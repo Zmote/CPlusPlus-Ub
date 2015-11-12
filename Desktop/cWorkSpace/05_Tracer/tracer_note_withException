@@ -1,0 +1,28 @@
+Tracer created: main
+Tracer created: inner
+Tracer moved: inner moved from
+Tracer created: foo
+Tracer: inner moved from
+Tracer destroyed: foo
+Tracer destroyed: inner moved from
+Tracer created: bar
+Tracer: inner
+Tracer: bar
+Tracer: inner
+
+This application has requested the Runtime to terminate it in an unusual way.
+Please contact the application's support team for more information.
+terminate called after throwing an instance of 'char const*'
+
+Notiz:
+
+Beim Wurf der Exception wird das Program angehalten,OHNE
+das die Objekte zerstört werden. --> müsste man also manuell zerstören, bevor
+exception geworfen wird oder in der catch-Klause die Zerstörung
+implementieren.
+
+Funktionsaufrufe(inkl. Konstruktor) werden direkt nach der
+Ausführung der Funktion zerstört.
+
+Objekte im inneren Block werden beim Verlassen des Blocks
+zerstört.
