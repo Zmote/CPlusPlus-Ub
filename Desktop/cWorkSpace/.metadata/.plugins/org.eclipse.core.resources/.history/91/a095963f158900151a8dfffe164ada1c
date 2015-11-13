@@ -1,4 +1,0 @@
-#include "w06_algo.h"
-#include <iostream>
-
-enum class Switch::State{ON, OFF, INBETWEEN};
