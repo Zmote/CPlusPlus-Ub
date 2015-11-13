@@ -1,14 +1,16 @@
-/*
- * w06_algo.h
- *
- *  Created on: 11.11.2015
- *      Author: Zmotions
- */
-
 #ifndef W06_ALGO_H_
 #define W06_ALGO_H_
 
+#include <iosfwd>
 
+class  Switch{
+private:
+	enum class State : unsigned short;
+	State currentState;
+public:
+	Switch();
+	void pressButton();
+};
 
 
 

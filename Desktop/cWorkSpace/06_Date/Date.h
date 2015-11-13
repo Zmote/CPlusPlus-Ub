@@ -9,6 +9,8 @@
 class Date {
 public:
 	//Starts with sunday, because of gauss algorithm
+	//Es macht Sinn hier eine enum Klasse zu verwenden, da sonst der namespace von Date
+	//allzu sehr verschmutzt wird.
 	enum class Day: int{Sonntag, Montag,Dienstag,Mittwoch,Donnerstag,Freitag,Samstag};
 public:
 	enum Month{Januar=1,Februar,Maerz,April,Mai,Juni,Juli,August,September,Oktober,November,Dezember};

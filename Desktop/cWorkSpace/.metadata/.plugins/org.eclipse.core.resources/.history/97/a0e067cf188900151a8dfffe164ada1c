@@ -1,0 +1,8 @@
+#include "Ansi.h"
+#include <iostream>
+using namespace Ansi;
+
+std::string Ansi::Pos(unsigned l, unsigned c) {
+	std::string output = ESCAPE + std::to_string(l) + ";" + std::to_string(c) + "H";
+    return
+}

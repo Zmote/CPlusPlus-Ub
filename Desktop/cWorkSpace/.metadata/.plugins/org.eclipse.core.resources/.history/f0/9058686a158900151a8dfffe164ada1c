@@ -1,0 +1,4 @@
+#include "w06_algo.h"
+#include <iostream>
+
+enum class Switch::State: unsigned short{ON, OFF, INBETWEEN};

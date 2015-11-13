@@ -7,6 +7,7 @@
 #include <iostream>
 #include <array>
 
+// I made a comment for git.
 void Date::print(std::ostream& out) const {
 	auto ch = out.fill('0');
 	out << std::setw(2) << day << '.';
@@ -37,10 +38,10 @@ std::string dayMapper(Date::Day date){
 }
 
 std::string Date::day_of_week(){
+	std::vector<Date::Day> all_days{Day::Montag,Day::Dienstag, Day::Mittwoch,Day::Donnerstag,Day::Freitag,Day::Samstag,Day::Sonntag};
 	std::vector<int> t = { 0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4 };
 	year -= month < 3;
 	int d = ( year + year/4 - year/100 + year/400 + t[month-1] + day) % 7;
-	std::vector<Date::Day> all_days{Day::Montag,Day::Dienstag, Day::Mittwoch,Day::Donnerstag,Day::Freitag,Day::Samstag,Day::Sonntag};
 	for(Date::Day date: all_days){
 		if(static_cast<int>(date) == d){
 			return dayMapper(date);

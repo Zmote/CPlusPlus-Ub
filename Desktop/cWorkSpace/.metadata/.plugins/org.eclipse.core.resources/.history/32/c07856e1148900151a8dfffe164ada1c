@@ -1,0 +1,10 @@
+#ifndef W06_ALGO_H_
+#define W06_ALGO_H_
+
+class  Switch{
+
+};
+
+
+
+#endif /* W06_ALGO_H_ */
