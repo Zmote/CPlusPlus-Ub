@@ -1,0 +1,24 @@
+#include "w06_algo.h"
+#incdlue "Ansi.h"
+#include <iostream>
+//cevelop error, does build
+enum class Switch::State: unsigned short{ON, OFF, BLINKING};
+
+void Switch::pressButton(){
+	switch(currentState){
+	case State::ON:
+		currentState = State::BLINKING;
+		std::cout << Ansi::Blink();
+		break;
+	case State::OFF:
+		currentState = State::ON;
+		break;
+	case State::BLINKING:
+		currentState = State::OFF;
+		break;
+	}
+}
+
+Switch::Switch():currentState{Switch::State::OFF}{
+
+}

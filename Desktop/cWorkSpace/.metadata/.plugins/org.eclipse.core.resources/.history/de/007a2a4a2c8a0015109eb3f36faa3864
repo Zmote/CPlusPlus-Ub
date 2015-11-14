@@ -1,0 +1,8 @@
+w04algo.h <--> countToLower <--> why is it a bad design? Is it?
+w04algo.cpp <--> output 1.0000 as 1 and not 1.0, valid?
+tracer.cpp <--> Move Constructor strucutre, check if correct.
+w04_algo.cpp,h <--> whats the difference between passing a function per std::function<double(double> func vs double f(double)?
+06_Date.h <--> check if overload problems answer is correct.
+Ansi::Blink() on Linux(Ubuntu) doesn't seem to work, is code correct? Is it some linux specific limitation?
+Check: inline operators don't work, why? (in header as well in implentation file, all variations seem to fail)
+

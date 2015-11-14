@@ -1,0 +1,11 @@
+#include "w07_algo.h"
+#include "Field5.h"
+#include <iostream>
+using namespace F5;
+int main(){
+//Field5 myfield = 3_F5;
+//std::cout << myfield;
+Field5 myfield2 = 2_F5 - 1_F5;
+Field5 myfield_1 = 1_F5;
+std::cout << myfield2;
+}

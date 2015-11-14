@@ -1,0 +1,19 @@
+<testsuites>
+	<testsuite name="AllTests" tests="15">
+		<testcase classname="AllTests" name="testSimpleWordPerConstructor"/>
+		<testcase classname="AllTests" name="testInvalidWordPerConstructor1"/>
+		<testcase classname="AllTests" name="testInvalidWordPerConstructor2"/>
+		<testcase classname="AllTests" name="testInvalidWordPerConstructor3"/>
+		<testcase classname="AllTests" name="testMultipleWordsConstructor"/>
+		<testcase classname="AllTests" name="testEmptyWordConstructor"/>
+		<testcase classname="AllTests" name="testDefaultWordConstructor"/>
+		<testcase classname="AllTests" name="testSimpleWordPerStream"/>
+		<testcase classname="AllTests" name="testInvalidWordPerStream1"/>
+		<testcase classname="AllTests" name="testInvalidWordPerStream2"/>
+		<testcase classname="AllTests" name="testInvalidWordPerStream3"/>
+		<testcase classname="AllTests" name="testMultipleWordsStream"/>
+		<testcase classname="AllTests" name="testMultipleWordsStream2"/>
+		<testcase classname="AllTests" name="testEmptyWordStream"/>
+		<testcase classname="AllTests" name="testWordEndOfInputStream"/>
+	</testsuite>
+</testsuites>

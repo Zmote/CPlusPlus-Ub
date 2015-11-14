@@ -1,0 +1,11 @@
+#include "word.h"
+#include <iostream>
+#include <sstream>
+
+int main(){
+Word myword{};
+std::string testString{"Zafer is da man"};
+std::istringstream mystream{testString};
+mystream >> myword;
+std::cout << myword;
+}

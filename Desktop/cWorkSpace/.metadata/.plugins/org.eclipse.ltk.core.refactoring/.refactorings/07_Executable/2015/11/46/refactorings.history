@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;07_Executable/main.h&apos; to &apos;main.cpp&apos;" description="Rename resource &apos;main.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="main.h" name="main.cpp" stamp="1447487263385" updateReferences="true"/>
+</session>

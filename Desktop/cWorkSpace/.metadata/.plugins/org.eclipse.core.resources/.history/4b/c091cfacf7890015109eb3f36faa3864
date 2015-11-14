@@ -1,0 +1,18 @@
+#include "w06_algo.h"
+#include <iostream>
+//cevelop error, does build
+enum class Switch::State: unsigned short{ON, OFF, BLINKING};
+
+void Switch::pressButton(){
+	switch(currentState){
+	case State::ON:
+		break;
+	case State::OFF:
+		break;
+
+	}
+}
+
+Switch::Switch():currentState{Switch::State::OFF}{
+
+}

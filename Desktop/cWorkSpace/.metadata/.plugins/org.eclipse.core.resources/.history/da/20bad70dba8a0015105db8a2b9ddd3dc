@@ -1,0 +1,65 @@
+#ifndef Field5_H_
+#define Field5_H_
+#include <iosfwd>
+#include <cmath>
+#include <iostream>
+#include <boost/operators.hpp>
+
+class Field5 {
+	unsigned val;
+public:
+	explicit constexpr Field5(unsigned x = 0u) :
+			val { x % 5 } {
+	}
+	constexpr unsigned value() const {
+		return val;
+	}
+	constexpr operator unsigned() const {
+		return val;
+	}
+	constexpr bool operator==(Field5 const &r) const {
+		return val == r.val;
+	}
+	constexpr bool operator!=(Field5 const &r) const {
+		return !(*this == r);
+	}
+	constexpr Field5 operator+=(Field5 const &r) {
+		val = (val + r.value()) % 5;
+		return *this;
+	}
+	constexpr Field5 operator*=(Field5 const&r) {
+		val = (val * r.value()) % 5;
+		return *this;
+	}
+	constexpr Field5 operator+(Field5 const &r) const {
+		return Field5 { val + r.val };
+	}
+	constexpr Field5 operator-(Field5 const &r) const {
+		return Field5 {(5 +( val - r.val)) };
+		}
+	constexpr Field5 operator-() const {
+			return Field5 {5%val};
+	}
+	constexpr Field5 operator*(Field5 const &r) const {
+		return Field5 { val * r.val };
+	}
+	constexpr Field5 operator/(Field5 const &r) const {
+		int res;
+		for(int i = 0; i < 5; i++){
+			res = val * i;
+			if(res == r.value){
+				return Field5 {res};
+			}
+		}
+
+		}
+};
+
+namespace F5 {
+constexpr Field5 operator"" _F5(unsigned long long v) {
+	return Field5 { static_cast<unsigned>(v % 5) };
+}
+}
+std::ostream& operator <<(std::ostream& out, const Field5& r);
+
+#endif /* Field5_H_ */

@@ -1,0 +1,15 @@
+#ifndef W06_ALGO_H_
+#define W06_ALGO_H_
+
+#include <iosfwd>
+
+class  Switch{
+private:
+	enum class State : unsigned short;
+	Sate currentStae;
+public:
+	void pressButon();
+};
+
+
+#endif /* W06_ALGO_H_ */

@@ -1,0 +1,11 @@
+#include "wlist.h"
+#include "word.h"
+#include <vector>
+#include <iterator>
+#include <algorithm>
+#include <iostream>
+#include <sstream>
+
+void wlist(std::ostream &out, std::istream &in){
+	using namespace std;
+}

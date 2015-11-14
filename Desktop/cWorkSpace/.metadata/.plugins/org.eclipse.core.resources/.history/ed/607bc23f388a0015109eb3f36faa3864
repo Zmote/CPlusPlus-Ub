@@ -1,0 +1,28 @@
+#ifndef WORD_H_
+#define WORD_H_
+
+#include <iosfwd>
+#include <string>
+#include <ostream>
+
+class Word{
+std::string word;
+public:
+	Word() = default;
+	explicit Word(std::string c);
+	void print(std::ostream& o);
+	void read(std::istream& i);
+	const std::string toLower();
+	bool operator <  (const Word  &rhs) const { return toLower() < rhs.toLower(); }
+	bool operator >  (const Word  &rhs) const { return rhs < *this; }
+	bool operator == (const Word  &rhs) const { return !(*this < rhs || *this > rhs ); }
+	bool operator != (const Word  &rhs) const { return !(*this == rhs); }
+	bool operator >= (const Word  &rhs) const { return !(*this < rhs); }
+	bool operator <= (const Word  &rhs) const { return !(*this > rhs); }
+};
+
+std::ostream& operator<<(std::ostream& out,Word& word);
+std::istream& operator>>(std::istream& in,Word& word);
+
+
+#endif /* WORD_H_ */

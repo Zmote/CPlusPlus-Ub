@@ -1,0 +1,23 @@
+<testsuites>
+	<testsuite name="AllTests" tests="11">
+		<testcase classname="AllTests" name="testForeColorWhite">
+			<failure message="..\src\Test.cpp:11 testForeColorWhite: &quot;\\033[37m&quot; == Ansi::ForeColor(Ansi::fwhite) expected:	0x1B[37m	but was:	0x1B[47m	">
+testForeColorWhite: &quot;\\033[37m&quot; == Ansi::ForeColor(Ansi::fwhite) expected:	0x1B[37m	but was:	0x1B[47m	
+			</failure>
+		</testcase>
+		<testcase classname="AllTests" name="testClear"/>
+		<testcase classname="AllTests" name="testBAckColorBlack">
+			<failure message="..\src\Test.cpp:14 testBAckColorBlack: &quot;\\033[40m&quot; == Ansi::BackColor(Ansi::bblack) expected:	0x1B[40m	but was:	0x1B[30m	">
+testBAckColorBlack: &quot;\\033[40m&quot; == Ansi::BackColor(Ansi::bblack) expected:	0x1B[40m	but was:	0x1B[30m	
+			</failure>
+		</testcase>
+		<testcase classname="AllTests" name="testBold"/>
+		<testcase classname="AllTests" name="testAttrOff"/>
+		<testcase classname="AllTests" name="testPosXY"/>
+		<testcase classname="AllTests" name="testHome"/>
+		<testcase classname="AllTests" name="testUp"/>
+		<testcase classname="AllTests" name="testDown"/>
+		<testcase classname="AllTests" name="testLeft"/>
+		<testcase classname="AllTests" name="testRight"/>
+	</testsuite>
+</testsuites>

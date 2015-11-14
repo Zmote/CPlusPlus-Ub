@@ -1,0 +1,20 @@
+#include "w07_algo.h"
+#include "Field5.h"
+#include <iostream>
+using namespace F5;
+int main(){
+//Field5 myfield = 3_F5;
+//std::cout << myfield;
+Field5 myfield2 = 3_F5 - 4_F5;
+Field5 myfield_1 = 1_F5;
+Field5 myfield_2 = 2_F5;
+Field5 myfield_4 = 4_F5 + 4_F5;
+unsigned int a = 3;
+unsigned int b = 4;
+unsigned int c = abs(a-b);
+std::cout << myfield2 << '\n';
+std::cout << myfield_1<< '\n';
+std::cout << myfield_2<< '\n';
+std::cout << c << '\n';
+std::cout << myfield_4 << '\n';
+}
