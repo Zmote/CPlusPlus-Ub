@@ -53,15 +53,15 @@ std::set<std::string> generate_anagrams(std::istream& in){
 	std::string input{};
 	getline(in,input);
 	std::set<std::string> wpalindromes{};
-	std::set<std::string> allPalindromes{};
-	std::string word{};
 
 	//for no lowercase/uppercase distinguishment of words
 	std::transform(input.begin(), input.end(), input.begin(), ::tolower);
 
 	//generate all permutations of a word or input
 	do{
-		wpalindromes.insert(input);
+		std::stringstream ss{input};
+		wpalindromes.insert(std::istream_iterator<std::string>(ss),std::istream_iterator<std::string>());
+		//wpalindromes.insert(input);
 	}while(std::next_permutation(input.begin(),input.end()));
 
 	//separate words from generated permutations
@@ -69,14 +69,7 @@ std::set<std::string> generate_anagrams(std::istream& in){
 	//permutations separately for each word, but it should generate permutations
 	//from both words and then separated them into words --> UPDATE:
 	//This algorithm seems right, but takes forever --> find fix
-	for_each(begin(wpalindromes),end(wpalindromes),[&](std::string i){
-		std::stringstream ss{i};
-		std::vector<std::string> vec{std::istream_iterator<std::string>(ss),std::istream_iterator<std::string>()};
-		for_each(begin(vec),end(vec),[&](std::string j){
-			allPalindromes.insert(j);
-		});
-	});
-	return allPalindromes;
+	return wpalindromes;
 }
 
 
@@ -88,8 +81,9 @@ std::set<std::string> getValidWords(std::set<std::string> permutations){
 		{
 			while(getline(myfile,line))
 			{
-				//for no lowercase/uppercase distinguishment of words
-				std::transform(line.begin(), line.end(), line.begin(), ::tolower);
+				//for no lowercase/uppercase distinguishment of words --> find optimized version
+				std::transform(line.begin(),line.begin()++,line.begin(),std::tolower);
+				std::cout << line << '\n';
 			 for_each(begin(permutations),end(permutations),[&](std::string i){
 					 if(i == line){
 						 validWords.insert(i);
