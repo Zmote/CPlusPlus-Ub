@@ -1,0 +1,20 @@
+#include "palindrom.h"
+#include <iostream>
+#include <fstream>
+
+int main(){
+std:: string line;
+std::fstream myfile ("linuxwords.sql");
+ if (myfile.is_open())
+ {
+   while ( getline (myfile,line) )
+   {
+	   if(is_palindrom(mystring)){
+	   	std::cout<< mystring + " is a palindrom";
+	   }else{
+	   	std::cout << mystring + " is not a palindrom";
+	   }
+   }
+   myfile.close();
+ }
+}

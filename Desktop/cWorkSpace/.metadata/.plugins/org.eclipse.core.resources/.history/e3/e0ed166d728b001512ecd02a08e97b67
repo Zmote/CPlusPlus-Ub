@@ -1,0 +1,8 @@
+#include "palindrom.h"
+#include <iostream>
+#include <fstream>
+
+int main(){
+printPalindromes_fromFile(std::cout,"linuxwords.sql");
+printPalindrome("Otto");
+}

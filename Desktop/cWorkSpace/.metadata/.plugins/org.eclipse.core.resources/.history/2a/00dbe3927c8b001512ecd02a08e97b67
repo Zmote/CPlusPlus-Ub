@@ -1,0 +1,16 @@
+#include "palindrom.h"
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <algorithm>
+
+int main(){
+//printPalindromes_fromFile(std::cout,"linuxwords.sql");
+	std::string s{"Zafer"};
+do
+   {
+
+	  std::cout<<s<<"\n";
+
+   }while(std::next_permutation(s.begin(),s.end()));
+}

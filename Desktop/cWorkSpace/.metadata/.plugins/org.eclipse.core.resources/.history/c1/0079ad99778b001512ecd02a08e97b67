@@ -1,0 +1,11 @@
+#include "palindrom.h"
+#include <iostream>
+#include <fstream>
+#include <string>
+
+int main(){
+//printPalindromes_fromFile(std::cout,"linuxwords.sql");
+std::string word{"Zafer"};
+std::string rest{word.substr(0)};
+std::cout << rest;
+}

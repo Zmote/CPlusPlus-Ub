@@ -1,0 +1,16 @@
+/*
+ * palindrom.h
+ *
+ *  Created on: 15.11.2015
+ *      Author: Zmotions
+ */
+
+#ifndef PALINDROM_H_
+#define PALINDROM_H_
+#include <iosfwd>
+
+bool is_palindrom(std::string input);
+bool palindromes_inFile(std::string url);
+
+
+#endif /* PALINDROM_H_ */
