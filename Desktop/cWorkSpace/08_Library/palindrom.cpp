@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <deque>
 #include <algorithm>
 #include <fstream>
 #include <set>
@@ -55,40 +56,28 @@ std::set<std::string> generate_anagrams(std::istream& in){
 	std::set<std::string> wpalindromes{};
 
 	//for no lowercase/uppercase distinguishment of words
-	std::transform(input.begin(), input.end(), input.begin(), ::tolower);
+	std::transform(input.begin(), input.begin() + 1, input.begin(), ::tolower);
 
 	//generate all permutations of a word or input
 	do{
 		std::stringstream ss{input};
 		wpalindromes.insert(std::istream_iterator<std::string>(ss),std::istream_iterator<std::string>());
-		//wpalindromes.insert(input);
 	}while(std::next_permutation(input.begin(),input.end()));
-
-	//separate words from generated permutations
-	//TODO: --> currently, your algorithm sepearates vacation and time and generates
-	//permutations separately for each word, but it should generate permutations
-	//from both words and then separated them into words --> UPDATE:
-	//This algorithm seems right, but takes forever --> find fix
 	return wpalindromes;
 }
-
 
 std::set<std::string> getValidWords(std::set<std::string> permutations){
 	std::string line{};
 	std::set<std::string> validWords{};
 	std::fstream myfile ("linuxwords.sql");
-	if (myfile.is_open())
-		{
+	if (myfile.is_open()){
 			while(getline(myfile,line))
 			{
-				//for no lowercase/uppercase distinguishment of words --> find optimized version
-				std::transform(line.begin(),line.begin()++,line.begin(),std::tolower);
-				std::cout << line << '\n';
-			 for_each(begin(permutations),end(permutations),[&](std::string i){
-					 if(i == line){
-						 validWords.insert(i);
-					 }
-			 });
+			//for no lowercase/uppercase distinguishment of words --> find optimized version
+			std::transform(line.begin(),line.begin() + 1,begin(line),::tolower);
+			 if(std::binary_search(begin(permutations),end(permutations),line)){
+				 validWords.insert(line);
+			 }
 			}
 		}
 	myfile.close();
