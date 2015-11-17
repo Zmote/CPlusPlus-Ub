@@ -1,0 +1,14 @@
+#include "kwic.h"
+#include "word.h"
+#include <iterator>
+#include <string>
+
+void kwic(std::ostream& out, std::istream& in){
+Word myword{};
+in >> myword;
+std::stringstream ss{};
+ss << myword;
+std::vector<Word> vec{std::istream_iterator<std::string>(ss),std::istream_iterator<string>()};
+
+}
+

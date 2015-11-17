@@ -1,0 +1,20 @@
+#include "palindrom.h"
+#include <iostream>
+#include <istream>
+#include <fstream>
+#include <string>
+#include <sstream>
+#include <ctime>
+#include <unordered_set>
+#include <algorithm>
+
+int main(){
+//printPalindromes_fromFile(std::cout,"linuxwords.sql");
+//printAnagrams(std::cout,getValidWords(generate_anagrams(std::cin)));
+//printAnagrams(std::cout,findAnagrams(std::cin));
+std::istringstream ss{"I am hulk"};
+unsigned int start = clock();
+std::unordered_set<std::string> myset = findAnagrams(ss);
+std::cout << "Time in miliseconds: " << clock()-start << " ms\n";
+printAnagrams(std::cout,myset);
+}

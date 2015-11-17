@@ -1,5 +1,5 @@
-#include "wlist.h"
 #include "word.h"
+#include "kwic.h"
 #include <iostream>
 #include <sstream>
 
@@ -17,4 +17,5 @@ int main(){
 //	std::cout << "myword2 ist kleiner als myword1";
 //}
 //wlist(std::cout,std::cin);
+kwic(std::cout,std::cin);
 }

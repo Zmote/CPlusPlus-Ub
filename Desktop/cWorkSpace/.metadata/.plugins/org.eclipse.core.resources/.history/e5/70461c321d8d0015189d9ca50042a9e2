@@ -1,0 +1,8 @@
+#ifndef KWIC_H_
+#define KWIC_H_
+
+void kwic(std::ostream& out, std::string input);
+
+
+
+#endif /* KWIC_H_ */

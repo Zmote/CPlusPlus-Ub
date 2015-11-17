@@ -59,7 +59,7 @@ void Word::read(std::istream& i){
 	std::string inputString{in(i),in()};
 	vec = separateWords(inputString,word);
 	for_each(begin(vec),end(vec),[&](auto i){
-		word += (i+" "); //space only tmp, for visibility?!
+		word += (i+" ");
 	});
 	while(word.back() == ' '){
 		word.pop_back();

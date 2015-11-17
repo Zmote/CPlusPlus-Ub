@@ -1,0 +1,18 @@
+w04algo.h <--> countToLower <--> why is it a bad design? Is it?
+w04algo.cpp <--> output 1.0000 as 1 and not 1.0, valid?
+tracer.cpp <--> Move Constructor strucutre, check if correct.
+w04_algo.cpp,h <--> whats the difference between passing a function per std::function<double(double> func vs double f(double)?
+06_Date.h <--> check if overload problems answer is correct.
+Ansi::Blink() on Linux(Ubuntu) doesn't seem to work, is code correct? Is it some linux specific limitation?
+Check: inline operators don't work, why? (in header as well in implentation file, all variations seem to fail)
+
+Testat:Ask if word implementation for testat correct, or what the real idea is behind?
+Testat:Ob neue Wörter erzeugt werden --> check was genau gemeint ist damit? (Vorallem das mit dem stream ist zu abzuklären)
+--> Write a test that checks what happens at the end of the input with the input stream. Will an empty word be created, even if it is forbidden? 
+Testat:Constructor: Can it have a default value?
+Testat: Check kwic implementation for testat if correct
+Testat: Order of outputted "kwic" ok? Or do they have to be the way like in the exercises(intertwined)
+
+Anagrams: Can't find active in list of permutations, why? (am appears, I is not in the list)
+--> Vacation time = I am active <-- 
+Anagrams: How could you raise performance?

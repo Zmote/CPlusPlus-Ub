@@ -1,0 +1,10 @@
+#ifndef KWIC_H_
+#define KWIC_H_
+#include <iosfwd>
+#include <string>
+
+void kwic(std::ostream& out, std::string input);
+
+
+
+#endif /* KWIC_H_ */

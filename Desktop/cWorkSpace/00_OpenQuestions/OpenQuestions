@@ -6,7 +6,15 @@ w04_algo.cpp,h <--> whats the difference between passing a function per std::fun
 Ansi::Blink() on Linux(Ubuntu) doesn't seem to work, is code correct? Is it some linux specific limitation?
 Check: inline operators don't work, why? (in header as well in implentation file, all variations seem to fail)
 
+/********************************************************ZU ABKLÄREN*******************************************************/
 Testat:Ask if word implementation for testat correct, or what the real idea is behind?
 Testat:Ob neue Wörter erzeugt werden --> check was genau gemeint ist damit? (Vorallem das mit dem stream ist zu abzuklären)
 --> Write a test that checks what happens at the end of the input with the input stream. Will an empty word be created, even if it is forbidden? 
 Testat:Constructor: Can it have a default value?
+Testat: Check kwic implementation for testat if correct
+Testat: Order of outputted "kwic" ok? Or do they have to be the way like in the exercises(intertwined)
+/********************************************************ZU ABKLÄREN*******************************************************/
+
+Anagrams: Can't find active in list of permutations, why? (am appears, I is not in the list)
+--> Vacation time = I am active <-- 
+Anagrams: How could you raise performance?

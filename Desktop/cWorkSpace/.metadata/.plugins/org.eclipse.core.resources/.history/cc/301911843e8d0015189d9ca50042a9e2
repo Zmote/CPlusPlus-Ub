@@ -1,0 +1,24 @@
+#include "kwic.h"
+#include "word.h"
+#include <iterator>
+#include <algorithm>
+#include <vector>
+#include <sstream>
+#include <string>
+
+void kwic(std::ostream& out, std::istream& in){
+Word myword{};
+std::stringstream ss{};
+in>>myword;
+ss<<myword;
+
+for(unsigned int i = 0; i < vec.size();i++){
+	std::rotate(begin(vec),begin(vec)+1,end(vec));
+	for_each(begin(vec),end(vec),[&](Word i){
+		out << i << " ";
+	});
+	out << '\n';
+	std::rotate(begin(vec),begin(vec)+1,end(vec));
+}
+}
+

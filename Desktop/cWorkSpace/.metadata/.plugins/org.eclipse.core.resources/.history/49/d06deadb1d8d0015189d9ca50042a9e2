@@ -1,0 +1,7 @@
+#include "kwic.h"
+#include "word.h"
+
+void kwic(std::ostream& out, std::string input){
+Word mywords{};
+}
+
