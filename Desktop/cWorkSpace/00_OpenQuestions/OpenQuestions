@@ -12,9 +12,13 @@ Testat:Ob neue Wörter erzeugt werden --> check was genau gemeint ist damit? (Vor
 --> Write a test that checks what happens at the end of the input with the input stream. Will an empty word be created, even if it is forbidden? 
 Testat:Constructor: Can it have a default value?
 Testat: Check kwic implementation for testat if correct
+Testat?: Program wfavorite produces results only with Ctrl+Z(eof), is that a problem?
 Testat: Order of outputted "kwic" ok? Or do they have to be the way like in the exercises(intertwined)
 /********************************************************ZU ABKLÄREN*******************************************************/
 
 Anagrams: Can't find active in list of permutations, why? (am appears, I is not in the list)
 --> Vacation time = I am active <-- 
 Anagrams: How could you raise performance?
+
+wfavorite: --> terminate vs. Ctrl + Z, why does it work sometimes, and sometimes not? --> show code
+wfavorite: --> (multi)map.insert with std::pair, how to do correctly? My version didn't input anything.

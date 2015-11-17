@@ -1,0 +1,10 @@
+#ifndef W09_ALGO_H_
+#define W09_ALGO_H_
+#include <iosfwd>
+
+int wcount(std::istream& in);
+int wdiffcount(std::istream& in);
+int wfavorite(std::istream& in);
+
+
+#endif /* W09_ALGO_H_ */

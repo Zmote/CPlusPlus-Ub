@@ -832,3 +832,257 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2015-11-17 17:48:46.164 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_60
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_CH
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-11-17 17:48:56.035
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\shoda_000'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-11-17 17:49:33.595
+!MESSAGE Indexed '09_Executable' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0 %)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-11-17 17:49:49.424
+!MESSAGE Indexed '09_Library' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0 %)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-11-17 17:51:03.219
+!MESSAGE Indexed '09_Test' (1 sources, 26 headers) in 0.701 sec: 622 declarations; 813 references; 25 unresolved inclusions; 0 syntax errors; 416 unresolved names (22 %)
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2015-11-17 17:51:30.493
+!MESSAGE Internal Error
+!STACK 0
+java.lang.NullPointerException
+	at ch.hsr.ifs.cute.ui.ASTUtil.containsAssert(ASTUtil.java:37)
+	at ch.hsr.ifs.cute.ui.ASTUtil.isTestFunction(ASTUtil.java:27)
+	at ch.hsr.ifs.cute.ui.checkers.TestFunctionFinderVisitor.visit(TestFunctionFinderVisitor.java:37)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTFunctionDefinition.accept(CPPASTFunctionDefinition.java:176)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTCompositeTypeSpecifier.accept(CPPASTCompositeTypeSpecifier.java:203)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTSimpleDeclaration.accept(CPPASTSimpleDeclaration.java:102)
+	at org.eclipse.cdt.internal.core.dom.parser.ASTTranslationUnit.accept(ASTTranslationUnit.java:266)
+	at ch.hsr.ifs.cute.ui.checkers.UnregisteredTestChecker.processAst(UnregisteredTestChecker.java:51)
+	at org.eclipse.cdt.codan.core.cxx.model.AbstractIndexAstChecker.processModel(AbstractIndexAstChecker.java:111)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:91)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.runInEditor(CodanRunner.java:46)
+	at org.eclipse.cdt.codan.internal.core.CodanBuilder.processResource(CodanBuilder.java:126)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.CxxCodanReconciler.reconciledAst(CxxCodanReconciler.java:37)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanCReconciler.reconciled(CodanCReconciler.java:57)
+	at org.eclipse.cdt.internal.ui.editor.CEditor.reconciled(CEditor.java:3086)
+	at org.eclipse.cdt.internal.ui.text.CReconcilingStrategy.reconcile(CReconcilingStrategy.java:99)
+	at org.eclipse.cdt.internal.ui.text.CReconcilingStrategy.initialReconcile(CReconcilingStrategy.java:122)
+	at org.eclipse.cdt.internal.ui.text.CompositeReconcilingStrategy.initialReconcile(CompositeReconcilingStrategy.java:117)
+	at org.eclipse.cdt.internal.ui.text.CCompositeReconcilingStrategy.initialReconcile(CCompositeReconcilingStrategy.java:108)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.initialProcess(MonoReconciler.java:105)
+	at org.eclipse.cdt.internal.ui.text.CReconciler.initialProcess(CReconciler.java:338)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:173)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-11-17 18:04:24.003
+!MESSAGE Indexed '09_Executable' (1 sources, 0 headers) in 0.004 sec: 1 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0 %)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-11-17 18:15:07.698
+!MESSAGE Indexed '09_Executable' (1 sources, 118 headers) in 1.75 sec: 12'380 declarations; 20'017 references; 0 unresolved inclusions; 4 syntax errors; 32 unresolved names (0.099 %)
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2015-11-17 18:16:11.584
+!MESSAGE Internal Error
+!STACK 0
+java.lang.NullPointerException
+	at ch.hsr.ifs.cute.ui.ASTUtil.containsAssert(ASTUtil.java:37)
+	at ch.hsr.ifs.cute.ui.ASTUtil.isTestFunction(ASTUtil.java:27)
+	at ch.hsr.ifs.cute.ui.checkers.TestFunctionFinderVisitor.visit(TestFunctionFinderVisitor.java:37)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTFunctionDefinition.accept(CPPASTFunctionDefinition.java:176)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTCompositeTypeSpecifier.accept(CPPASTCompositeTypeSpecifier.java:203)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTSimpleDeclaration.accept(CPPASTSimpleDeclaration.java:102)
+	at org.eclipse.cdt.internal.core.dom.parser.ASTTranslationUnit.accept(ASTTranslationUnit.java:266)
+	at ch.hsr.ifs.cute.ui.checkers.UnregisteredTestChecker.processAst(UnregisteredTestChecker.java:51)
+	at org.eclipse.cdt.codan.core.cxx.model.AbstractIndexAstChecker.processModel(AbstractIndexAstChecker.java:111)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:91)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.runInEditor(CodanRunner.java:46)
+	at org.eclipse.cdt.codan.internal.core.CodanBuilder.processResource(CodanBuilder.java:126)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.CxxCodanReconciler.reconciledAst(CxxCodanReconciler.java:37)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanCReconciler.reconciled(CodanCReconciler.java:57)
+	at org.eclipse.cdt.internal.ui.editor.CEditor.reconciled(CEditor.java:3086)
+	at org.eclipse.cdt.internal.ui.text.CReconcilingStrategy.reconcile(CReconcilingStrategy.java:99)
+	at org.eclipse.cdt.internal.ui.text.CReconcilingStrategy.initialReconcile(CReconcilingStrategy.java:122)
+	at org.eclipse.cdt.internal.ui.text.CompositeReconcilingStrategy.initialReconcile(CompositeReconcilingStrategy.java:117)
+	at org.eclipse.cdt.internal.ui.text.CCompositeReconcilingStrategy.initialReconcile(CCompositeReconcilingStrategy.java:108)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.initialProcess(MonoReconciler.java:105)
+	at org.eclipse.cdt.internal.ui.text.CReconciler.initialProcess(CReconciler.java:338)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:173)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-11-17 18:16:24.025
+!MESSAGE Indexed '09_Library' (2 sources, 208 headers) in 4.08 sec: 37'536 declarations; 76'291 references; 0 unresolved inclusions; 4 syntax errors; 322 unresolved names (0.28 %)
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2015-11-17 18:16:24.671
+!MESSAGE Internal Error
+!STACK 0
+java.lang.NullPointerException
+	at ch.hsr.ifs.cute.ui.ASTUtil.containsAssert(ASTUtil.java:37)
+	at ch.hsr.ifs.cute.ui.ASTUtil.isTestFunction(ASTUtil.java:27)
+	at ch.hsr.ifs.cute.ui.checkers.TestFunctionFinderVisitor.visit(TestFunctionFinderVisitor.java:37)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTFunctionDefinition.accept(CPPASTFunctionDefinition.java:176)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTCompositeTypeSpecifier.accept(CPPASTCompositeTypeSpecifier.java:203)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTSimpleDeclaration.accept(CPPASTSimpleDeclaration.java:102)
+	at org.eclipse.cdt.internal.core.dom.parser.ASTTranslationUnit.accept(ASTTranslationUnit.java:266)
+	at ch.hsr.ifs.cute.ui.checkers.UnregisteredTestChecker.processAst(UnregisteredTestChecker.java:51)
+	at org.eclipse.cdt.codan.core.cxx.model.AbstractIndexAstChecker.processModel(AbstractIndexAstChecker.java:111)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:91)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.runInEditor(CodanRunner.java:46)
+	at org.eclipse.cdt.codan.internal.core.CodanBuilder.processResource(CodanBuilder.java:126)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.CxxCodanReconciler.reconciledAst(CxxCodanReconciler.java:37)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanCReconciler.reconciled(CodanCReconciler.java:57)
+	at org.eclipse.cdt.internal.ui.editor.CEditor.reconciled(CEditor.java:3086)
+	at org.eclipse.cdt.internal.ui.text.CReconcilingStrategy.reconcile(CReconcilingStrategy.java:99)
+	at org.eclipse.cdt.internal.ui.text.CReconcilingStrategy.reconcile(CReconcilingStrategy.java:63)
+	at org.eclipse.cdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:87)
+	at org.eclipse.cdt.internal.ui.text.CCompositeReconcilingStrategy.reconcile(CCompositeReconcilingStrategy.java:90)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
+	at org.eclipse.cdt.internal.ui.text.CReconciler.process(CReconciler.java:349)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-11-17 18:49:42.734
+!MESSAGE Indexed '09_Executable' (1 sources, 118 headers) in 1.58 sec: 12'381 declarations; 20'012 references; 0 unresolved inclusions; 4 syntax errors; 32 unresolved names (0.099 %)
+!SESSION 2015-11-17 19:02:42.455 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_60
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_CH
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.egit.ui 2 0 2015-11-17 19:03:03.863
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\shoda_000'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.cdt.ui 4 4 2015-11-17 19:32:04.538
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPFunctionScope.getParent(CPPFunctionScope.java:90)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPSemantics.getParentScope(CPPSemantics.java:1394)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPSemantics.lookup(CPPSemantics.java:1073)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPSemantics.resolveBinding(CPPSemantics.java:299)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPVisitor.createBinding(CPPVisitor.java:268)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTName.createIntermediateBinding(CPPASTName.java:61)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTNameBase.resolvePreBinding(CPPASTNameBase.java:94)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPVisitor.getContainingScopeOrNull(CPPVisitor.java:1261)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPVisitor.getContainingScope(CPPVisitor.java:1220)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPSemantics.getLookupScope(CPPSemantics.java:875)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPSemantics.lookup(CPPSemantics.java:984)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPSemantics.contentAssistLookup(CPPSemantics.java:3968)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPSemantics.findBindingsForContentAssist(CPPSemantics.java:3830)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTQualifiedName.findBindings(CPPASTQualifiedName.java:329)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTQualifiedName.findBindings(CPPASTQualifiedName.java:439)
+	at org.eclipse.cdt.internal.ui.text.contentassist.DOMCompletionProposalComputer.computeCompletionProposals(DOMCompletionProposalComputer.java:153)
+	at org.eclipse.cdt.internal.ui.text.contentassist.ParsingBasedProposalComputer.computeCompletionProposals(ParsingBasedProposalComputer.java:54)
+	at org.eclipse.cdt.internal.ui.text.contentassist.CompletionProposalComputerDescriptor.computeCompletionProposals(CompletionProposalComputerDescriptor.java:294)
+	at org.eclipse.cdt.internal.ui.text.contentassist.CompletionProposalCategory.computeCompletionProposals(CompletionProposalCategory.java:261)
+	at org.eclipse.cdt.internal.ui.text.contentassist.ContentAssistProcessor.collectProposals(ContentAssistProcessor.java:258)
+	at org.eclipse.cdt.internal.ui.text.contentassist.ContentAssistProcessor.computeCompletionProposals(ContentAssistProcessor.java:212)
+	at org.eclipse.jface.text.contentassist.ContentAssistant$5.run(ContentAssistant.java:1904)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jface.text.contentassist.ContentAssistant.computeCompletionProposals(ContentAssistant.java:1902)
+	at org.eclipse.jface.text.contentassist.CompletionProposalPopup.computeProposals(CompletionProposalPopup.java:573)
+	at org.eclipse.jface.text.contentassist.CompletionProposalPopup.access$16(CompletionProposalPopup.java:570)
+	at org.eclipse.jface.text.contentassist.CompletionProposalPopup$2.run(CompletionProposalPopup.java:505)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.jface.text.contentassist.CompletionProposalPopup.showProposals(CompletionProposalPopup.java:499)
+	at org.eclipse.jface.text.contentassist.ContentAssistant$2.run(ContentAssistant.java:384)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4155)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3772)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1127)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:654)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:598)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-11-17 19:37:32.859
+!MESSAGE Indexed '09_Library' (2 sources, 214 headers) in 8.6 sec: 38'927 declarations; 78'623 references; 0 unresolved inclusions; 4 syntax errors; 34 unresolved names (0.029 %)
+
+!ENTRY org.eclipse.cdt.ui 4 4 2015-11-17 20:07:06.464
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPFunctionScope.getParent(CPPFunctionScope.java:90)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPSemantics.getParentScope(CPPSemantics.java:1394)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPSemantics.lookup(CPPSemantics.java:1073)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPSemantics.resolveBinding(CPPSemantics.java:299)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPVisitor.createBinding(CPPVisitor.java:268)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTName.createIntermediateBinding(CPPASTName.java:61)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTNameBase.resolvePreBinding(CPPASTNameBase.java:94)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPVisitor.getContainingScopeOrNull(CPPVisitor.java:1261)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPVisitor.getContainingScope(CPPVisitor.java:1220)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPSemantics.getLookupScope(CPPSemantics.java:875)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPSemantics.lookup(CPPSemantics.java:984)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPSemantics.contentAssistLookup(CPPSemantics.java:3968)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPSemantics.findBindingsForContentAssist(CPPSemantics.java:3830)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTQualifiedName.findBindings(CPPASTQualifiedName.java:329)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTQualifiedName.findBindings(CPPASTQualifiedName.java:439)
+	at org.eclipse.cdt.internal.ui.text.contentassist.DOMCompletionProposalComputer.computeCompletionProposals(DOMCompletionProposalComputer.java:153)
+	at org.eclipse.cdt.internal.ui.text.contentassist.ParsingBasedProposalComputer.computeCompletionProposals(ParsingBasedProposalComputer.java:54)
+	at org.eclipse.cdt.internal.ui.text.contentassist.CompletionProposalComputerDescriptor.computeCompletionProposals(CompletionProposalComputerDescriptor.java:294)
+	at org.eclipse.cdt.internal.ui.text.contentassist.CompletionProposalCategory.computeCompletionProposals(CompletionProposalCategory.java:261)
+	at org.eclipse.cdt.internal.ui.text.contentassist.ContentAssistProcessor.collectProposals(ContentAssistProcessor.java:258)
+	at org.eclipse.cdt.internal.ui.text.contentassist.ContentAssistProcessor.computeCompletionProposals(ContentAssistProcessor.java:212)
+	at org.eclipse.jface.text.contentassist.ContentAssistant$5.run(ContentAssistant.java:1904)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jface.text.contentassist.ContentAssistant.computeCompletionProposals(ContentAssistant.java:1902)
+	at org.eclipse.jface.text.contentassist.CompletionProposalPopup.computeProposals(CompletionProposalPopup.java:573)
+	at org.eclipse.jface.text.contentassist.CompletionProposalPopup.access$16(CompletionProposalPopup.java:570)
+	at org.eclipse.jface.text.contentassist.CompletionProposalPopup$2.run(CompletionProposalPopup.java:505)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.jface.text.contentassist.CompletionProposalPopup.showProposals(CompletionProposalPopup.java:499)
+	at org.eclipse.jface.text.contentassist.ContentAssistant$2.run(ContentAssistant.java:384)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4155)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3772)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1127)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:654)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:598)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-11-17 20:29:38.985
+!MESSAGE Indexed '09_Library' (2 sources, 214 headers) in 6.54 sec: 38'935 declarations; 78'646 references; 0 unresolved inclusions; 4 syntax errors; 35 unresolved names (0.03 %)

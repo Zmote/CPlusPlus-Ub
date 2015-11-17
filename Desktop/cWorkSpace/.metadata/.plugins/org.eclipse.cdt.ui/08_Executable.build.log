@@ -1,1 +1,7 @@
-Info: Nothing to build for 08_Executable
+17:49:11 **** Rebuild of configuration Debug for project 08_Executable ****
+Info: Internal Builder is used for build
+g++ -std=c++1y "-IC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\08_Library" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ "-LC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\08_Library\\Debug" -o 08_Executable.exe main.o -l08_Library 
+
+17:49:12 Build Finished (took 1s.606ms)
+

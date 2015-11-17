@@ -1,1 +1,9 @@
-Info: Nothing to build for 08_Library
+17:49:06 **** Rebuild of configuration Debug for project 08_Library ****
+Info: Internal Builder is used for build
+g++ -std=c++1y -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o word.o "..\\word.cpp" 
+g++ -std=c++1y -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o palindrom.o "..\\palindrom.cpp" 
+g++ -std=c++1y -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o w08_alog.o "..\\w08_alog.cpp" 
+ar -r lib08_Library.a palindrom.o w08_alog.o word.o 
+
+17:49:09 Build Finished (took 2s.651ms)
+
