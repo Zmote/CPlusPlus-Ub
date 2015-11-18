@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;09_Library/english.stop&apos; to &apos;english.sql&apos;" description="Rename resource &apos;english.stop&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="english.stop" name="english.sql" stamp="1447876911126" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;09_Library/english.sql&apos; to &apos;english.stop&apos;" description="Rename resource &apos;english.sql&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="english.sql" name="english.stop" stamp="1447877411532" updateReferences="true"/>
+</session>

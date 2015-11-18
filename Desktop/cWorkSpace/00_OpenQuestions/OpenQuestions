@@ -8,17 +8,22 @@ Check: inline operators don't work, why? (in header as well in implentation file
 
 /********************************************************ZU ABKLÄREN*******************************************************/
 Testat:Ask if word implementation for testat correct, or what the real idea is behind?
+Testat:<< operator in word, ganz neues Word object oder addiert zum Bestehenden?
 Testat:Ob neue Wörter erzeugt werden --> check was genau gemeint ist damit? (Vorallem das mit dem stream ist zu abzuklären)
 --> Write a test that checks what happens at the end of the input with the input stream. Will an empty word be created, even if it is forbidden? 
 Testat:Constructor: Can it have a default value?
+Testat:equal-algo word-class impl. --> word operator== OK? --> std::string public or private depending if I am to implement std::equal
 Testat: Check kwic implementation for testat if correct
-Testat?: Program wfavorite produces results only with Ctrl+Z(eof), is that a problem?
 Testat: Order of outputted "kwic" ok? Or do they have to be the way like in the exercises(intertwined)
+Testat: Ask if operators in header-file problematic
+Testat: isalpha doesn't consider ü,ä,ö, why? -->std::setlocale loc("") or ("de_DE") or ("de_DE.UTF8") nor ("de_DE.UTF-8") work with std::isalpha(i,loc)
 /********************************************************ZU ABKLÄREN*******************************************************/
 
 Anagrams: Can't find active in list of permutations, why? (am appears, I is not in the list)
 --> Vacation time = I am active <-- 
 Anagrams: How could you raise performance?
 
-wfavorite: --> terminate vs. Ctrl + Z, why does it work sometimes, and sometimes not? --> show code
+wfavorite: --> terminate vs. Ctrl + Z, why does it work sometimes, and sometimes not? --> show code --> Program wfavorite produces results only with Ctrl+Z(eof), is that a problem?
 wfavorite: --> (multi)map.insert with std::pair, how to do correctly? My version didn't input anything.
+
+TODO: finish wordle.

@@ -1,0 +1,33 @@
+w04algo.h <--> countToLower <--> why is it a bad design? Is it?
+w04algo.cpp <--> output 1.0000 as 1 and not 1.0, valid?
+tracer.cpp <--> Move Constructor strucutre, check if correct.
+w04_algo.cpp,h <--> whats the difference between passing a function per std::function<double(double> func vs double f(double)?
+06_Date.h <--> check if overload problems answer is correct.
+Ansi::Blink() on Linux(Ubuntu) doesn't seem to work, is code correct? Is it some linux specific limitation?
+Check: inline operators don't work, why? (in header as well in implentation file, all variations seem to fail)
+
+/********************************************************ZU ABKLÄREN*******************************************************/
+Testat:Ask if word implementation for testat correct, or what the real idea is behind?
+Testat:<< operator in word, ganz neues Word object oder addiert zum Bestehenden?
+Testat:Ob neue Wörter erzeugt werden --> check was genau gemeint ist damit? (Vorallem das mit dem stream ist zu abzuklären)
+--> Write a test that checks what happens at the end of the input with the input stream. Will an empty word be created, even if it is forbidden? 
+Testat:Constructor: Can it have a default value?
+Testat:equal-algo word-class impl. --> word operator== OK? --> std::string public or private depending if I am to implement std::equal
+Testat: Check kwic implementation for testat if correct
+Testat?: Program wfavorite produces results only with Ctrl+Z(eof), is that a problem?
+Testat: Order of outputted "kwic" ok? Or do they have to be the way like in the exercises(intertwined)
+Testat: Ask if operators in header-file problematic
+Testat: isalpha doesn't consider ü,ä,ö, why?
+/********************************************************ZU ABKLÄREN*******************************************************/
+
+Anagrams: Can't find active in list of permutations, why? (am appears, I is not in the list)
+--> Vacation time = I am active <-- 
+Anagrams: How could you raise performance?
+
+wfavorite: --> terminate vs. Ctrl + Z, why does it work sometimes, and sometimes not? --> show code
+wfavorite: --> (multi)map.insert with std::pair, how to do correctly? My version didn't input anything.
+
+TODO: equal-algo word-class impl. --> word operator== OK? --> std::string public or private depending if I am to implement std::equal
+TODO: use stl functors for map-sort(so you don't have to reverse iterate)
+TODO: const vars/functions word-class/kwic
+TODO: finish wordle.
