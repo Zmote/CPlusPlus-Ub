@@ -1,6 +1,7 @@
-21:25:11 **** Incremental Build of configuration Debug for project 09_Executable ****
+09:42:13 **** Incremental Build of configuration Debug for project 09_Executable ****
 Info: Internal Builder is used for build
+g++ -std=c++1y "-IC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\09_Library" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
 g++ "-LC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\09_Library\\Debug" -o 09_Executable.exe main.o -l09_Library 
 
-21:25:11 Build Finished (took 578ms)
+09:42:14 Build Finished (took 852ms)
 

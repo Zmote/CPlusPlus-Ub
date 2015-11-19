@@ -1,0 +1,12 @@
+#include "prime.h"
+#include <vector>
+#include <algorithm>
+#include <functional>
+
+bool isPrime(const int number){
+std::vector<int> range{number};
+int n[0];
+generate(begin(range),end(range),[](){
+	return ++pos;
+});
+}

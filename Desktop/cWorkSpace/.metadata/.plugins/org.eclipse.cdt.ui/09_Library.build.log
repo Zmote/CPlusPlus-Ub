@@ -1,7 +1,7 @@
-21:25:09 **** Incremental Build of configuration Debug for project 09_Library ****
+09:54:07 **** Incremental Build of configuration Debug for project 09_Library ****
 Info: Internal Builder is used for build
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o w09_algo.o "..\\w09_algo.cpp" 
-ar -r lib09_Library.a w09_algo.o word.o 
+g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o prime.o "..\\prime.cpp" 
+ar -r lib09_Library.a prime.o w09_algo.o word.o 
 
-21:25:11 Build Finished (took 1s.501ms)
+09:54:08 Build Finished (took 995ms)
 

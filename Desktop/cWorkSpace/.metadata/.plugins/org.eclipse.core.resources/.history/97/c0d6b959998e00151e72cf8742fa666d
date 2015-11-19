@@ -1,0 +1,18 @@
+#include "w09_algo.h"
+#include "prime.h"
+
+#include <iostream>
+
+int main(){
+//std::cout << wcount(std::cin);
+//std::cout << wdiffcount(std::cin);
+
+//wfavorite(std::cout,std::cin);
+
+//wordle(std::cout,std::cin);
+
+if(isPrime(3)){
+std::cout << "3 is a prime";
+}
+
+}

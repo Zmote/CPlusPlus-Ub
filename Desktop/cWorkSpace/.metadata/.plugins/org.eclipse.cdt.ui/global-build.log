@@ -1,35 +1,4 @@
-21:23:56 **** Incremental Build of configuration Debug for project 09_Library ****
+09:54:07 **** Incremental Build of configuration Debug for project 09_Library ****
 Info: Internal Builder is used for build
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o w09_algo.o "..\\w09_algo.cpp" 
-ar -r lib09_Library.a w09_algo.o word.o 
-Info: Nothing to build for 09_Library
-21:24:00 **** Incremental Build of configuration Debug for project 09_Library ****
-Info: Internal Builder is used for build
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o w09_algo.o "..\\w09_algo.cpp" 
-ar -r lib09_Library.a w09_algo.o word.o 
-21:24:01 **** Incremental Build of configuration Debug for project 09_Executable ****
-Info: Internal Builder is used for build
-g++ "-LC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\09_Library\\Debug" -o 09_Executable.exe main.o -l09_Library 
-21:24:52 **** Incremental Build of configuration Debug for project 09_Library ****
-Info: Internal Builder is used for build
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o w09_algo.o "..\\w09_algo.cpp" 
-ar -r lib09_Library.a w09_algo.o word.o 
-21:24:54 **** Incremental Build of configuration Debug for project 09_Library ****
-Info: Internal Builder is used for build
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o w09_algo.o "..\\w09_algo.cpp" 
-ar -r lib09_Library.a w09_algo.o word.o 
-21:24:55 **** Incremental Build of configuration Debug for project 09_Executable ****
-Info: Internal Builder is used for build
-g++ -std=c++1y "-IC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\09_Library" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
-g++ "-LC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\09_Library\\Debug" -o 09_Executable.exe main.o -l09_Library 
-21:25:07 **** Incremental Build of configuration Debug for project 09_Library ****
-Info: Internal Builder is used for build
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o w09_algo.o "..\\w09_algo.cpp" 
-ar -r lib09_Library.a w09_algo.o word.o 
-21:25:09 **** Incremental Build of configuration Debug for project 09_Library ****
-Info: Internal Builder is used for build
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o w09_algo.o "..\\w09_algo.cpp" 
-ar -r lib09_Library.a w09_algo.o word.o 
-21:25:11 **** Incremental Build of configuration Debug for project 09_Executable ****
-Info: Internal Builder is used for build
-g++ "-LC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\09_Library\\Debug" -o 09_Executable.exe main.o -l09_Library 
+g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o prime.o "..\\prime.cpp" 
+ar -r lib09_Library.a prime.o w09_algo.o word.o 

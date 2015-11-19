@@ -1,4 +1,5 @@
 #include "w09_algo.h"
+#include "prime.h"
 
 #include <iostream>
 
@@ -8,5 +9,12 @@ int main(){
 
 //wfavorite(std::cout,std::cin);
 
-wordle(std::cout,std::cin);
+//wordle(std::cout,std::cin);
+
+if(isPrime(4)){
+std::cout << "Number is a prime";
+}else{
+std::cout << "Number is not a prime!";
+}
+
 }

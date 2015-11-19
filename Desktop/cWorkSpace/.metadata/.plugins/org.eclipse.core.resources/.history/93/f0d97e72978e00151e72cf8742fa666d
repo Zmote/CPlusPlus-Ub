@@ -1,0 +1,6 @@
+#include "prime.h"
+
+
+bool isPrime(int number){
+std::vector<int> range{};
+}

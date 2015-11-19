@@ -1,4 +1,5 @@
 #include "palindrom.h"
+#include "prime.h"
 #include <iostream>
 #include <fstream>
 #include <string>

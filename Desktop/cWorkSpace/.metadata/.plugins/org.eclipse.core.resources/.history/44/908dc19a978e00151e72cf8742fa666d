@@ -1,0 +1,8 @@
+#include "prime.h"
+#include <vector>
+#include <algorithm>
+
+bool isPrime(int number){
+std::vector<int> range{};
+generate(begin(range),end(range));
+}

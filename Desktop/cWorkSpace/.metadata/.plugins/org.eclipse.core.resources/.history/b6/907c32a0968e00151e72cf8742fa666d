@@ -1,0 +1,4 @@
+#include "prime.h"
+
+
+bool isPrime(int number);
