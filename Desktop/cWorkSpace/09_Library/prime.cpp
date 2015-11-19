@@ -19,4 +19,5 @@ iota(begin(range),end(range),0);
 range.erase(remove_if(begin(range),end(range),[](int i){return !(isPrime(i));}),range.end());
 copy(begin(range),end(range),std::ostream_iterator<int>{out,"\n"});
 //TODO: find a way to print new range-size(amount of primes)
+out << "There are " << range.size() << " primes in the range: " << number;
 }

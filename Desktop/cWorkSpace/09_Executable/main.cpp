@@ -1,6 +1,5 @@
 #include "w09_algo.h"
 #include "prime.h"
-
 #include <iostream>
 
 int main(){
@@ -11,10 +10,11 @@ int main(){
 
 //wordle(std::cout,std::cin);
 
-if(isPrime(4)){
-std::cout << "Number is a prime";
-}else{
-std::cout << "Number is not a prime!";
-}
+//if(isPrime(6)){
+//	std::cout << "It's a prime!\n";
+//}else{
+//	std::cout << "Not a prime!\n";
+//}
 
+//primes(std::cout,1000);
 }
