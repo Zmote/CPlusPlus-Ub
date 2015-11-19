@@ -1,8 +1,8 @@
-09:39:59 **** Incremental Build of configuration Debug for project 08_Executable ****
+22:00:24 **** Incremental Build of configuration Debug for project 08_Executable ****
 Info: Internal Builder is used for build
 g++ -std=c++1y "-IC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\08_Library" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
 ..\main.cpp:2:19: fatal error: prime.h: No such file or directory
 compilation terminated.
 
-09:39:59 Build Finished (took 126ms)
+22:00:24 Build Finished (took 635ms)
 

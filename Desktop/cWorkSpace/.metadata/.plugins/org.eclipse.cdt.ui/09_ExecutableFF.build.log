@@ -1,0 +1,6 @@
+23:23:12 **** Incremental Build of configuration Debug for project 09_ExecutableFF ****
+Info: Internal Builder is used for build
+g++ "-LC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\09_Library\\Debug" -o 09_ExecutableFF.exe main.o -l09_Library 
+
+23:23:13 Build Finished (took 525ms)
+

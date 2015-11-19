@@ -1,0 +1,8 @@
+23:18:27 **** Incremental Build of configuration Debug for project 09_ExecutableF ****
+Info: Internal Builder is used for build
+g++ "-LC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\09_Library\\Debug" -o 09_ExecutableF.exe main.o -l09_Library 
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file 09_ExecutableF.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+
+23:18:28 Build Finished (took 76ms)
+

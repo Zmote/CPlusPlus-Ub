@@ -29,7 +29,7 @@ Testat: isalpha doesn't consider ü,ä,ö, why? -->std::setlocale loc("") or ("de_D
 
 Testat: optimize includes and the like
 /********************************************************ZU ABKLÄREN*******************************************************/
---> Send Mail with Anagram problems to silvan
+--> Send Mail with Anagram problems to silvan --> status: sent, awaiting answer.
 Anagrams: Can't find active in list of permutations, why? (am appears, I is not in the list)
 --> Vacation time = I am active <-- 
 Anagrams: How could you raise performance?

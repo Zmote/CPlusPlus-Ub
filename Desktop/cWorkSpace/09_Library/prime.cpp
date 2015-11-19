@@ -3,22 +3,20 @@
 #include <algorithm>
 #include <functional>
 #include <iterator>
-#include <iostream>
+#include <numeric>
 
 bool isPrime(const int number){
-std::vector<int> range{number};
-int n{1};
-generate(begin(range),end(range),[&n](){
-	return n++;
-});
-for_each(begin(range),end(range),[](int i){
-	std::cout << i << "\n";
-});
-int divisions{0};
-for_each(begin(range),end(range),[&](int i){
-	if(number%i == 0){
-		divisions++;
-	}
-});
-return divisions >=2? false:true;
+if(number == 0)return false;
+std::vector<int> range(number);
+iota(begin(range),end(range),1);
+int count = count_if(begin(range),end(range),[&](int i){return number%i == 0;});
+return count >=3? false:true;
+}
+
+void primes(std::ostream& out, const int number){
+std::vector<int> range(number);
+iota(begin(range),end(range),0);
+range.erase(remove_if(begin(range),end(range),[](int i){return !(isPrime(i));}),range.end());
+copy(begin(range),end(range),std::ostream_iterator<int>{out,"\n"});
+//TODO: find a way to print new range-size(amount of primes)
 }

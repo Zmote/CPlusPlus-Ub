@@ -1,7 +1,13 @@
-09:54:07 **** Incremental Build of configuration Debug for project 09_Library ****
+23:25:20 **** Incremental Build of configuration Debug for project 09_Library ****
 Info: Internal Builder is used for build
 g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o prime.o "..\\prime.cpp" 
-ar -r lib09_Library.a prime.o w09_algo.o word.o 
+..\prime.cpp: In function 'void primes(std::ostream&, int)':
+..\prime.cpp:22:1: error: 'ios' has not been declared
+ ios::fmtflags f(cout.flags());
+ ^
+..\prime.cpp:23:38: error: invalid operands of types 'const char*' and 'const char [16]' to binary 'operator+'
+ out << "There are " + range.size() + " in the range: " number;
+                                      ^
 
-09:54:08 Build Finished (took 995ms)
+23:25:20 Build Finished (took 773ms)
 

@@ -1,7 +1,8 @@
-09:42:13 **** Incremental Build of configuration Debug for project 09_Executable ****
+23:16:01 **** Incremental Build of configuration Debug for project 09_Executable ****
 Info: Internal Builder is used for build
-g++ -std=c++1y "-IC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\09_Library" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
 g++ "-LC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\09_Library\\Debug" -o 09_Executable.exe main.o -l09_Library 
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file 09_Executable.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
 
-09:42:14 Build Finished (took 852ms)
+23:16:01 Build Finished (took 99ms)
 
