@@ -47,7 +47,7 @@ std::vector<std::string> separateWords(const std::string& input, std::string& wo
 
 void Word::read(std::istream& i){
 	using in = std::istreambuf_iterator<char>;
-	word.clear(); //TODO: find out if << operator has to add or "create" a totally new word
+	word.clear();
 	std::vector<std::string> vec;
 	std::string inputString{in(i),in()};
 	vec = separateWords(inputString,word);
