@@ -7,23 +7,19 @@
 #include <set>
 #include <string>
 
-void kwic(std::ostream& out, std::istream& in){
-std::vector<std::vector<Word>> sentences{};
-std::vector<Word> sentence{};
-Word word{};
-std::string input{};
-while(getline(in,input)){
-std::stringstream ss{input};
-	while(ss){
-		ss >> word;
-		sentence.push_back(word);
-	}
-	sentences.push_back(sentence);
-	sentence.clear();
+#include <iostream>
+
+void printSet(std::ostream& out, std::set<std::vector<Word>>& setOfSentences){
+	for_each(begin(setOfSentences),end(setOfSentences),[&](std::vector<Word> sentence){
+		for(Word word:sentence){
+			out << word << " ";
+		}
+		out << "\n";
+	});
 }
-//TODO: Helper functions
-//TODO: Code Optimizations
-std::set<std::vector<Word>> setOfSentences;
+
+std::set<std::vector<Word>> buildSetWithRotations(std::vector<std::vector<Word>>& sentences){
+std::set<std::vector<Word>> setOfSentences{};
 for_each(begin(sentences),end(sentences),[&](std::vector<Word> wordVector){
 	std::vector<Word> vec = wordVector;
 	setOfSentences.insert(vec);
@@ -32,13 +28,31 @@ for_each(begin(sentences),end(sentences),[&](std::vector<Word> wordVector){
 		setOfSentences.insert(vec);
 	}
 });
+return setOfSentences;
+}
 
-for_each(begin(setOfSentences),end(setOfSentences),[&](std::vector<Word> sentence){
-	for(Word word:sentence){
-		out << word << " ";
+std::vector<std::vector<Word>> buildFromInput(std::istream& in){
+	std::vector<std::vector<Word>> sentences{};
+	std::vector<Word> sentence{};
+	Word word{};
+	std::string input{};
+	while(getline(in,input)){
+	std::stringstream ss{input};
+		while(ss){
+			ss >> word;
+			sentence.push_back(word);
+		}
+		sentences.push_back(sentence);
+		sentence.clear();
 	}
-	out << "\n";
-});
+	return sentences;
+}
+
+//TODO: Code Optimizations
+void kwic(std::ostream& out, std::istream& in){
+std::vector<std::vector<Word>> sentences = buildFromInput(in);
+std::set<std::vector<Word>> setOfSentences = buildSetWithRotations(sentences);
+printSet(out,setOfSentences);
 
 }
 
