@@ -3,7 +3,7 @@
 
 #include <iosfwd>
 #include <string>
-#include <ostream>
+#include <iostream>
 #include <algorithm>
 #include <cctype>
 

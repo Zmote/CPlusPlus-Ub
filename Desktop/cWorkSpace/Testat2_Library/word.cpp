@@ -6,7 +6,6 @@
 #include <string>
 
 //TODO: Write Tests
-//TODO: Optimize algorithms
 //TODO: check includes
 Word::Word(const std::string c){
 	if(!c.empty()){
@@ -38,8 +37,7 @@ void Word::read(std::istream& in){
 			break;
 		}
 	}
-	//TODO: Find a way to avoid word creation on flush
-	Word newWord{word};
-	*this = newWord;
+	//try: in.setstate(std::ios::failbit | in.rdstate()); something with that? Only the flush issue remained
+	//which doesn't matter, if you read with while(std::cin >> myword), but still
 }
 

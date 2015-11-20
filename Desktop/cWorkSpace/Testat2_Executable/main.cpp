@@ -12,12 +12,9 @@ Word myword{};
 std::vector<Word>vec{};
 while(std::cin){
 	std::cin >> myword;
-	std::cout << myword << std::endl;
+	std::cout << myword << '\n';
 	vec.push_back(myword);
 }
 
-for(Word w: vec){
-	std::cout << w << std::endl;
-}
-
+std::cout << vec.size();
 }
