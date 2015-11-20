@@ -9,10 +9,22 @@
 		<testcase classname="AllTests" name="testDefaultWordConstructor"/>
 		<testcase classname="AllTests" name="testSimpleWordPerStream"/>
 		<testcase classname="AllTests" name="testInvalidWordPerStream1"/>
-		<testcase classname="AllTests" name="testInvalidWordPerStream2"/>
+		<testcase classname="AllTests" name="testInvalidWordPerStream2">
+			<failure message="..\src\Test.cpp:56 testInvalidWordPerStream2: &quot;Hallo&quot; == o.str() expected:	Hallo	but was:		">
+testInvalidWordPerStream2: &quot;Hallo&quot; == o.str() expected:	Hallo	but was:		
+			</failure>
+		</testcase>
 		<testcase classname="AllTests" name="testInvalidWordPerStream3"/>
-		<testcase classname="AllTests" name="testMultipleWordsStream"/>
-		<testcase classname="AllTests" name="testMultipleWordsStream2"/>
+		<testcase classname="AllTests" name="testMultipleWordsStream">
+			<failure message="..\src\Test.cpp:73 testMultipleWordsStream: &quot;compl tely weird matted in put&quot; == o.str() expected:	compl tely weird matted in put	but was:	compl	">
+testMultipleWordsStream: &quot;compl tely weird matted in put&quot; == o.str() expected:	compl tely weird matted in put	but was:	compl	
+			</failure>
+		</testcase>
+		<testcase classname="AllTests" name="testMultipleWordsStream2">
+			<failure message="..\src\Test.cpp:82 testMultipleWordsStream2: &quot;Hallo Welt Zafer ist hier&quot; == o.str() expected:	Hallo Welt Zafer ist hier	but was:	Hallo	">
+testMultipleWordsStream2: &quot;Hallo Welt Zafer ist hier&quot; == o.str() expected:	Hallo Welt Zafer ist hier	but was:	Hallo	
+			</failure>
+		</testcase>
 		<testcase classname="AllTests" name="testEmptyWordStream"/>
 		<testcase classname="AllTests" name="testWordEndOfInputStream"/>
 	</testsuite>

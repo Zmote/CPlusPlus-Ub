@@ -1,159 +1,24 @@
-09:09:19 **** Incremental Build of configuration Debug for project Testat2_Library ****
-Info: Internal Builder is used for build
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o word.o "..\\word.cpp" 
-..\word.cpp: In function 'std::vector<std::__cxx11::basic_string<char> > separateWords(const string&, std::__cxx11::string&)':
-..\word.cpp:33:8: error: expected primary-expression before ')' token
-  while()
-        ^
-..\word.cpp: In member function 'void Word::read(std::istream&)':
-..\word.cpp:52:21: error: no matching function for call to 'std::__cxx11::basic_stringstream<char>::basic_stringstream(<brace-enclosed initializer list>)'
-  std::stringstream{i};
-                     ^
-In file included from ..\word.cpp:6:0:
-c:\mingw\include\c++\5.1.0\sstream:723:7: note: candidate: std::__cxx11::basic_stringstream<_CharT, _Traits, _Alloc>::basic_stringstream(std::__cxx11::basic_stringstream<_CharT, _Traits, _Alloc>&&) [with _CharT = char; _Traits = std::char_traits<char>; _Alloc = std::allocator<char>]
-       basic_stringstream(basic_stringstream&& __rhs)
-       ^
-c:\mingw\include\c++\5.1.0\sstream:723:7: note:   no known conversion for argument 1 from 'std::istream {aka std::basic_istream<char>}' to 'std::__cxx11::basic_stringstream<char>&&'
-c:\mingw\include\c++\5.1.0\sstream:706:7: note: candidate: std::__cxx11::basic_stringstream<_CharT, _Traits, _Alloc>::basic_stringstream(const __string_type&, std::ios_base::openmode) [with _CharT = char; _Traits = std::char_traits<char>; _Alloc = std::allocator<char>; std::__cxx11::basic_stringstream<_CharT, _Traits, _Alloc>::__string_type = std::__cxx11::basic_string<char>; std::ios_base::openmode = std::_Ios_Openmode]
-       basic_stringstream(const __string_type& __str,
-       ^
-c:\mingw\include\c++\5.1.0\sstream:706:7: note:   no known conversion for argument 1 from 'std::istream {aka std::basic_istream<char>}' to 'const __string_type& {aka const std::__cxx11::basic_string<char>&}'
-c:\mingw\include\c++\5.1.0\sstream:690:7: note: candidate: std::__cxx11::basic_stringstream<_CharT, _Traits, _Alloc>::basic_stringstream(std::ios_base::openmode) [with _CharT = char; _Traits = std::char_traits<char>; _Alloc = std::allocator<char>; std::ios_base::openmode = std::_Ios_Openmode]
-       basic_stringstream(ios_base::openmode __m = ios_base::out | ios_base::in)
-       ^
-c:\mingw\include\c++\5.1.0\sstream:690:7: note:   no known conversion for argument 1 from 'std::istream {aka std::basic_istream<char>}' to 'std::ios_base::openmode {aka std::_Ios_Openmode}'
-09:14:59 **** Incremental Build of configuration Debug for project Testat2_Library ****
-Info: Internal Builder is used for build
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o word.o "..\\word.cpp" 
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o kwic.o "..\\kwic.cpp" 
-ar -r libTestat2_Library.a kwic.o word.o 
-09:15:01 **** Incremental Build of configuration Debug for project Testat2_Library ****
-Info: Internal Builder is used for build
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o word.o "..\\word.cpp" 
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o kwic.o "..\\kwic.cpp" 
-ar -r libTestat2_Library.a kwic.o word.o 
-09:15:03 **** Incremental Build of configuration Debug for project Testat2_Executable ****
+Info: Nothing to build for Testat2_Library
+10:38:49 **** Incremental Build of configuration Debug for project Testat2_Executable ****
 Info: Internal Builder is used for build
 g++ -std=c++1y "-IC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\Testat2_Library" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
 g++ "-LC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\Testat2_Library\\Debug" -o Testat2_Executable.exe main.o -lTestat2_Library 
-09:15:21 **** Incremental Build of configuration Debug for project Testat2_Library ****
-Info: Internal Builder is used for build
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o kwic.o "..\\kwic.cpp" 
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o word.o "..\\word.cpp" 
-ar -r libTestat2_Library.a kwic.o word.o 
-09:15:23 **** Incremental Build of configuration Debug for project Testat2_Library ****
-Info: Internal Builder is used for build
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o word.o "..\\word.cpp" 
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o kwic.o "..\\kwic.cpp" 
-ar -r libTestat2_Library.a kwic.o word.o 
-09:15:25 **** Incremental Build of configuration Debug for project Testat2_Executable ****
+Info: Nothing to build for Testat2_Library
+Info: Nothing to build for Testat2_Library
+10:39:11 **** Incremental Build of configuration Debug for project Testat2_Executable ****
 Info: Internal Builder is used for build
 g++ -std=c++1y "-IC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\Testat2_Library" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
 g++ "-LC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\Testat2_Library\\Debug" -o Testat2_Executable.exe main.o -lTestat2_Library 
-09:16:05 **** Incremental Build of configuration Debug for project Testat2_Library ****
-Info: Internal Builder is used for build
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o kwic.o "..\\kwic.cpp" 
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o word.o "..\\word.cpp" 
-ar -r libTestat2_Library.a kwic.o word.o 
-09:16:07 **** Incremental Build of configuration Debug for project Testat2_Library ****
-Info: Internal Builder is used for build
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o kwic.o "..\\kwic.cpp" 
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o word.o "..\\word.cpp" 
-ar -r libTestat2_Library.a kwic.o word.o 
-09:16:09 **** Incremental Build of configuration Debug for project Testat2_Executable ****
-Info: Internal Builder is used for build
-g++ "-LC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\Testat2_Library\\Debug" -o Testat2_Executable.exe main.o -lTestat2_Library 
-09:16:38 **** Incremental Build of configuration Debug for project Testat2_Library ****
-Info: Internal Builder is used for build
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o kwic.o "..\\kwic.cpp" 
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o word.o "..\\word.cpp" 
-ar -r libTestat2_Library.a kwic.o word.o 
-09:16:40 **** Incremental Build of configuration Debug for project Testat2_Library ****
-Info: Internal Builder is used for build
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o kwic.o "..\\kwic.cpp" 
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o word.o "..\\word.cpp" 
-ar -r libTestat2_Library.a kwic.o word.o 
-09:16:42 **** Incremental Build of configuration Debug for project Testat2_Executable ****
-Info: Internal Builder is used for build
-g++ "-LC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\Testat2_Library\\Debug" -o Testat2_Executable.exe main.o -lTestat2_Library 
-09:18:58 **** Incremental Build of configuration Debug for project Testat2_Library ****
-Info: Internal Builder is used for build
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o word.o "..\\word.cpp" 
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o kwic.o "..\\kwic.cpp" 
-ar -r libTestat2_Library.a kwic.o word.o 
-09:19:00 **** Incremental Build of configuration Debug for project Testat2_Library ****
-Info: Internal Builder is used for build
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o word.o "..\\word.cpp" 
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o kwic.o "..\\kwic.cpp" 
-ar -r libTestat2_Library.a kwic.o word.o 
-09:19:02 **** Incremental Build of configuration Debug for project Testat2_Executable ****
+Info: Nothing to build for Testat2_Library
+Info: Nothing to build for Testat2_Library
+10:39:44 **** Incremental Build of configuration Debug for project Testat2_Executable ****
 Info: Internal Builder is used for build
 g++ -std=c++1y "-IC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\Testat2_Library" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
 g++ "-LC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\Testat2_Library\\Debug" -o Testat2_Executable.exe main.o -lTestat2_Library 
-09:19:21 **** Incremental Build of configuration Debug for project Testat2_Library ****
-Info: Internal Builder is used for build
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o word.o "..\\word.cpp" 
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o kwic.o "..\\kwic.cpp" 
-ar -r libTestat2_Library.a kwic.o word.o 
-09:19:23 **** Incremental Build of configuration Debug for project Testat2_Library ****
-Info: Internal Builder is used for build
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o kwic.o "..\\kwic.cpp" 
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o word.o "..\\word.cpp" 
-ar -r libTestat2_Library.a kwic.o word.o 
-09:19:26 **** Incremental Build of configuration Debug for project Testat2_Executable ****
-Info: Internal Builder is used for build
-g++ -std=c++1y "-IC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\Testat2_Library" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
-g++ "-LC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\Testat2_Library\\Debug" -o Testat2_Executable.exe main.o -lTestat2_Library 
-09:20:02 **** Incremental Build of configuration Debug for project Testat2_Library ****
-Info: Internal Builder is used for build
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o kwic.o "..\\kwic.cpp" 
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o word.o "..\\word.cpp" 
-ar -r libTestat2_Library.a kwic.o word.o 
-09:20:05 **** Incremental Build of configuration Debug for project Testat2_Library ****
-Info: Internal Builder is used for build
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o word.o "..\\word.cpp" 
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o kwic.o "..\\kwic.cpp" 
-ar -r libTestat2_Library.a kwic.o word.o 
-09:20:07 **** Incremental Build of configuration Debug for project Testat2_Executable ****
-Info: Internal Builder is used for build
-g++ "-LC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\Testat2_Library\\Debug" -o Testat2_Executable.exe main.o -lTestat2_Library 
-09:24:17 **** Incremental Build of configuration Debug for project Testat2_Library ****
-Info: Internal Builder is used for build
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o kwic.o "..\\kwic.cpp" 
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o word.o "..\\word.cpp" 
-ar -r libTestat2_Library.a kwic.o word.o 
-09:24:19 **** Incremental Build of configuration Debug for project Testat2_Library ****
-Info: Internal Builder is used for build
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o kwic.o "..\\kwic.cpp" 
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o word.o "..\\word.cpp" 
-ar -r libTestat2_Library.a kwic.o word.o 
-09:24:21 **** Incremental Build of configuration Debug for project Testat2_Executable ****
-Info: Internal Builder is used for build
-g++ -std=c++1y "-IC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\Testat2_Library" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
-g++ "-LC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\Testat2_Library\\Debug" -o Testat2_Executable.exe main.o -lTestat2_Library 
-09:29:28 **** Incremental Build of configuration Debug for project Testat2_Library ****
-Info: Internal Builder is used for build
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o kwic.o "..\\kwic.cpp" 
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o word.o "..\\word.cpp" 
-ar -r libTestat2_Library.a kwic.o word.o 
-09:29:30 **** Incremental Build of configuration Debug for project Testat2_Library ****
-Info: Internal Builder is used for build
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o kwic.o "..\\kwic.cpp" 
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o word.o "..\\word.cpp" 
-ar -r libTestat2_Library.a kwic.o word.o 
-09:29:32 **** Incremental Build of configuration Debug for project Testat2_Executable ****
-Info: Internal Builder is used for build
-g++ "-LC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\Testat2_Library\\Debug" -o Testat2_Executable.exe main.o -lTestat2_Library 
-09:34:53 **** Incremental Build of configuration Debug for project Testat2_Library ****
-Info: Internal Builder is used for build
-g++ -std=c++1y "-IC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\Testat2_Library\\mockator" -O0 -g3 -Wall -c -fmessage-length=0 -o kwic.o "..\\kwic.cpp" 
-g++ -std=c++1y "-IC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\Testat2_Library\\mockator" -O0 -g3 -Wall -c -fmessage-length=0 -o word.o "..\\word.cpp" 
-ar -r libTestat2_Library.a kwic.o word.o 
-09:34:55 **** Incremental Build of configuration Debug for project Testat2_Library ****
-Info: Internal Builder is used for build
-g++ -std=c++1y "-IC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\Testat2_Library\\mockator" -O0 -g3 -Wall -c -fmessage-length=0 -o kwic.o "..\\kwic.cpp" 
-g++ -std=c++1y "-IC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\Testat2_Library\\mockator" -O0 -g3 -Wall -c -fmessage-length=0 -o word.o "..\\word.cpp" 
-ar -r libTestat2_Library.a kwic.o word.o 
-09:34:57 **** Incremental Build of configuration Debug for project Testat2_Executable ****
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file Testat2_Executable.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for Testat2_Library
+Info: Nothing to build for Testat2_Library
+10:39:52 **** Incremental Build of configuration Debug for project Testat2_Executable ****
 Info: Internal Builder is used for build
 g++ "-LC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\Testat2_Library\\Debug" -o Testat2_Executable.exe main.o -lTestat2_Library 
