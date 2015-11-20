@@ -1,24 +1,13 @@
-Info: Nothing to build for Testat2_Library
-10:38:49 **** Incremental Build of configuration Debug for project Testat2_Executable ****
+11:22:30 **** Incremental Build of configuration Debug for project Testat2_Library ****
 Info: Internal Builder is used for build
-g++ -std=c++1y "-IC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\Testat2_Library" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
-g++ "-LC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\Testat2_Library\\Debug" -o Testat2_Executable.exe main.o -lTestat2_Library 
+g++ -std=c++1y "-IC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\Testat2_Library\\mockator" -O0 -g3 -Wall -c -fmessage-length=0 -o kwic.o "..\\kwic.cpp" 
+ar -r libTestat2_Library.a kwic.o word.o 
 Info: Nothing to build for Testat2_Library
-Info: Nothing to build for Testat2_Library
-10:39:11 **** Incremental Build of configuration Debug for project Testat2_Executable ****
+11:22:33 **** Incremental Build of configuration Debug for project Testat2_Library ****
 Info: Internal Builder is used for build
-g++ -std=c++1y "-IC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\Testat2_Library" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
-g++ "-LC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\Testat2_Library\\Debug" -o Testat2_Executable.exe main.o -lTestat2_Library 
-Info: Nothing to build for Testat2_Library
-Info: Nothing to build for Testat2_Library
-10:39:44 **** Incremental Build of configuration Debug for project Testat2_Executable ****
-Info: Internal Builder is used for build
-g++ -std=c++1y "-IC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\Testat2_Library" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
-g++ "-LC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\Testat2_Library\\Debug" -o Testat2_Executable.exe main.o -lTestat2_Library 
-c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file Testat2_Executable.exe: Permission denied
-collect2.exe: error: ld returned 1 exit status
-Info: Nothing to build for Testat2_Library
-Info: Nothing to build for Testat2_Library
-10:39:52 **** Incremental Build of configuration Debug for project Testat2_Executable ****
+g++ -std=c++1y "-IC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\Testat2_Library\\mockator" -O0 -g3 -Wall -c -fmessage-length=0 -o word.o "..\\word.cpp" 
+g++ -std=c++1y "-IC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\Testat2_Library\\mockator" -O0 -g3 -Wall -c -fmessage-length=0 -o kwic.o "..\\kwic.cpp" 
+ar -r libTestat2_Library.a kwic.o word.o 
+11:22:35 **** Incremental Build of configuration Debug for project Testat2_Executable ****
 Info: Internal Builder is used for build
 g++ "-LC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\Testat2_Library\\Debug" -o Testat2_Executable.exe main.o -lTestat2_Library 

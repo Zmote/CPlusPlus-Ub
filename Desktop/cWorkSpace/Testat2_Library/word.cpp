@@ -34,12 +34,8 @@ void Word::read(std::istream& in){
 		if(std::isalpha(in.peek())){
 			word+= in.get();
 		}else{
-			while(in){
-				if(!std::isalpha(in.peek()) && !in.eof()){
-					in.get();
-				}else{
-					break;
-				}
+			while(std::isspace(in.peek())){
+				in.get();
 			}
 			break;
 		}
