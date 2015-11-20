@@ -21,7 +21,8 @@ std::stringstream ss{input};
 	sentences.push_back(sentence);
 	sentence.clear();
 }
-
+//TODO: Helper functions
+//TODO: Code Optimizations
 std::set<std::vector<Word>> setOfSentences;
 for_each(begin(sentences),end(sentences),[&](std::vector<Word> wordVector){
 	std::vector<Word> vec = wordVector;

@@ -3,13 +3,12 @@
 #include <vector>
 #include <iterator>
 #include <algorithm>
-#include <sstream>
-#include <locale>
 #include <string>
-//TODO: Constructor: Can it have a default value?
-//TODO: Write Tests
-//TODO: Ob neue Wörter erzeugt werden --> check was genau gemeint ist damit?
 
+//TODO: Write Tests
+//TODO: Optimize algorithms
+//TODO: check includes
+//TODO: check if word clas fulfills all requirements
 Word::Word(const std::string c){
 	if(!c.empty()){
 		for_each(begin(c),end(c),[&](char i){
@@ -34,7 +33,7 @@ void Word::read(std::istream& in){
 		if(std::isalpha(in.peek())){
 			word+= in.get();
 		}else{
-			while(std::isspace(in.peek())){
+			while(!std::isalpha(in.peek()) && !in.eof()){
 				in.get();
 			}
 			break;
