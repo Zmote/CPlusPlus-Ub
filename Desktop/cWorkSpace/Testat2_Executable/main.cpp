@@ -6,6 +6,18 @@
 
 int main(){
 
-kwic(std::cout,std::cin);
+//kwic(std::cout,std::cin);
+
+Word myword{};
+std::vector<Word>vec{};
+while(std::cin){
+	std::cin >> myword;
+	std::cout << myword << std::endl;
+	vec.push_back(myword);
+}
+
+for(Word w: vec){
+	std::cout << w << std::endl;
+}
 
 }

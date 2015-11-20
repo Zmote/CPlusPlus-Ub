@@ -7,7 +7,7 @@
 #include <set>
 #include <string>
 
-#include <iostream>
+//TODO: Code Optimizations
 
 void printSet(std::ostream& out, std::set<std::vector<Word>>& setOfSentences){
 	for_each(begin(setOfSentences),end(setOfSentences),[&](std::vector<Word> sentence){
@@ -48,7 +48,6 @@ std::vector<std::vector<Word>> buildFromInput(std::istream& in){
 	return sentences;
 }
 
-//TODO: Code Optimizations
 void kwic(std::ostream& out, std::istream& in){
 std::vector<std::vector<Word>> sentences = buildFromInput(in);
 std::set<std::vector<Word>> setOfSentences = buildSetWithRotations(sentences);

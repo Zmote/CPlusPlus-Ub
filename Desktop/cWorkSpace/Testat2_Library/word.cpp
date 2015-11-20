@@ -8,7 +8,6 @@
 //TODO: Write Tests
 //TODO: Optimize algorithms
 //TODO: check includes
-//TODO: check if word clas fulfills all requirements
 Word::Word(const std::string c){
 	if(!c.empty()){
 		for_each(begin(c),end(c),[&](char i){
@@ -39,5 +38,8 @@ void Word::read(std::istream& in){
 			break;
 		}
 	}
+	//TODO: Find a way to avoid word creation on flush
+	Word newWord{word};
+	*this = newWord;
 }
 
