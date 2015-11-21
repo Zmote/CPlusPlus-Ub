@@ -24,6 +24,7 @@ void Word::print(std::ostream& o){
 
 void Word::read(std::istream& in){
 	word.clear();
+	//TODO: read until a word is read, skip whitespaces " Hello!" --> "Hello"
 	while(in){
 		if(std::isalpha(in.peek())){
 			word+= in.get();
@@ -31,7 +32,9 @@ void Word::read(std::istream& in){
 			while(!std::isalpha(in.peek()) && !in.eof()){
 				in.get();
 			}
-			break;
+			if(!word.empty()){
+				break;
+			}
 		}
 	}
 }

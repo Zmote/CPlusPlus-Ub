@@ -5,6 +5,8 @@
 #include "xml_listener.h"
 #include "cute_runner.h"
 
+//TODO: kwic tests
+//TODO: more word-tests, new behaviour
 void testSimpleWordPerConstructor(){
 Word myword{"Zafer"};
 std::ostringstream o{};
@@ -67,20 +69,23 @@ ASSERT_EQUAL("",o.str());
 
 void testMultipleWordsStream(){
 std::istringstream i{"compl33tely ~ weird !!?!! 4matted in_put"};
-Word myword{};
-i >> myword;
 std::ostringstream o{};
-o << myword;
-ASSERT_EQUAL("compl tely weird matted in put",o.str());
+Word myword{};
+while(i){
+	i>>myword;
+	o << myword << '\n';
+}
+ASSERT_EQUAL("compl\ntely\nweird\nmatted\nin\nput\n",o.str());
 }
 
 void testMultipleWordsStream2(){
 std::istringstream i{"Hallo, Welt! 3.32 Zafer ist hier"};
 Word myword{};
 i >> myword;
+i >> myword;
 std::ostringstream o{};
 o << myword;
-ASSERT_EQUAL("Hallo Welt Zafer ist hier",o.str());
+ASSERT_EQUAL("Welt",o.str());
 }
 
 void testEmptyWordStream(){
