@@ -1,0 +1,8 @@
+10:01:41 **** Rebuild of configuration Debug for project 10_Library ****
+Info: Internal Builder is used for build
+g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o w10_algo.o "..\\w10_algo.cpp" 
+ar -r lib10_Library.a w10_algo.o 
+ar: creating lib10_Library.a
+
+10:01:41 Build Finished (took 172ms)
+

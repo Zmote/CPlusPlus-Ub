@@ -1,0 +1,23 @@
+#include "kwic.h"
+#include "word.h"
+#include <iostream>
+#include <sstream>
+#include <vector>
+
+int main(){
+
+//kwic(std::cout,std::cin);
+
+Word myword{};
+std::vector<Word>vec{};
+while(std::cin){
+	std::cin >> myword;
+	std::cout << word << std::endl;
+	vec.push_back(myword);
+}
+
+for(Word w: vec){
+	std::cout << w << std::endl;
+}
+
+}

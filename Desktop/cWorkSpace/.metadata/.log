@@ -4527,3 +4527,15 @@ java.lang.NullPointerException
 	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
 	at org.eclipse.cdt.internal.ui.text.CReconciler.process(CReconciler.java:349)
 	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-11-21 10:01:06.732
+!MESSAGE Indexed '10_Executable' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0 %)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-11-21 10:01:16.944
+!MESSAGE Indexed '10_Library' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0 %)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-11-21 10:02:08.972
+!MESSAGE Indexed '10_Test' (1 sources, 26 headers) in 0.471 sec: 622 declarations; 813 references; 25 unresolved inclusions; 0 syntax errors; 416 unresolved names (22 %)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-11-21 10:03:13.927
+!MESSAGE Indexed '10_Executable' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0 %)
