@@ -37,7 +37,5 @@ void Word::read(std::istream& in){
 			break;
 		}
 	}
-	//try: in.setstate(std::ios::failbit | in.rdstate()); something with that? Only the flush issue remained
-	//which doesn't matter, if you read with while(std::cin >> myword), but still
 }
 
