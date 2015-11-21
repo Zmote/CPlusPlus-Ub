@@ -3,7 +3,6 @@
 
 #include <iosfwd>
 #include <string>
-#include <iostream>
 #include <algorithm>
 #include <cctype>
 
@@ -11,7 +10,7 @@ class Word{
 std::string word;
 public:
 	Word() = default;
-	explicit Word(std::string c);
+	explicit Word(const std::string c);
 	void print(std::ostream& o);
 	void read(std::istream& in);
 	bool operator<(Word const  &rhs) const{

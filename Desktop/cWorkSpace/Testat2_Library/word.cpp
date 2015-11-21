@@ -1,15 +1,12 @@
 #include "word.h"
 #include <iostream>
-#include <vector>
-#include <iterator>
 #include <algorithm>
 #include <string>
 
 //TODO: Write Tests
-//TODO: check includes
 Word::Word(const std::string c){
 	if(!c.empty()){
-		for_each(begin(c),end(c),[&](char i){
+		for_each(begin(c),end(c),[&](const char i){
 			if(!std::isalpha(i) || std::isspace(i)){
 				throw std::invalid_argument("Invalid characters detected");
 			}else{
