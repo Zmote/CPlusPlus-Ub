@@ -3,7 +3,7 @@
 
 #include <iosfwd>
 #include <string>
-#include <ostream>
+#include <iostream>
 #include <algorithm>
 #include <cctype>
 
@@ -13,7 +13,7 @@ public:
 	Word() = default;
 	explicit Word(std::string c);
 	void print(std::ostream& o);
-	void read(std::istream& i);
+	void read(std::istream& in);
 	bool operator<(Word const  &rhs) const{
 		return std::lexicographical_compare(begin(word),end(word),
 				begin(rhs.word),end(rhs.word),[](char l, char r){

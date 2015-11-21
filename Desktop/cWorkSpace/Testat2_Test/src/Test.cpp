@@ -41,11 +41,11 @@ ASSERT_EQUAL("Zafer",o.str());
 }
 void testInvalidWordPerStream1(){
 std::istringstream i{"compl33tely"};
+std::ostringstream o{};
 Word myword{};
 i >> myword;
-std::ostringstream o{};
 o << myword;
-ASSERT_EQUAL("compl tely",o.str());
+ASSERT_EQUAL("compl",o.str());
 }
 void testInvalidWordPerStream2(){
 std::istringstream i{" Hallo!"};

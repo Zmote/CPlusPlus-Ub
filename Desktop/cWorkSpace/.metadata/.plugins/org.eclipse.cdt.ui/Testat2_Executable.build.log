@@ -1,6 +1,1 @@
-08:50:38 **** Incremental Build of configuration Debug for project Testat2_Executable ****
-Info: Internal Builder is used for build
-g++ "-LC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\Testat2_Library\\Debug" -o Testat2_Executable.exe main.o -lTestat2_Library 
-
-08:50:39 Build Finished (took 678ms)
-
+Info: Nothing to build for Testat2_Executable

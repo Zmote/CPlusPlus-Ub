@@ -4,38 +4,54 @@
 #include <algorithm>
 #include <vector>
 #include <sstream>
+#include <set>
 #include <string>
 
-void kwic(std::ostream& out, std::istream& in){
-std::vector<std::vector<Word>> words{};
-std::string word{};
-while(getline(in,word)){
-	std::stringstream ss{word};
-	std::stringstream os{};
-	Word myword{};
-	//vector<Word> words = ss >> Word <-- static access, >> op returns vector, ok?
-	//TODO: --> implement >> so that it mimics string operators input
-	//ie. remember how words separated by whitespace in the stream are
-	//read as separate wors with the istream_iterator<std::string>?
-	//exactly the same behaviour is expected for your word class,
-	//ie on every ss >> myword call, it would take one word out of the stream and
-	//put it in your word instance, on multiple calls, it would take on every call the next
-	//word out of the stream and create an instance!
-	ss >> myword;
-	os << myword;
-	std::vector<Word> sentence{std::istream_iterator<std::string>(os),std::istream_iterator<std::string>()};
-	words.push_back(sentence);
+//TODO: Code Optimizations
+
+void printSet(std::ostream& out, std::set<std::vector<Word>>& setOfSentences){
+	for_each(begin(setOfSentences),end(setOfSentences),[&](std::vector<Word> sentence){
+		for(Word word:sentence){
+			out << word << " ";
+		}
+		out << "\n";
+	});
 }
-for_each(begin(words),end(words),[&](std::vector<Word> wordVector){
+
+std::set<std::vector<Word>> buildSetWithRotations(std::vector<std::vector<Word>>& sentences){
+std::set<std::vector<Word>> setOfSentences{};
+for_each(begin(sentences),end(sentences),[&](std::vector<Word> wordVector){
 	std::vector<Word> vec = wordVector;
+	setOfSentences.insert(vec);
 	for(unsigned int i = 0; i < vec.size();i++){
 		std::rotate(begin(vec),begin(vec)+1,end(vec));
-		for_each(begin(vec),end(vec),[&](Word i){
-			out << i << " ";
-		});
-		out << '\n';
+		setOfSentences.insert(vec);
 	}
 });
+return setOfSentences;
+}
+
+std::vector<std::vector<Word>> buildFromInput(std::istream& in){
+	std::vector<std::vector<Word>> sentences{};
+	std::vector<Word> sentence{};
+	Word word{};
+	std::string input{};
+	while(getline(in,input)){
+	std::stringstream ss{input};
+		while(ss){
+			ss >> word;
+			sentence.push_back(word);
+		}
+		sentences.push_back(sentence);
+		sentence.clear();
+	}
+	return sentences;
+}
+
+void kwic(std::ostream& out, std::istream& in){
+std::vector<std::vector<Word>> sentences = buildFromInput(in);
+std::set<std::vector<Word>> setOfSentences = buildSetWithRotations(sentences);
+printSet(out,setOfSentences);
 
 }
 
