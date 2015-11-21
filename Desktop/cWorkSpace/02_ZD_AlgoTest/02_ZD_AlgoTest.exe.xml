@@ -1,0 +1,8 @@
+<testsuites>
+	<testsuite name="AllTests" tests="4">
+		<testcase classname="AllTests" name="testCharCount"/>
+		<testcase classname="AllTests" name="testAllCharCount"/>
+		<testcase classname="AllTests" name="testWordCount"/>
+		<testcase classname="AllTests" name="testLineCount"/>
+	</testsuite>
+</testsuites>

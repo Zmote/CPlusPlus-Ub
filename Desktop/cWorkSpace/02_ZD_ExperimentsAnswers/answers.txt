@@ -1,0 +1,19 @@
+std::cin --> in header: iostream.h // Type
+std::endl --> in header: ostream.h// function
+std::tolower --> in header: locale_facets.h // function Online Doc: <cctype> --> backwards comp? Confirm.
+std::string --> in header: stringfwd.h // Type Online Doc: <string> --> Maybe because string is easier to remember than stringfwd?
+std::distance --> in header: stl_iterator_base_funcs.h // function Online Doc <iterator> ^
+std::istream_iterator --> in header: stream_iterator.h // Class ~ Variable? Online Doc: <iterator>, 
+	maybe they'are gathered in a header for convenience?
+std::size_t --> c++config.h //Type Online Doc: <cstring>,<cstddef>,<cstdio>,<ctime>,<cstdlib>
+--> maybe because it's derived from C?
+size_t --> in header: crtdefs.h //Type
+std::vector in header: stl_vector.h // Class ~ Variable, Online Doc: <vector>, again, name convenience?
+
+CONFIRM THESE! 
+
+Different headers are used for different versions of C++, using a certain set of headers requires the Compiler to be run in a certain mode, you 
+can't mix "older" version header files with newer ones. So the multiple header file thing is a backwards compatibility thing.
+
+include "" --> sucht im gleichen Ordner des Programms odr. definierte Stelle im Projekt-Configs.
+include <> --> sucht in einem spez. Ordner, das vom Compiler/IDE def. ist --> normalerweise für standartlibrary header benützt.
