@@ -13,25 +13,13 @@
 		<testcase classname="AllTests" name="testMultipleWordsConstructor"/>
 		<testcase classname="AllTests" name="testEmptyWordConstructor"/>
 		<testcase classname="AllTests" name="testDefaultWordConstructor"/>
-		<testcase classname="AllTests" name="testSimpleWordPerStream"/>
-		<testcase classname="AllTests" name="testInvalidWordPerStream1"/>
-		<testcase classname="AllTests" name="testInvalidWordPerStream2"/>
-		<testcase classname="AllTests" name="testInvalidWordPerStream3"/>
-		<testcase classname="AllTests" name="testMultipleWordsStream"/>
-		<testcase classname="AllTests" name="testMultipleWordsStream2"/>
-		<testcase classname="AllTests" name="testEmptyWordStream"/>
-		<testcase classname="AllTests" name="testWordEndOfInputStream"/>
-		<testcase classname="AllTests" name="testPrint"/>
-		<testcase classname="AllTests" name="testSimpleKwic"/>
-		<testcase classname="AllTests" name="testKwicWithInvalidCharacters"/>
-		<testcase classname="AllTests" name="testKwicWithOneWord"/>
-		<testcase classname="AllTests" name="testKwicWithOneSentence"/>
-		<testcase classname="AllTests" name="testKwichWithTwoSentences"/>
-		<testcase classname="AllTests" name="testKwicWithTwoWordsOnSeperateLines"/>
-		<testcase classname="AllTests" name="testKwichWithEmptyInput"/>
-		<testcase classname="AllTests" name="testSimpleRead"/>
-		<testcase classname="AllTests" name="testWeirdFormatRead"/>
-		<testcase classname="AllTests" name="testWeirdFormatRead2"/>
-		<testcase classname="AllTests" name="testWeirdFormatRead3"/>
-	</testsuite>
-</testsuites>
+		<testcase classname="AllTests" name="testSimpleWordPerStream">
+			<failure message="..\src\Test.cpp:77 testSimpleWordPerStream: &quot;Zafer&quot; == o.str() expected:	Zafer	but was:		">
+testSimpleWordPerStream: &quot;Zafer&quot; == o.str() expected:	Zafer	but was:		
+			</failure>
+		</testcase>
+		<testcase classname="AllTests" name="testInvalidWordPerStream1">
+			<failure message="..\src\Test.cpp:85 testInvalidWordPerStream1: &quot;compl&quot; == o.str() expected:	compl	but was:		">
+testInvalidWordPerStream1: &quot;compl&quot; == o.str() expected:	compl	but was:		
+			</failure>
+		</testcase>

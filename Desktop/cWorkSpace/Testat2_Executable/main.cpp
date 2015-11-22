@@ -3,7 +3,7 @@
 #include <iostream>
 
 int main(){
-
-kwic(std::cout,std::cin);
+//
+//kwic(std::cout,std::cin);
 
 }

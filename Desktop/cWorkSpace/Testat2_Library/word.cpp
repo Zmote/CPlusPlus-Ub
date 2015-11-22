@@ -24,18 +24,26 @@ void Word::print(std::ostream& o){
 }
 
 void Word::read(std::istream& in){
+	using isbuf = std::istreambuf_iterator<char>;
 	word.clear();
-	while(in){
-		if(std::isalpha(in.peek())){
-			word+= in.get();
-		}else{
-			while(!std::isalpha(in.peek()) && !in.eof()){
-				in.get();
-			}
-			if(!word.empty()){
-				break;
-			}
-		}
-	}
+	isbuf it = find_if(isbuf(in),isbuf(),[](char i){
+		return !std::isalpha(i);
+	});
+	copy_if(isbuf(in),it,begin(word),[&](char i){
+		return std::isalpha(i);
+	});
+
+//	while(in){
+//		if(std::isalpha(in.peek())){
+//			word+= in.get();
+//		}else{
+//			while(!std::isalpha(in.peek()) && !in.eof()){
+//				in.get();
+//			}
+//			if(!word.empty()){
+//				break;
+//			}
+//		}
+//	}
 }
 
