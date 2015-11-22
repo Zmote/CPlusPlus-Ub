@@ -81,7 +81,7 @@
 								<option id="gnu.cpp.compiler.mingw.lib.release.option.optimization.level.450357578" name="Optimization Level" superClass="gnu.cpp.compiler.mingw.lib.release.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.most" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.mingw.lib.release.option.debugging.level.1142824256" name="Debug Level" superClass="gnu.cpp.compiler.mingw.lib.release.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.dialect.flags.1496004942" name="Other dialect flags" superClass="gnu.cpp.compiler.option.dialect.flags" useByScannerDiscovery="true" value="-std=c++1y" valueType="string"/>
-								<option id="gnu.cpp.compiler.option.include.paths.1493201355" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+								<option id="gnu.cpp.compiler.option.include.paths.1493201355" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="${workspace_loc:\${ProjName}\mockator}"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.136231259" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
@@ -107,9 +107,14 @@
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 		<project id="Testat2_Library.cdt.managedbuild.target.gnu.mingw.lib.1670222855" name="Static Library" projectType="cdt.managedbuild.target.gnu.mingw.lib"/>
 	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="refreshScope"/>
 	<storageModule moduleId="scannerConfiguration">
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.mingw.lib.debug.1179984874;cdt.managedbuild.config.gnu.mingw.lib.debug.1179984874.;cdt.managedbuild.tool.gnu.c.compiler.mingw.lib.debug.1443043679;cdt.managedbuild.tool.gnu.c.compiler.input.1376295301">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="gcov;gcov.;cdt.managedbuild.tool.gnu.cpp.compiler.mingw.lib.debug.1669112097;cdt.managedbuild.tool.gnu.cpp.compiler.input.690478759">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.mingw.lib.debug.1179984874;cdt.managedbuild.config.gnu.mingw.lib.debug.1179984874.;cdt.managedbuild.tool.gnu.cpp.compiler.mingw.lib.debug.591172854;cdt.managedbuild.tool.gnu.cpp.compiler.input.1884965227">
@@ -121,6 +126,8 @@
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.mingw.lib.release.131143725;cdt.managedbuild.config.gnu.mingw.lib.release.131143725.;cdt.managedbuild.tool.gnu.c.compiler.mingw.lib.release.615485954;cdt.managedbuild.tool.gnu.c.compiler.input.1401831931">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="gcov;gcov.;cdt.managedbuild.tool.gnu.c.compiler.mingw.lib.debug.624838964;cdt.managedbuild.tool.gnu.c.compiler.input.752770103">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
 	</storageModule>
-	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 </cproject>

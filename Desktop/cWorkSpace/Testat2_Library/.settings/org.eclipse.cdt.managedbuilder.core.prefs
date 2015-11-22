@@ -7,3 +7,11 @@ environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.mingw.lib.debug.
 environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.mingw.lib.debug.1179984874/C_INCLUDE_PATH/operation=remove
 environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.mingw.lib.debug.1179984874/append=true
 environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.mingw.lib.debug.1179984874/appendContributed=true
+environment/buildEnvironmentInclude/gcov/CPATH/delimiter=;
+environment/buildEnvironmentInclude/gcov/CPATH/operation=remove
+environment/buildEnvironmentInclude/gcov/CPLUS_INCLUDE_PATH/delimiter=;
+environment/buildEnvironmentInclude/gcov/CPLUS_INCLUDE_PATH/operation=remove
+environment/buildEnvironmentInclude/gcov/C_INCLUDE_PATH/delimiter=;
+environment/buildEnvironmentInclude/gcov/C_INCLUDE_PATH/operation=remove
+environment/buildEnvironmentInclude/gcov/append=true
+environment/buildEnvironmentInclude/gcov/appendContributed=true

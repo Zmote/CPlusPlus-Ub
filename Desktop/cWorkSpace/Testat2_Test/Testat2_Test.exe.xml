@@ -1,5 +1,11 @@
 <testsuites>
-	<testsuite name="AllTests" tests="15">
+	<testsuite name="AllTests" tests="29">
+		<testcase classname="AllTests" name="testSmallerThanOperator"/>
+		<testcase classname="AllTests" name="testGreaterThanOperator"/>
+		<testcase classname="AllTests" name="testEqualToOperator"/>
+		<testcase classname="AllTests" name="testNotEqualToOperator"/>
+		<testcase classname="AllTests" name="testGreaterThanOrEqualOperator"/>
+		<testcase classname="AllTests" name="testSmallerThanOrEqualOperator"/>
 		<testcase classname="AllTests" name="testSimpleWordPerConstructor"/>
 		<testcase classname="AllTests" name="testInvalidWordPerConstructor1"/>
 		<testcase classname="AllTests" name="testInvalidWordPerConstructor2"/>
@@ -15,5 +21,13 @@
 		<testcase classname="AllTests" name="testMultipleWordsStream2"/>
 		<testcase classname="AllTests" name="testEmptyWordStream"/>
 		<testcase classname="AllTests" name="testWordEndOfInputStream"/>
+		<testcase classname="AllTests" name="testPrint"/>
+		<testcase classname="AllTests" name="testSimpleKwic"/>
+		<testcase classname="AllTests" name="testKwicWithInvalidCharacters"/>
+		<testcase classname="AllTests" name="testKwicWithOneWord"/>
+		<testcase classname="AllTests" name="testKwicWithOneSentence"/>
+		<testcase classname="AllTests" name="testKwichWithTwoSentences"/>
+		<testcase classname="AllTests" name="testKwicWithTwoWordsOnSeperateLines"/>
+		<testcase classname="AllTests" name="testKwichWithEmptyInput"/>
 	</testsuite>
 </testsuites>

@@ -2,8 +2,9 @@
 #include <iostream>
 #include <algorithm>
 #include <string>
+#include <iterator>
+#include <stdexcept>
 
-//TODO: Write Tests
 Word::Word(const std::string c){
 	if(!c.empty()){
 		for_each(begin(c),end(c),[&](const char i){
@@ -24,7 +25,6 @@ void Word::print(std::ostream& o){
 
 void Word::read(std::istream& in){
 	word.clear();
-	//TODO: read until a word is read, skip whitespaces " Hello!" --> "Hello"
 	while(in){
 		if(std::isalpha(in.peek())){
 			word+= in.get();

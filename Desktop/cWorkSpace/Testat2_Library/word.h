@@ -2,7 +2,6 @@
 #define WORD_H_
 
 #include <iosfwd>
-#include <string>
 #include <algorithm>
 #include <cctype>
 
@@ -44,6 +43,5 @@ inline bool operator==(Word const &lhs, Word const &rhs){
 inline bool operator!=(Word const &lhs, Word const &rhs){
 	return !(lhs==rhs);
 }
-
 
 #endif /* WORD_H_ */
