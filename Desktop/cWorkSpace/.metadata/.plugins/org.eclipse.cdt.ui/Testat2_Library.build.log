@@ -1,7 +1,1 @@
-12:23:01 **** Incremental Build of configuration Debug for project Testat2_Library ****
-Info: Internal Builder is used for build
-g++ -std=c++1y "-IC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\Testat2_Library\\mockator" -O0 -g3 -Wall -c -fmessage-length=0 -o word.o "..\\word.cpp" 
-ar -r libTestat2_Library.a kwic.o word.o 
-
-12:23:02 Build Finished (took 906ms)
-
+Info: Nothing to build for Testat2_Library

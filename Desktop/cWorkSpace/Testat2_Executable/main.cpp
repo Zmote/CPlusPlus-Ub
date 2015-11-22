@@ -8,6 +8,7 @@ int main(){
 
 Word myword{};
 std::cin >> myword;
+std::cin >> myword;
 std::cout << myword;
 
 }

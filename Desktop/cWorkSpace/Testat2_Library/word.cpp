@@ -31,11 +31,8 @@ void Word::read(std::istream& in){
 	});
 
 	copy_if(isbuf(in),it,begin(word),[&](char i){
-		std::cout << i;
 		return std::isalpha(i);
 	});
-
-	std::cout << "Contents of word: "<< word;
 
 //	while(in){
 //		if(std::isalpha(in.peek())){
