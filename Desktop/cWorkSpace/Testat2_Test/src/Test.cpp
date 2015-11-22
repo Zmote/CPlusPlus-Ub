@@ -147,6 +147,42 @@ myword.print(o);
 ASSERT_EQUAL("Zafer",o.str());
 }
 
+void testSimpleRead(){
+std::istringstream i{"Zafer is my name"};
+std::ostringstream o{};
+Word myword{};
+myword.read(i);
+myword.print(o);
+ASSERT_EQUAL("Zafer",o.str());
+}
+
+void testWeirdFormatRead(){
+std::istringstream i{"compl33tly"};
+std::ostringstream o{};
+Word myword{};
+myword.read(i);
+myword.print(o);
+ASSERT_EQUAL("compl",o.str());
+}
+
+void testWeirdFormatRead2(){
+std::istringstream i{"     compl33tly"};
+std::ostringstream o{};
+Word myword{};
+myword.read(i);
+myword.print(o);
+ASSERT_EQUAL("compl",o.str());
+}
+
+void testWeirdFormatRead3(){
+std::istringstream i{"  3!98 ~ Zafer '´´´? - "};
+std::ostringstream o{};
+Word myword{};
+myword.read(i);
+myword.print(o);
+ASSERT_EQUAL("Zafer",o.str());
+}
+
 void testSimpleKwic(){
 std::istringstream i{"Do it"};
 std::ostringstream o{};
@@ -246,6 +282,10 @@ void runAllTests(int argc, char const *argv[]){
 	s.push_back(CUTE(testKwichWithTwoSentences));
 	s.push_back(CUTE(testKwicWithTwoWordsOnSeperateLines));
 	s.push_back(CUTE(testKwichWithEmptyInput));
+	s.push_back(CUTE(testSimpleRead));
+	s.push_back(CUTE(testWeirdFormatRead));
+	s.push_back(CUTE(testWeirdFormatRead2));
+	s.push_back(CUTE(testWeirdFormatRead3));
 	cute::xml_file_opener xmlfile(argc,argv);
 	cute::xml_listener<cute::ide_listener<> >  lis(xmlfile.out);
 	cute::makeRunner(lis,argc,argv)(s, "AllTests");

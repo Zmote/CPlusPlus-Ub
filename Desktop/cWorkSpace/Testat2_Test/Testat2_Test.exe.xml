@@ -1,5 +1,5 @@
 <testsuites>
-	<testsuite name="AllTests" tests="29">
+	<testsuite name="AllTests" tests="33">
 		<testcase classname="AllTests" name="testSmallerThanOperator"/>
 		<testcase classname="AllTests" name="testGreaterThanOperator"/>
 		<testcase classname="AllTests" name="testEqualToOperator"/>
@@ -29,5 +29,9 @@
 		<testcase classname="AllTests" name="testKwichWithTwoSentences"/>
 		<testcase classname="AllTests" name="testKwicWithTwoWordsOnSeperateLines"/>
 		<testcase classname="AllTests" name="testKwichWithEmptyInput"/>
+		<testcase classname="AllTests" name="testSimpleRead"/>
+		<testcase classname="AllTests" name="testWeirdFormatRead"/>
+		<testcase classname="AllTests" name="testWeirdFormatRead2"/>
+		<testcase classname="AllTests" name="testWeirdFormatRead3"/>
 	</testsuite>
 </testsuites>
