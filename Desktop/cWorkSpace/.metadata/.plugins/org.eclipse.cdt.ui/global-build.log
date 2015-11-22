@@ -1,16 +1,4 @@
-12:04:06 **** Incremental Build of configuration Debug for project Testat2_Library ****
+12:23:01 **** Incremental Build of configuration Debug for project Testat2_Library ****
 Info: Internal Builder is used for build
 g++ -std=c++1y "-IC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\Testat2_Library\\mockator" -O0 -g3 -Wall -c -fmessage-length=0 -o word.o "..\\word.cpp" 
 ar -r libTestat2_Library.a kwic.o word.o 
-12:06:15 **** Incremental Build of configuration Debug for project Testat2_Library ****
-Info: Internal Builder is used for build
-g++ -std=c++1y "-IC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\Testat2_Library\\mockator" -O0 -g3 -Wall -c -fmessage-length=0 -o word.o "..\\word.cpp" 
-ar -r libTestat2_Library.a kwic.o word.o 
-12:06:16 **** Incremental Build of configuration Debug for project Testat2_Library ****
-Info: Internal Builder is used for build
-g++ -std=c++1y "-IC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\Testat2_Library\\mockator" -O0 -g3 -Wall -c -fmessage-length=0 -o kwic.o "..\\kwic.cpp" 
-g++ -std=c++1y "-IC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\Testat2_Library\\mockator" -O0 -g3 -Wall -c -fmessage-length=0 -o word.o "..\\word.cpp" 
-ar -r libTestat2_Library.a kwic.o word.o 
-12:06:19 **** Incremental Build of configuration Debug for project Testat2_Test ****
-Info: Internal Builder is used for build
-g++ "-LC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\Testat2_Library\\Debug" "-LC:\\Users\\shoda_000\\Desktop\\CPlusPlus-Ub\\Desktop\\cWorkSpace\\Testat2_Library\\Debug Gcov" -o Testat2_Test.exe "src\\Test.o" -lTestat2_Library 
