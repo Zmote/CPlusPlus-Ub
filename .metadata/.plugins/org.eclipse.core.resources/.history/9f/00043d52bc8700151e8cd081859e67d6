@@ -1,0 +1,8 @@
+#include "w04algo.h"
+#include <cmath>
+#include <iostream>
+
+int main(){
+	//wlist(std::cout,std::cin);
+	printFunctionTable(std::cout,1.0,9.0,4.0,[](double x){return std::sin(x);});
+}

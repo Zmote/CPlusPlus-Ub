@@ -1,0 +1,13 @@
+08:20:01 **** Incremental Build of configuration Debug for project Dep_Hello ****
+Info: Internal Builder is used for build
+g++ -std=c++1y "-IC:\\Users\\Zmote\\Dropbox\\cWorkSpace\\Hello" "-IC:\\Users\\Zmote\\Dropbox\\cWorkSpace\\Hello\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\hello2.o" "..\\src\\hello2.cpp" 
+..\src\hello2.cpp: In function 'int main()':
+..\src\hello2.cpp:10:2: error: 'Hello' was not declared in this scope
+  Hello hello{};
+  ^
+..\src\hello2.cpp:11:2: error: 'hello' was not declared in this scope
+  hello.sayHello(std::cout);
+  ^
+
+08:20:01 Build Finished (took 376ms)
+

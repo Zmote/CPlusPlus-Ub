@@ -1,0 +1,17 @@
+<testsuites>
+	<testsuite name="AllTests" tests="13">
+		<testcase classname="AllTests" name="testWordCount"/>
+		<testcase classname="AllTests" name="testWordCountertwoSentences"/>
+		<testcase classname="AllTests" name="lowerFirstCharacter"/>
+		<testcase classname="AllTests" name="lowerSeveralCharacters"/>
+		<testcase classname="AllTests" name="lowerNone"/>
+		<testcase classname="AllTests" name="lowerAll"/>
+		<testcase classname="AllTests" name="lowerEmpty"/>
+		<testcase classname="AllTests" name="umlautsAreNotChanged"/>
+		<testcase classname="AllTests" name="testBasicFunctionTable"/>
+		<testcase classname="AllTests" name="testSimpleCosineFunction"/>
+		<testcase classname="AllTests" name="testSimpleSineFunction"/>
+		<testcase classname="AllTests" name="testSimpleSineFunctionWithPi"/>
+		<testcase classname="AllTests" name="testSquareFunction"/>
+	</testsuite>
+</testsuites>

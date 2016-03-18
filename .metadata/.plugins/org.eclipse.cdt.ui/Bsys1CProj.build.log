@@ -1,0 +1,7 @@
+12:45:22 **** Rebuild of configuration Debug for project Bsys1CProj ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Bsys1CProj.o" "..\\src\\Bsys1CProj.c" 
+gcc -o Bsys1CProj.exe "src\\Bsys1CProj.o" 
+
+12:45:23 Build Finished (took 241ms)
+

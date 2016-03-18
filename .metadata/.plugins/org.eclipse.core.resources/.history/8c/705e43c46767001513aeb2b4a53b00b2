@@ -1,0 +1,17 @@
+#include <iostream>
+
+int main(){
+	int anAnswer{};
+	while(std::cin){
+		if(!(std::cin >> anAnswer)){
+			if(std::cin.fail()){
+				std::cout << "I failed";
+			}
+			if(std::cin.eof()){
+				std::cout << "EOF called";
+			}
+		}else{
+			std::cout << anAnswer;;
+		}
+	}
+}

@@ -1,0 +1,7 @@
+12:19:21 **** Rebuild of configuration Debug for project 03_ZD_LargeNumbersTest ****
+Info: Internal Builder is used for build
+g++ -std=c++1y "-IC:\\Users\\shoda_000\\Dropbox\\cWorkSpace\\03_ZD_LargeNumbersTest\\cute" "-IC:\\Users\\shoda_000\\Dropbox\\cWorkSpace\\03_ZD_LargeNumbersLib" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Test.o" "..\\src\\Test.cpp" 
+g++ "-LC:\\Users\\shoda_000\\Dropbox\\cWorkSpace\\03_ZD_LargeNumbersLib\\Debug" -o 03_ZD_LargeNumbersTest.exe "src\\Test.o" -l03_ZD_LargeNumbersLib 
+
+12:19:24 Build Finished (took 3s.356ms)
+

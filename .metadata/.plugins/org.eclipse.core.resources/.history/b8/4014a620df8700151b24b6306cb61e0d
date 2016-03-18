@@ -1,0 +1,16 @@
+#ifndef CALC_H_
+#define CALC_H_
+#include <iosfwd>
+
+class Calculator{
+
+public:
+	Calculator();
+	int calc(int const a, int const b, char const op);
+	int calc(std::istream &in);
+};
+
+int calc(int const a, int const b, char const op);
+int calc(std::istream &in);
+
+#endif /* CALC_H_ */

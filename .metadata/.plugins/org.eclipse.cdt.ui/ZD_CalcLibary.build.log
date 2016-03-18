@@ -1,0 +1,9 @@
+09:31:22 **** Rebuild of configuration Debug for project ZD_CalcLibary ****
+Info: Internal Builder is used for build
+g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o calculator.o "..\\calculator.cpp" 
+ar -r libZD_CalcLibary.a calculator.o main.o 
+ar: creating libZD_CalcLibary.a
+
+09:31:23 Build Finished (took 864ms)
+

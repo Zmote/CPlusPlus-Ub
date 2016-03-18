@@ -1,0 +1,8 @@
+08:37:00 **** Incremental Build of configuration Debug for project 04_ZD_Testat1Ex ****
+Info: Internal Builder is used for build
+g++ -std=c++1y "-IC:\\Users\\shoda_000\\Dropbox\\cWorkSpace\\04_ZD_Testat1Lib" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+ar -r lib04_ZD_Testat1Ex.a main.o 
+ar: creating lib04_ZD_Testat1Ex.a
+
+08:37:00 Build Finished (took 256ms)
+

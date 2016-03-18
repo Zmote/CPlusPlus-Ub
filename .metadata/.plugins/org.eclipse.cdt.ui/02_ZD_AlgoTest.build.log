@@ -1,0 +1,6 @@
+10:10:59 **** Incremental Build of configuration Debug for project 02_ZD_AlgoTest ****
+Info: Internal Builder is used for build
+g++ "-LC:\\Users\\shoda_000\\Dropbox\\cWorkSpace\\02_ZD_AlgoLib\\Debug" -o 02_ZD_AlgoTest.exe "src\\Test.o" -l02_ZD_AlgoLib 
+
+10:11:00 Build Finished (took 1s.164ms)
+

@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;Lectures C++&apos;" deleteContents="false" description="Delete resource &apos;Lectures C++&apos;" element1="/Lectures C++" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1443676400164"/>&#x0A;<refactoring comment="Rename resource &apos;03_ZD_LargeNumbers&apos; to &apos;03_ZD_LargeNumbersLib&apos;" description="Rename resource &apos;03_ZD_LargeNumbers&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/03_ZD_LargeNumbers" name="03_ZD_LargeNumbersLib" stamp="1443676492458" updateReferences="true"/>
+</session>

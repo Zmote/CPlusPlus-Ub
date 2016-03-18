@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;ZD_Hello_List5/sayhello2.cpp&apos; to &apos;hello2.cpp&apos;" description="Rename resource &apos;sayhello2.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="sayhello2.cpp" name="hello2.cpp" stamp="1442845615962" updateReferences="true"/>
+</session>

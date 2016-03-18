@@ -1,0 +1,9 @@
+11:03:13 **** Incremental Build of configuration Debug for project Testat1Lib ****
+Info: Internal Builder is used for build
+g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o calc.o "..\\calc.cpp" 
+g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o sevensegment.o "..\\sevensegment.cpp" 
+g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o pocketcalculator.o "..\\pocketcalculator.cpp" 
+ar -r libTestat1Lib.a calc.o pocketcalculator.o sevensegment.o 
+
+11:03:16 Build Finished (took 2s.827ms)
+

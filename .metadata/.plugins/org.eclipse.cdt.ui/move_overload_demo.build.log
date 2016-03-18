@@ -1,0 +1,56 @@
+19:35:58 **** Incremental Build of configuration Debug for project move_overload_demo ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o move_overload_demo.o "..\\move_overload_demo.cpp" 
+..\move_overload_demo.cpp:11:11: error: expected ',' or '...' before '&&' token
+ void foo(X&& rvr){
+           ^
+..\move_overload_demo.cpp:17:18: error: expected ',' or '...' before '&&' token
+ void foo(X const && rvr){
+                  ^
+..\move_overload_demo.cpp: In function 'void foo(X)':
+..\move_overload_demo.cpp:17:6: error: redefinition of 'void foo(X)'
+ void foo(X const && rvr){
+      ^
+..\move_overload_demo.cpp:11:6: note: 'void foo(X)' previously defined here
+ void foo(X&& rvr){
+      ^
+..\move_overload_demo.cpp: In function 'int main()':
+..\move_overload_demo.cpp:23:5: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  X x{};
+     ^
+..\move_overload_demo.cpp:24:12: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  X const &y{X{}};
+            ^
+..\move_overload_demo.cpp:24:14: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  X const &y{X{}};
+              ^
+..\move_overload_demo.cpp:24:16: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  X const &y{X{}};
+                ^
+..\move_overload_demo.cpp:25:7: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  X &z { x };
+       ^
+..\move_overload_demo.cpp:25:11: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  X &z { x };
+           ^
+..\move_overload_demo.cpp:26:11: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  X const a{};
+           ^
+..\move_overload_demo.cpp:27:4: error: expected unqualified-id before '&&' token
+  X &&b{X{}};
+    ^
+..\move_overload_demo.cpp:24:11: warning: unused variable 'y' [-Wunused-variable]
+  X const &y{X{}};
+           ^
+..\move_overload_demo.cpp:25:5: warning: unused variable 'z' [-Wunused-variable]
+  X &z { x };
+     ^
+..\move_overload_demo.cpp:26:10: warning: unused variable 'a' [-Wunused-variable]
+  X const a{};
+          ^
+..\move_overload_demo.cpp:43:1: error: expected '}' at end of input
+ }
+ ^
+
+19:35:58 Build Finished (took 347ms)
+

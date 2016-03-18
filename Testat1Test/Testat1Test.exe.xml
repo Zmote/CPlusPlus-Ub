@@ -1,0 +1,35 @@
+<testsuites>
+	<testsuite name="AllTests" tests="31">
+		<testcase classname="AllTests" name="testMultiplication"/>
+		<testcase classname="AllTests" name="testDivision"/>
+		<testcase classname="AllTests" name="testAddition"/>
+		<testcase classname="AllTests" name="testSubtraction"/>
+		<testcase classname="AllTests" name="testDivisionThroughZero"/>
+		<testcase classname="AllTests" name="testModulo"/>
+		<testcase classname="AllTests" name="testModuloWithZero"/>
+		<testcase classname="AllTests" name="testPrintLargeNumber333"/>
+		<testcase classname="AllTests" name="testPrintSingleLargeNumber3"/>
+		<testcase classname="AllTests" name="testCalcInvalidInput"/>
+		<testcase classname="AllTests" name="testPrintLargeNumberMinus33"/>
+		<testcase classname="AllTests" name="testPrintLargeNumber333Scaled2"/>
+		<testcase classname="AllTests" name="testCalculatorInvalidInput"/>
+		<testcase classname="AllTests" name="testCalculatorSimpleAddition"/>
+		<testcase classname="AllTests" name="testCalculatorSimpleMultiplication"/>
+		<testcase classname="AllTests" name="testCalculatorSimpleDivision"/>
+		<testcase classname="AllTests" name="testCalculatorSimpleSubtraction"/>
+		<testcase classname="AllTests" name="testCalculatorSimpleModulo"/>
+		<testcase classname="AllTests" name="testCalculatorSimpleDivisionThroughZero"/>
+		<testcase classname="AllTests" name="testCalculatorSimpleModuloWithZero"/>
+		<testcase classname="AllTests" name="testCalculatorSimpleSubtractionNegative"/>
+		<testcase classname="AllTests" name="testCalculatorSignedOperand"/>
+		<testcase classname="AllTests" name="testCalculatorInvalidOperand"/>
+		<testcase classname="AllTests" name="testCalculatorInvalidInput2"/>
+		<testcase classname="AllTests" name="testCalculatorInvalidOperator"/>
+		<testcase classname="AllTests" name="testCalculatorInvalidInput3"/>
+		<testcase classname="AllTests" name="testCalculatorScaled2"/>
+		<testcase classname="AllTests" name="testPrintLargeNumberInvalidArgument"/>
+		<testcase classname="AllTests" name="testPrintLargeNumberScaled2InvalidArgument"/>
+		<testcase classname="AllTests" name="testPrintSingleLNumber3"/>
+		<testcase classname="AllTests" name="testPrintSingleLNumberInvalidInput"/>
+	</testsuite>
+</testsuites>

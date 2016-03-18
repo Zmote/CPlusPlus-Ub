@@ -1,0 +1,40 @@
+#include <iostream>
+
+
+int main(){
+std::string name;
+	while(std::cin >> name){
+		//getline(std::cin, name);
+		std::cout << name;
+	}
+}
+
+
+/*int main(){
+	int anAnswer{};
+	while(std::cin){
+		if(!(std::cin >> anAnswer)){
+			if(std::cin.eof()){
+			std::cout << "EOF called";
+		}
+			if(std::cin.fail()){
+				std::cout << "I failed";
+			}
+		}else{
+			std::cout << anAnswer;;
+		}
+	}
+}*/
+
+/*
+ * 1.-----------------------------------------------------------------
+ *The streams failbit is set. The char's are still in the stream, but
+ *The the stream itself isn't accesible anymore --> you can't keep
+ *The reading in new numbers into the stream.
+ * */
+
+/*
+ *2.------------------------------------------------------------------
+ *
+ * */
+

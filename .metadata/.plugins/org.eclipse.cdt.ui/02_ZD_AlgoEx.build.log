@@ -1,0 +1,6 @@
+22:45:53 **** Incremental Build of configuration Debug for project 02_ZD_AlgoEx ****
+Info: Internal Builder is used for build
+g++ "-LC:\\Users\\Zmote\\Dropbox\\cWorkSpace\\02_ZD_AlgoLib\\Debug" -o 02_ZD_AlgoEx.exe main.o -l02_ZD_AlgoLib 
+
+22:45:53 Build Finished (took 620ms)
+

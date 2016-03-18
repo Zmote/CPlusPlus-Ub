@@ -1,0 +1,15 @@
+#include "bounded_buffer_student_suite.h"
+#include "cute.h"
+
+void test_default_constructed_const_int_buffer_of_size_thousand_is_empty_with_more_info() {
+	BoundedBuffer<int, 1000> const buffer{};
+	ASSERTM("New buffer should be empty", buffer.empty());
+}
+
+cute::suite make_suite_bounded_buffer_student_suite(){
+	cute::suite s;
+	return s;
+}
+
+
+

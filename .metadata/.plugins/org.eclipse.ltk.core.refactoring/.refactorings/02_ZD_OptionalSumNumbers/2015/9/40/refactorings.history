@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;02_ZD_OptionalSumNumbers/implementation&apos; to &apos;implementation.cpp&apos;" description="Rename resource &apos;implementation&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="implementation" name="implementation.cpp" stamp="1443627618169" updateReferences="true"/>
+</session>

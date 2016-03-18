@@ -1,0 +1,8 @@
+09:38:42 **** Incremental Build of configuration Debug for project HelloClass ****
+Info: Internal Builder is used for build
+g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.cpp" 
+g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Hello.o" "..\\src\\Hello.cpp" 
+g++ -o HelloClass.exe "src\\Hello.o" "src\\main.o" 
+
+09:38:43 Build Finished (took 1s.353ms)
+

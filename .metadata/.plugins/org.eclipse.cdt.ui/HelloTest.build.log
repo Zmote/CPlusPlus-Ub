@@ -1,0 +1,10 @@
+13:30:29 **** Incremental Build of configuration Debug for project HelloTest ****
+make all 
+'Building target: HelloTest'
+'Invoking: MacOS X C++ Linker'
+g++ -L"C:\Users\Zmote\Dropbox\cWorkSpace\CPlusPlusLecture\ws01\Hello\Debug" -o "HelloTest"  ./src/Test.o   -lHello
+'Finished building target: HelloTest'
+' '
+
+13:30:30 Build Finished (took 1s.129ms)
+

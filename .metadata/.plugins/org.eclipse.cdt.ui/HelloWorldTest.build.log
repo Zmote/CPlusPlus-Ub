@@ -1,0 +1,9 @@
+09:16:46 **** Incremental Build of configuration Debug for project HelloWorldTest ****
+Info: Internal Builder is used for build
+g++ -o HelloWorldTest.exe "src\\Test.o" 
+src\Test.o: In function `thisIsATest()':
+C:\Users\Zmote\Dropbox\cWorkSpace\HelloWorldTest\Debug/../src/Test.cpp:10: undefined reference to `Hello::sayHello(std::ostream&) const'
+collect2.exe: error: ld returned 1 exit status
+
+09:16:47 Build Finished (took 1s.126ms)
+

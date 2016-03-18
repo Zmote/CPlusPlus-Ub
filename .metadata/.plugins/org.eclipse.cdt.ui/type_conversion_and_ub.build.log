@@ -1,0 +1,10 @@
+09:34:10 **** Incremental Build of configuration Debug for project type_conversion_and_ub ****
+make all 
+'Building target: type_conversion_and_ub'
+'Invoking: MacOS X C++ Linker'
+g++  -o "type_conversion_and_ub"  ./src/type_conversion_and_ub.o   
+'Finished building target: type_conversion_and_ub'
+' '
+
+09:34:11 Build Finished (took 609ms)
+

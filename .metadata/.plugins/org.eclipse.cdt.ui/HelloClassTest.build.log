@@ -1,0 +1,8 @@
+08:48:57 **** Incremental Build of configuration Debug for project HelloClassTest ****
+Info: Internal Builder is used for build
+g++ -std=c++1y "-IC:\\Users\\Zmote\\Dropbox\\cWorkSpace\\HelloClass" "-IC:\\Users\\Zmote\\Dropbox\\cWorkSpace\\HelloClassTest\\cute" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Test.o" "..\\src\\Test.cpp" 
+..\src\Test.cpp:5:21: fatal error: hello_c.h: No such file or directory
+compilation terminated.
+
+08:48:57 Build Finished (took 187ms)
+

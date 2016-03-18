@@ -1,0 +1,7 @@
+17:29:09 **** Incremental Build of configuration Debug for project 04_Executable ****
+Info: Internal Builder is used for build
+g++ -std=c++1y "-IC:\\Users\\Zmote\\Dropbox\\cWorkSpace\\04_Library" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ "-LC:\\Users\\Zmote\\Dropbox\\cWorkSpace\\04_Library\\Debug" -o 04_Executable.exe main.o -l04_Library 
+
+17:29:11 Build Finished (took 2s.145ms)
+

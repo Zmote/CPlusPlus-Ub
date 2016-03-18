@@ -1,0 +1,7 @@
+19:26:54 **** Incremental Build of configuration Debug for project move_only_fixed ****
+Info: Internal Builder is used for build
+g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o move_only.o "..\\move_only.cpp" 
+g++ -o move_only_fixed.exe move_only.o 
+
+19:26:55 Build Finished (took 948ms)
+

@@ -1,0 +1,7 @@
+17:29:07 **** Incremental Build of configuration Debug for project 04_Library ****
+Info: Internal Builder is used for build
+g++ -std=c++1y "-IC:\\Program Files\\boost\\boost_1_59_0" -O0 -g3 -Wall -c -fmessage-length=0 -o w04algo.o "..\\w04algo.cpp" 
+ar -r lib04_Library.a w04algo.o 
+
+17:29:08 Build Finished (took 1s.949ms)
+

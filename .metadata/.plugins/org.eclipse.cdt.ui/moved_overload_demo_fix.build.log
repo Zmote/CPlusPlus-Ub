@@ -1,0 +1,7 @@
+19:59:38 **** Incremental Build of configuration Debug for project moved_overload_demo_fix ****
+Info: Internal Builder is used for build
+g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o moved.o "..\\moved.cpp" 
+g++ -o moved_overload_demo_fix.exe moved.o 
+
+19:59:39 Build Finished (took 943ms)
+

@@ -1,0 +1,68 @@
+19:24:03 **** Incremental Build of configuration Debug for project move_only ****
+make all 
+'Building file: ../move_only.cpp'
+'Invoking: GCC C++ Compiler'
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"move_only.d" -MT"move_only.o" -o "move_only.o" "../move_only.cpp"
+../move_only.cpp:4:17: warning: defaulted and deleted functions only available with -std=c++11 or -std=gnu++11
+    MoveOnly() = default;
+                 ^
+../move_only.cpp:5:21: error: expected ',' or '...' before '&&' token
+    MoveOnly(MoveOnly&&) {
+                     ^
+../move_only.cpp:5:23: error: invalid constructor; you probably meant 'MoveOnly (const MoveOnly&)'
+    MoveOnly(MoveOnly&&) {
+                       ^
+../move_only.cpp:8:32: warning: defaulted and deleted functions only available with -std=c++11 or -std=gnu++11
+    MoveOnly(const MoveOnly&) = delete; // implicitly deleted
+                                ^
+../move_only.cpp:11:16: error: expected ',' or '...' before '&&' token
+ void g(MoveOnly&&) { std::cout << "g(MoveOnly&&) called\n"; }
+                ^
+../move_only.cpp: In function 'int main()':
+../move_only.cpp:14:15: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+    f( MoveOnly{} ); // rvalue temporary
+               ^
+../move_only.cpp:14:18: error: use of deleted function 'MoveOnly::MoveOnly(const MoveOnly&)'
+    f( MoveOnly{} ); // rvalue temporary
+                  ^
+../move_only.cpp:8:4: note: declared here
+    MoveOnly(const MoveOnly&) = delete; // implicitly deleted
+    ^
+../move_only.cpp:10:6: note:   initializing argument 1 of 'void f(MoveOnly)'
+ void f(MoveOnly) { std::cout << "f(MoveOnly) called\n"; }
+      ^
+../move_only.cpp:15:15: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+    g( MoveOnly{} ); // rvalue temporary
+               ^
+../move_only.cpp:15:18: error: call of overloaded 'g(MoveOnly)' is ambiguous
+    g( MoveOnly{} ); // rvalue temporary
+                  ^
+../move_only.cpp:11:6: note: candidate: void g(MoveOnly)
+ void g(MoveOnly&&) { std::cout << "g(MoveOnly&&) called\n"; }
+      ^
+../move_only.cpp:12:6: note: candidate: void g(const MoveOnly&)
+ void g(MoveOnly const &){ std::cout << "g(MoveOnly const&) called\n"; }
+      ^
+../move_only.cpp:17:15: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+    MoveOnly mv{}; // lvalue
+               ^
+../move_only.cpp:19:6: error: 'move' is not a member of 'std'
+    f(std::move(mv)); // make an rvalue from lvalue
+      ^
+../move_only.cpp:20:8: error: call of overloaded 'g(MoveOnly&)' is ambiguous
+    g(mv); // binds to const-ref due to lvalue used
+        ^
+../move_only.cpp:11:6: note: candidate: void g(MoveOnly)
+ void g(MoveOnly&&) { std::cout << "g(MoveOnly&&) called\n"; }
+      ^
+../move_only.cpp:12:6: note: candidate: void g(const MoveOnly&)
+ void g(MoveOnly const &){ std::cout << "g(MoveOnly const&) called\n"; }
+      ^
+../move_only.cpp:21:6: error: 'move' is not a member of 'std'
+    g(std::move(mv)); // binds to rvalue-ref
+      ^
+subdir.mk:18: recipe for target 'move_only.o' failed
+make: *** [move_only.o] Error 1
+
+19:24:03 Build Finished (took 383ms)
+

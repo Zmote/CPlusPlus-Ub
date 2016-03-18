@@ -1,0 +1,10 @@
+12:45:23 **** Incremental Build of configuration Debug for project CUTECPPLibrary ****
+Info: Internal Builder is used for build
+g++ "-LC:\\Users\\Zmote\\Dropbox\\cWorkSpace\\CPPLibrary\\Debug" -o CUTECPPLibrary.exe "src\\Test.o" -lCPPLibrary 
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: skipping incompatible C:\Users\Zmote\Dropbox\cWorkSpace\CPPLibrary\Debug/libCPPLibrary.dll when searching for -lCPPLibrary
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: skipping incompatible C:\Users\Zmote\Dropbox\cWorkSpace\CPPLibrary\Debug/libCPPLibrary.dll when searching for -lCPPLibrary
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot find -lCPPLibrary
+collect2.exe: error: ld returned 1 exit status
+
+12:45:23 Build Finished (took 319ms)
+

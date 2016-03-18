@@ -1,0 +1,10 @@
+/*
+ * main.cpp
+ *
+ *  Created on: 10.11.2015
+ *      Author: Zmote
+ */
+#include <iostream>
+int main(){
+	std::cout << "Hello, World!";
+}

@@ -1,0 +1,7 @@
+#include "calculator.h"
+#include <iostream>
+
+int main(){
+	int result = calc(5,4,"+")
+	printf(std::cout, result);
+}

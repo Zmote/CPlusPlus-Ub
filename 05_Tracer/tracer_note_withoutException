@@ -1,0 +1,20 @@
+Tracer created: main
+Tracer created: inner
+Tracer moved: inner moved from
+Tracer created: foo
+Tracer: inner moved from
+Tracer destroyed: foo
+Tracer destroyed: inner moved from
+Tracer created: bar
+Tracer: inner //Aufruf .show()
+Tracer: bar
+Tracer: inner
+Tracer destroyed: bar
+Tracer destroyed: inner
+Tracer created: temp
+Tracer created: foo
+Tracer: temp
+Tracer destroyed: foo
+Tracer destroyed: temp
+Tracer: main
+Tracer destroyed: main

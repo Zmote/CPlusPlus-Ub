@@ -1,0 +1,9 @@
+#ifndef WORD_H_
+#define WORD_H_
+
+class Word{
+
+};
+
+
+#endif /* WORD_H_ */

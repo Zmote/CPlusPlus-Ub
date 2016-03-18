@@ -1,0 +1,10 @@
+#include "Date.h"
+#include <iostream>
+
+int main(){
+	Date adate{2015,Date::November,12};
+	Date bdate{Date::Dezember,12,2015};
+	Date cdate{12,Date::Juli,2015};
+	adate.print(std::cout);
+	bdate.print(std::cout);
+}

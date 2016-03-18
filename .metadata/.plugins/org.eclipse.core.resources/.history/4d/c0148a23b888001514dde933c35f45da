@@ -1,0 +1,111 @@
+#include "Date.h"
+#include <stdexcept>
+#include <ostream>
+#include <iomanip>
+#include <algorithm>
+#include <iostream>
+
+void Date::print(std::ostream& out) const {
+	auto ch = out.fill('0');
+	out << std::setw(2) << day << '.';
+	out << std::setw(2) << month << '.';
+	out << std::setw(4) << year;
+	out.fill(ch);
+}
+
+std::string dayMapper(Date::Day date){
+	switch(date){
+	case Date::Day::Montag:
+		return "Montag";
+	case Date::Day::Dienstag:
+		return "Dienstag";
+	case Date::Day::Mittwoch:
+		return "Mittwoch";
+	case Date::Day::Donnerstag:
+		return "Donnerstag";
+	case Date::Day::Freitag:
+		return "Freitag";
+	case Date::Day::Samstag:
+		return "Samstag";
+	case Date::Day::Sonntag:
+		return "Sonntag";
+	default:
+		throw std::out_of_range("No valid day");
+	}
+}
+
+std::string Date::day_of_week(){
+	int a = (14-month)/12;
+	int y=year-a;
+	int m = month+12*a-2;
+	int d = ((day+y+y/4-y/100+y/400+(31*m/12))%7)+1;
+	std::vector<Date::Day> all_days{Day::Montag,Day::Dienstag, Day::Mittwoch,Day::Donnerstag,Day::Freitag,Day::Samstag,Day::Sonntag};
+	for(Date::Day date: all_days){
+		if(static_cast<int>(date) == d){
+			return dayMapper(date);
+		}
+	}
+	throw std::out_of_range("No valid day");
+}
+
+
+bool Date::isValidYear(int year) {
+	return year >= 1813 && year < 10000;
+}
+
+bool Date::isLeapYear(int year) {
+	return !(year % 4) && ((year % 100) || !(year % 400));
+}
+
+bool Date::isValidDate(int year, Month month, int day) {
+	return isValidYear(year) && day > 0 && day <= endOfMonth(year, month);
+}
+
+Date::Date(int year, Month month, int day) :
+		year { year }, month { month }, day { day } {
+	if (!isValidDate(year, month, day))
+		throw std::out_of_range { "invalid date" };
+}
+
+Date::Date(Month month, int day,int year) : Date(year,month,day){}
+
+int Date::endOfMonth(int year, int month) {
+	switch (month) {
+	case 1:
+	case 3:
+	case 5:
+	case 7:
+	case 8:
+	case 10:
+	case 12:
+		return 31;
+	case 4:
+	case 6:
+	case 9:
+	case 11:
+		return 30;
+	case 2:
+		return (isLeapYear(year) ? 29 : 28);
+	}
+	return 0;
+}
+
+void Date::nextDay() {
+	if (day == endOfMonth(year, month)) {
+		day = 1;
+		if (month == 12) {
+			month = 1;
+			++year;
+			if (!isValidYear(year))
+				throw std::out_of_range("last year");
+		} else {
+			++month;
+		}
+	} else {
+		++day;
+	}
+}
+
+bool Date::operator <(Date const& rhs) const {
+	return year < rhs.year || (year == rhs.year && (month < rhs.month || (month == rhs.month && day < rhs.day)));
+}

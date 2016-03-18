@@ -1,0 +1,8 @@
+22:00:41 **** Rebuild of configuration Debug for project ZD_MyFirstCProj ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\implementation.o" "..\\src\\implementation.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.cpp" 
+g++ -o ZD_MyFirstCProj.exe "src\\implementation.o" "src\\main.o" 
+
+22:00:42 Build Finished (took 1s.214ms)
+

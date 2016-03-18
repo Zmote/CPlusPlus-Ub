@@ -1,0 +1,7 @@
+15:48:01 **** Incremental Build of configuration Debug for project ZD_Dep_Hello ****
+Info: Internal Builder is used for build
+g++ -std=c++1y "-IC:\\Users\\Zmote\\Dropbox\\cWorkSpace\\CPlusPlusLecture\\ws01\\Hello" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\hello2.o" "..\\src\\hello2.cpp" 
+g++ "-LC:\\Users\\Zmote\\Dropbox\\cWorkSpace\\CPlusPlusLecture\\ws01\\Hello\\Debug" -o ZD_Dep_Hello.exe "src\\hello2.o" -lHello 
+
+15:48:02 Build Finished (took 989ms)
+

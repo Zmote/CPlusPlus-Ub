@@ -1,0 +1,17 @@
+<testsuites>
+	<testsuite name="AllTests" tests="13">
+		<testcase classname="AllTests" name="testCharCount"/>
+		<testcase classname="AllTests" name="testCharCountEmptyStream"/>
+		<testcase classname="AllTests" name="testAllCharCount"/>
+		<testcase classname="AllTests" name="testAllCharCountEmptyStream"/>
+		<testcase classname="AllTests" name="testWordCountNormal"/>
+		<testcase classname="AllTests" name="testWordCountWithWhiteSpaceAtEnd"/>
+		<testcase classname="AllTests" name="testWordCountEmptyLine"/>
+		<testcase classname="AllTests" name="testLineCountWithShortFile"/>
+		<testcase classname="AllTests" name="testLineCountWithLargeFile"/>
+		<testcase classname="AllTests" name="testAllANormal"/>
+		<testcase classname="AllTests" name="testAllAEmptyStream"/>
+		<testcase classname="AllTests" name="testPrintSingleLargeNumber3"/>
+		<testcase classname="AllTests" name="testPrintLargeNumber333"/>
+	</testsuite>
+</testsuites>

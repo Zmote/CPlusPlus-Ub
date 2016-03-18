@@ -1,0 +1,13 @@
+#include <iostream>
+
+int main(){
+	int anAnswer{};
+	while(std::cin){
+		if(!(std::cin >> anAnswer)){
+			std::cout << "Failed";
+			std::cout << anAnswer;;
+		}else{
+
+		}
+	}
+}

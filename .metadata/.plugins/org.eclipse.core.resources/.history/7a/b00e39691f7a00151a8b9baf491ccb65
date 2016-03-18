@@ -1,0 +1,109 @@
+#include "calc.h"
+#include "sevensegment.h"
+#include "pocketcalculator.h"
+#include "cute.h"
+#include "ide_listener.h"
+#include "xml_listener.h"
+#include "cute_runner.h"
+/******** Calc Tests**********/
+void testMultiplication() {
+	std::ostringstream o{};
+	o << calc(5,5,'*');
+	ASSERT_EQUAL("25",o.str());
+}
+
+void testMultiplicationOverflow(){
+
+	ASSERT_THROWS(calc(333333,3333333,'*'), std::overflow_error);
+}
+
+void testDivision(){
+	std::ostringstream o{};
+	o << calc(125,5,'/');
+	ASSERT_EQUAL("25",o.str());
+}
+
+void testDivisionThroughZero(){
+	std::ostringstream o{};
+	try{
+		o << calc(50,0,'/');
+	}catch(std::exception& e){
+		ASSERT_EQUAL("Can't divide through zero\n",e.what());
+	}
+}
+
+void testAddition(){
+	std::ostringstream o{};
+	o << calc(25,100,'+');
+	ASSERT_EQUAL("125",o.str());
+}
+
+void testSubtraction(){
+	std::ostringstream o{};
+	o << calc(100, 45, '-');
+	ASSERT_EQUAL("55",o.str());
+}
+
+void testModulo(){
+	std::ostringstream o{};
+	o << calc(100,2,'%');
+	ASSERT_EQUAL(0,o.str());
+}
+
+void testModuloWithZero(){
+	ASSERT_THROWS(calc(20,0,'%'),std::invalid_argument);
+}
+
+/******** Sevensegment Tests**********/
+void testPrintLargeNumber333(){
+	std::ostringstream o{};
+	std::istringstream in{"333"};
+	printLargeNumber(o,in);
+	std::string expected{" -  -  - \n"
+						 "  |  |  |\n"
+						 " -  -  - \n"
+						 "  |  |  |\n"
+						 " -  -  - \n"
+	};
+	ASSERT_EQUAL(expected, o.str());
+}
+
+void testPrintSingleLargeNumber3(){
+	std::ostringstream o{};
+	std::istringstream in{"3"};
+	std::string expected{" - \n"
+						 "  |\n"
+						 " - \n"
+						 "  |\n"
+						 " - \n"};
+	printLargeNumber(o,in);
+	ASSERT_EQUAL(expected, o.str());
+}
+
+/******** PocketCalculator Tests**********/
+
+
+void runAllTests(int argc, char const *argv[]){
+	cute::suite s;
+	s.push_back(CUTE(testMultiplication));
+	s.push_back(CUTE(testMultiplicationOverflow));
+	s.push_back(CUTE(testDivision));
+	s.push_back(CUTE(testAddition));
+	s.push_back(CUTE(testSubtraction));
+	s.push_back(CUTE(testDivisionThroughZero));
+	s.push_back(CUTE(testModulo));
+	s.push_back(CUTE(testModuloWithZero));
+	s.push_back(CUTE(testPrintLargeNumber333));
+	s.push_back(CUTE(testPrintSingleLargeNumber3));
+	cute::xml_file_opener xmlfile(argc,argv);
+	cute::xml_listener<cute::ide_listener<> >  lis(xmlfile.out);
+	cute::makeRunner(lis,argc,argv)(s, "AllTests");
+}
+
+int main(int argc, char const *argv[]){
+    runAllTests(argc,argv);
+    return 0;
+}
+
+
+

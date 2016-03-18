@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;05_Tracer/tracer_not_withException&apos; to &apos;tracer_note_withException&apos;" description="Rename resource &apos;tracer_not_withException&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="tracer_not_withException" name="tracer_note_withException" stamp="1447235340753" updateReferences="true"/>
+</session>

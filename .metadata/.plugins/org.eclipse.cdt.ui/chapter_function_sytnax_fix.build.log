@@ -1,0 +1,7 @@
+19:20:04 **** Incremental Build of configuration Debug for project chapter_function_sytnax_fix ****
+Info: Internal Builder is used for build
+g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o overload.o "..\\overload.cpp" 
+g++ -o chapter_function_sytnax_fix.exe function_sytanx.o overload.o 
+
+19:20:05 Build Finished (took 1s.46ms)
+

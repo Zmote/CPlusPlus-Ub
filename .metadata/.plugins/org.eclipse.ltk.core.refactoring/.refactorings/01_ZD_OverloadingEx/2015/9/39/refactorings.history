@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;01_ZD_OverloadingEx/sayHello.h&apos; to &apos;hello_c.h&apos;" description="Rename resource &apos;sayHello.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="sayHello.h" name="hello_c.h" stamp="1443072559200" updateReferences="true"/>
+</session>

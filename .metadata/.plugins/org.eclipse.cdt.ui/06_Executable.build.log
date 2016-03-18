@@ -1,0 +1,6 @@
+22:16:20 **** Incremental Build of configuration Debug for project 06_Executable ****
+Info: Internal Builder is used for build
+g++ "-LC:\\Users\\Zmote\\Dropbox\\cWorkSpace\\06_Library\\Debug" "-LC:\\Users\\Zmote\\Dropbox\\cWorkSpace\\06_Date\\Debug" -o 06_Executable.exe main.o -l06_Library -l06_Date 
+
+22:16:20 Build Finished (took 741ms)
+

@@ -1,0 +1,6 @@
+19:47:32 **** Incremental Build of configuration Debug for project 05_Library ****
+Info: Internal Builder is used for build
+g++ -shared -o lib05_Library.dll calc.o pocketcalculator.o sevensegment.o w05_algo.o 
+
+19:47:33 Build Finished (took 935ms)
+

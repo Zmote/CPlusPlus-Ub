@@ -1,0 +1,5 @@
+#include "Date.h"
+
+int main(){
+	Date adate{2015,Date::November,12};
+}

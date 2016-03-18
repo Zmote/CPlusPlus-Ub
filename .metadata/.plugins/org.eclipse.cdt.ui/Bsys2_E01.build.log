@@ -1,0 +1,74 @@
+17:49:33 **** Incremental Build of configuration Debug for project Bsys2_E01 ****
+Info: Internal Builder is used for build
+gcc -o Bsys2_E01.exe wprog1.o 
+wprog1.o:crtexe.c:(.text+0x4e0): multiple definition of `WinMainCRTStartup'
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o:crtexe.c:(.text+0x4e0): first defined here
+wprog1.o:crtexe.c:(.text+0x510): multiple definition of `mainCRTStartup'
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o:crtexe.c:(.text+0x510): first defined here
+wprog1.o:cygming-crtbegin.c:(.text+0x550): multiple definition of `__gcc_register_frame'
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/crtbegin.o:cygming-crtbegin.c:(.text+0x10): first defined here
+wprog1.o:cygming-crtbegin.c:(.text+0x5b0): multiple definition of `__gcc_deregister_frame'
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/crtbegin.o:cygming-crtbegin.c:(.text+0x70): first defined here
+wprog1.o:crt_handler.c:(.rdata+0x430): multiple definition of `.refptr.__native_startup_state'
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o:crtexe.c:(.rdata$.refptr.__native_startup_state[.refptr.__native_startup_state]+0x0): first defined here
+wprog1.o:crt_handler.c:(.rdata+0x520): multiple definition of `.refptr.mingw_initltsdyn_force'
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o:crtexe.c:(.rdata$.refptr.mingw_initltsdyn_force[.refptr.mingw_initltsdyn_force]+0x0): first defined here
+wprog1.o:crt_handler.c:(.rdata+0x3c0): multiple definition of `.refptr.__imp__fmode'
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o:crtexe.c:(.rdata$.refptr.__imp__fmode[.refptr.__imp__fmode]+0x0): first defined here
+wprog1.o:crt_handler.c:(.rdata+0x3a0): multiple definition of `.refptr.__imp___initenv'
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o:crtexe.c:(.rdata$.refptr.__imp___initenv[.refptr.__imp___initenv]+0x0): first defined here
+wprog1.o:crt_handler.c:(.rdata+0x4d0): multiple definition of `.refptr._matherr'
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o:crtexe.c:(.rdata$.refptr._matherr[.refptr._matherr]+0x0): first defined here
+wprog1.o:crt_handler.c:(.rdata+0x530): multiple definition of `.refptr.mingw_initltssuo_force'
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o:crtexe.c:(.rdata$.refptr.mingw_initltssuo_force[.refptr.mingw_initltssuo_force]+0x0): first defined here
+wprog1.o:crt_handler.c:(.rdata+0x4a0): multiple definition of `.refptr._dowildcard'
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o:crtexe.c:(.rdata$.refptr._dowildcard[.refptr._dowildcard]+0x0): first defined here
+wprog1.o:crt_handler.c:(.rdata+0x450): multiple definition of `.refptr.__onexitend'
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o:crtexe.c:(.rdata$.refptr.__onexitend[.refptr.__onexitend]+0x0): first defined here
+wprog1.o:crt_handler.c:(.rdata+0x500): multiple definition of `.refptr.mingw_initcharmax'
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o:crtexe.c:(.rdata$.refptr.mingw_initcharmax[.refptr.mingw_initcharmax]+0x0): first defined here
+wprog1.o:crt_handler.c:(.rdata+0x3e0): multiple definition of `.refptr.__mingw_oldexcpt_handler'
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o:crtexe.c:(.rdata$.refptr.__mingw_oldexcpt_handler[.refptr.__mingw_oldexcpt_handler]+0x0): first defined here
+wprog1.o:crt_handler.c:(.rdata+0x480): multiple definition of `.refptr.__xi_a'
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o:crtexe.c:(.rdata$.refptr.__xi_a[.refptr.__xi_a]+0x0): first defined here
+wprog1.o:crt_handler.c:(.rdata+0x4e0): multiple definition of `.refptr._newmode'
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o:crtexe.c:(.rdata$.refptr._newmode[.refptr._newmode]+0x0): first defined here
+wprog1.o:crtexe.c:(.CRT+0x8): multiple definition of `mingw_pcppinit'
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o:crtexe.c:(.CRT$XCAA+0x0): first defined here
+wprog1.o:crt_handler.c:(.rdata+0x510): multiple definition of `.refptr.mingw_initltsdrot_force'
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o:crtexe.c:(.rdata$.refptr.mingw_initltsdrot_force[.refptr.mingw_initltsdrot_force]+0x0): first defined here
+wprog1.o:crt_handler.c:(.rdata+0x420): multiple definition of `.refptr.__native_startup_lock'
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o:crtexe.c:(.rdata$.refptr.__native_startup_lock[.refptr.__native_startup_lock]+0x0): first defined here
+wprog1.o:crt_handler.c:(.rdata+0x380): multiple definition of `.refptr.__dyn_tls_init_callback'
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o:crtexe.c:(.rdata$.refptr.__dyn_tls_init_callback[.refptr.__dyn_tls_init_callback]+0x0): first defined here
+wprog1.o:crtexe.c:(.text+0x540): multiple definition of `.weak._Jv_RegisterClasses.__gcc_register_frame'
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/crtbegin.o:cygming-crtbegin.c:(.text+0x0): first defined here
+wprog1.o:crtexe.c:(.data+0x0): multiple definition of `__mingw_winmain_nShowCmd'
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o:crtexe.c:(.data+0x0): first defined here
+wprog1.o:crtexe.c:(.CRT+0x20): multiple definition of `mingw_pcinit'
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o:crtexe.c:(.CRT$XIAA+0x0): first defined here
+wprog1.o:crt_handler.c:(.rdata+0x4c0): multiple definition of `.refptr._gnu_exception_handler'
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o:crtexe.c:(.rdata$.refptr._gnu_exception_handler[.refptr._gnu_exception_handler]+0x0): first defined here
+wprog1.o:crt_handler.c:(.rdata+0x440): multiple definition of `.refptr.__onexitbegin'
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o:crtexe.c:(.rdata$.refptr.__onexitbegin[.refptr.__onexitbegin]+0x0): first defined here
+wprog1.o:crt_handler.c:(.rdata+0x4f0): multiple definition of `.refptr.mingw_app_type'
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o:crtexe.c:(.rdata$.refptr.mingw_app_type[.refptr.mingw_app_type]+0x0): first defined here
+wprog1.o:crt_handler.c:(.rdata+0x3b0): multiple definition of `.refptr.__imp__acmdln'
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o:crtexe.c:(.rdata$.refptr.__imp__acmdln[.refptr.__imp__acmdln]+0x0): first defined here
+wprog1.o:crt_handler.c:(.rdata+0x390): multiple definition of `.refptr.__image_base__'
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o:crtexe.c:(.rdata$.refptr.__image_base__[.refptr.__image_base__]+0x0): first defined here
+wprog1.o:crt_handler.c:(.rdata+0x4b0): multiple definition of `.refptr._fmode'
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o:crtexe.c:(.rdata$.refptr._fmode[.refptr._fmode]+0x0): first defined here
+wprog1.o:crt_handler.c:(.rdata+0x460): multiple definition of `.refptr.__xc_a'
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o:crtexe.c:(.rdata$.refptr.__xc_a[.refptr.__xc_a]+0x0): first defined here
+wprog1.o:crt_handler.c:(.rdata+0x490): multiple definition of `.refptr.__xi_z'
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o:crtexe.c:(.rdata$.refptr.__xi_z[.refptr.__xi_z]+0x0): first defined here
+wprog1.o:crt_handler.c:(.rdata+0x340): multiple definition of `.refptr._MINGW_INSTALL_DEBUG_MATHERR'
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o:crtexe.c:(.rdata$.refptr._MINGW_INSTALL_DEBUG_MATHERR[.refptr._MINGW_INSTALL_DEBUG_MATHERR]+0x0): first defined here
+wprog1.o:crt_handler.c:(.rdata+0x470): multiple definition of `.refptr.__xc_z'
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o:crtexe.c:(.rdata$.refptr.__xc_z[.refptr.__xc_z]+0x0): first defined here
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/5.1.0/crtbegin.o:cygming-crtbegin.c:(.text+0x66): undefined reference to `_Jv_RegisterClasses'
+collect2.exe: error: ld returned 1 exit status
+
+17:49:33 Build Finished (took 225ms)
+

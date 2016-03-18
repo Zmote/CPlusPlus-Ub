@@ -1,0 +1,11 @@
+#ifndef WORD_H_
+#define WORD_H_
+
+class Word{
+std::string word{};
+public:
+	Word();
+};
+
+
+#endif /* WORD_H_ */

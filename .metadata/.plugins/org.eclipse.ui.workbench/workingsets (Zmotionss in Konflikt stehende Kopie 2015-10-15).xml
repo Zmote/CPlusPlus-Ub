@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1444749555863_1" label="C++_Lecture Examples" name="C++_Lecture Examples">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/unorderedsetremovevowels" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/sumd" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/move_only_fixed" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/iteratorexample" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/DateTest" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/RingModulo5InOutConversion" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/greeting" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/main_try_catch" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/DateTestWithBoostOperators" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/DateTestWithEnumerationForMonths" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/TracerDemo" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/chapter_function_syntax_lib" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/unordered_example" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/averagef" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/wc" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/lc-getline" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Hello" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/commonsequencecontainerfeatures" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/demosearchmismatch" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/demo_accumulate_string" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/multisetexample" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/DateInitializers" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/chacount" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/chapter_function_syntax_test" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/charc" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/tolower" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/exception_testing" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/fracttab" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/chapter_function_syntax_move_ctor" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/chapter_function_sytnax_fix" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/maplegacyloop" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/move_only" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/RingModulo5ConstexprTest" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/cat" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/partitiondemo" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/lcount" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/TracerMoveDemo" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/enumDemo" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/HelloMain" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/how_old_are_you_fragile" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/how_old_are_you_robust" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/bad_relational_operator_example" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/stack_and_queue_example" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/typeinfo_for_literals" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/allcharc" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/democopybackward" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/unordered_mapcountvowels" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Date" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/charcount_for_eof_demo" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/move_overload_demo" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/vectordemo" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/copycat" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/moved_overload_demo_fix" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/namespacesyntax" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/chapter_function_syntax" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/DateWithBoostOperators" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/demoheap" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/formatted_output" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/MoveOnly" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/bad_greeting" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/lc-newline" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/RingModulo5MixedArithmeticTest" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/sumi" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/wcount" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/exception_syntax" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/containerfeatures" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/lecture_examples" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/RingModulo5MixedArithmetic" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/helloworld" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/demorotate" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/DateTestInitializers" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/multab" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/demolambda" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/move_enabled" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/setexample" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/sumf" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/RingModulo5Constexpr" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/squarespartial_sumtransform" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/how_old_are_you_robust_ignoring" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/acount" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/mapcountvowels" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/ex_time_container_performance" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/RingModulo5InOutConversionTest" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/demosetalgorithms" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/algorithmdemo" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/tolower_chars" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/HelloTest" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/chcount" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/countvowelsmultiset" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/DateWithEnumerationForMonths" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/DateCheckSyntax" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/mapcountwords" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/averagei" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/type_conversion_and_ub" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1444749691982_2" label="C++_Week_04" name="C++_Week_04">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Testat1Lib" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Testat1Ex" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1444749719084_3" label="C++_Week_01" name="C++_Week_01">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/01_ZD_Hello_ExList4" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/01_ZD_Dep_Hello" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/01_ZD_CPPLibrary" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/01_ZD_Hello_Ex5" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/01_ZD_HelloSpecial" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/01_ZD_Hello" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/01_ZD_Hello1_Ex" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/01_ZD_Hello_List5" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/01_ZD_OverloadingEx" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/01_ZD_CUTECPPLibrary" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/01_ZD_HelloWorld" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1444749756657_4" label="C++_Week_02" name="C++_Week_02">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/02_ZD_AlgoEx" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/02_ZD_BartenderCheatSheet" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/02_ZD_ExperimentsAnswers" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/02_ZD_CalcInputStream" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/02_ZD_CalcTest" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/02_ZD_CalcEx" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/02_ZD_Calculator" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/02_ZD_AlgoLib" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/02_ZD_ExperimentsGreeting" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/02_ZD_OptionalSumNumbers" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/02_ZD_ExperimentsConditional" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/02_ZD_OptionalMultab" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/02_ZD_AlgoTest" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1444749785196_6" label="C++_Week_03" name="C++_Week_03">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/03_ZD_LargeNumbersLib" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/03_ZD_LargeNumbersMain" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/03_ZD_LargeNumbersTest" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1444758103601_18" label="Open Questions" name="Open Questions">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/moved_overload_demo_fix" type="4"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1441689685686_0" label="Window Working Set" name="Aggregate for window 1441689685686"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1444758129451_23" label="Multiple Working Sets" name="Aggregate:C++_Lecture Examples:C++_Week_01:C++_Week_02:C++_Week_03:C++_Week_04:">
+<workingSet IMemento.internal.id="C++_Lecture Examples"/>
+<workingSet IMemento.internal.id="C++_Week_01"/>
+<workingSet IMemento.internal.id="C++_Week_02"/>
+<workingSet IMemento.internal.id="C++_Week_03"/>
+<workingSet IMemento.internal.id="C++_Week_04"/>
+</workingSet>
+<mruList name="C++_Lecture Examples"/>
+<mruList name="Open Questions"/>
+<mruList name="C++_Week_04"/>
+<mruList name="C++_Week_03"/>
+<mruList name="C++_Week_02"/>
+</workingSetManager>

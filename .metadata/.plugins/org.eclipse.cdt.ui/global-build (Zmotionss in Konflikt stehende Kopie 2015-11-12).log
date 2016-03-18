@@ -1,0 +1,25 @@
+17:53:50 **** Incremental Build of configuration Debug for project 06_Date ****
+make all 
+'Building file: ../Date.cpp'
+'Invoking: GCC C++ Compiler'
+g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Date.d" -MT"Date.o" -o "Date.o" "../Date.cpp"
+../Date.cpp: In member function 'std::__cxx11::string Date::day_of_week()':
+../Date.cpp:23:6: warning: unused variable 'd' [-Wunused-variable]
+  int d = (day+y+y/4-y/100+y/400+(31*m/12))%7;
+      ^
+../Date.cpp:24:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+'Finished building: ../Date.cpp'
+' '
+'Building file: ../Date2.cpp'
+'Invoking: GCC C++ Compiler'
+g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Date2.d" -MT"Date2.o" -o "Date2.o" "../Date2.cpp"
+'Finished building: ../Date2.cpp'
+' '
+'Building target: lib06_Date.a'
+'Invoking: GCC Archiver'
+ar -r  "lib06_Date.a"  ./Date.o ./Date2.o   
+ar: creating lib06_Date.a
+'Finished building target: lib06_Date.a'
+' '

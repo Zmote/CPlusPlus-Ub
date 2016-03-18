@@ -1,0 +1,8 @@
+#include "w04algo.h"
+#include <cmath>
+#include <iostream>
+
+int main(){
+	//wlist(std::cout,std::cin);
+	printFunctionTable(std::cout,1,9,4,[](double x){return std::cos(x);});
+}

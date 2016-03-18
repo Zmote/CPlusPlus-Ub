@@ -1,0 +1,77 @@
+19:16:42 **** Incremental Build of configuration Debug for project chapter_function_syntax_lib ****
+make all 
+'Building file: ../long_function.cpp'
+'Invoking: GCC C++ Compiler'
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"long_function.d" -MT"long_function.o" -o "long_function.o" "../long_function.cpp"
+../long_function.cpp: In function 'bool writeNTimesToFile(std::__cxx11::string, std::__cxx11::string, size_t)':
+../long_function.cpp:10:21: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  std::ofstream file { filename, std::ios_base::app };
+                     ^
+../long_function.cpp:10:52: error: in C++98 'file' must be initialized by constructor, not by '{...}'
+  std::ofstream file { filename, std::ios_base::app };
+                                                    ^
+../long_function.cpp:10:52: error: no matching function for call to 'std::basic_ofstream<char>::basic_ofstream(<brace-enclosed initializer list>)'
+In file included from ../long_function.cpp:2:0:
+c:\mingw\include\c++\5.1.0\fstream:697:7: note: candidate: std::basic_ofstream<_CharT, _Traits>::basic_ofstream(const char*, std::ios_base::openmode) [with _CharT = char; _Traits = std::char_traits<char>; std::ios_base::openmode = std::_Ios_Openmode]
+       basic_ofstream(const char* __s,
+       ^
+c:\mingw\include\c++\5.1.0\fstream:697:7: note:   no known conversion for argument 1 from 'std::__cxx11::string {aka std::__cxx11::basic_string<char>}' to 'const char*'
+c:\mingw\include\c++\5.1.0\fstream:682:7: note: candidate: std::basic_ofstream<_CharT, _Traits>::basic_ofstream() [with _CharT = char; _Traits = std::char_traits<char>]
+       basic_ofstream(): __ostream_type(), _M_filebuf()
+       ^
+c:\mingw\include\c++\5.1.0\fstream:682:7: note:   candidate expects 0 arguments, 2 provided
+c:\mingw\include\c++\5.1.0\fstream:656:11: note: candidate: std::basic_ofstream<char>::basic_ofstream(const std::basic_ofstream<char>&)
+     class basic_ofstream : public basic_ostream<_CharT,_Traits>
+           ^
+c:\mingw\include\c++\5.1.0\fstream:656:11: note:   candidate expects 1 argument, 2 provided
+../long_function.cpp: In function 'bool writeNTimesToFile2(std::__cxx11::string, std::__cxx11::string, size_t)':
+../long_function.cpp:40:21: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  std::ofstream file { filename, std::ios_base::app };
+                     ^
+../long_function.cpp:40:52: error: in C++98 'file' must be initialized by constructor, not by '{...}'
+  std::ofstream file { filename, std::ios_base::app };
+                                                    ^
+../long_function.cpp:40:52: error: no matching function for call to 'std::basic_ofstream<char>::basic_ofstream(<brace-enclosed initializer list>)'
+In file included from ../long_function.cpp:2:0:
+c:\mingw\include\c++\5.1.0\fstream:697:7: note: candidate: std::basic_ofstream<_CharT, _Traits>::basic_ofstream(const char*, std::ios_base::openmode) [with _CharT = char; _Traits = std::char_traits<char>; std::ios_base::openmode = std::_Ios_Openmode]
+       basic_ofstream(const char* __s,
+       ^
+c:\mingw\include\c++\5.1.0\fstream:697:7: note:   no known conversion for argument 1 from 'std::__cxx11::string {aka std::__cxx11::basic_string<char>}' to 'const char*'
+c:\mingw\include\c++\5.1.0\fstream:682:7: note: candidate: std::basic_ofstream<_CharT, _Traits>::basic_ofstream() [with _CharT = char; _Traits = std::char_traits<char>]
+       basic_ofstream(): __ostream_type(), _M_filebuf()
+       ^
+c:\mingw\include\c++\5.1.0\fstream:682:7: note:   candidate expects 0 arguments, 2 provided
+c:\mingw\include\c++\5.1.0\fstream:656:11: note: candidate: std::basic_ofstream<char>::basic_ofstream(const std::basic_ofstream<char>&)
+     class basic_ofstream : public basic_ostream<_CharT,_Traits>
+           ^
+c:\mingw\include\c++\5.1.0\fstream:656:11: note:   candidate expects 1 argument, 2 provided
+../long_function.cpp: In function 'bool writeNTimesToFile3(std::__cxx11::string, std::__cxx11::string, size_t)':
+../long_function.cpp:69:21: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11
+  std::ofstream file { filename, std::ios_base::app };
+                     ^
+../long_function.cpp:69:52: error: in C++98 'file' must be initialized by constructor, not by '{...}'
+  std::ofstream file { filename, std::ios_base::app };
+                                                    ^
+../long_function.cpp:69:52: error: no matching function for call to 'std::basic_ofstream<char>::basic_ofstream(<brace-enclosed initializer list>)'
+In file included from ../long_function.cpp:2:0:
+c:\mingw\include\c++\5.1.0\fstream:697:7: note: candidate: std::basic_ofstream<_CharT, _Traits>::basic_ofstream(const char*, std::ios_base::openmode) [with _CharT = char; _Traits = std::char_traits<char>; std::ios_base::openmode = std::_Ios_Openmode]
+       basic_ofstream(const char* __s,
+       ^
+c:\mingw\include\c++\5.1.0\fstream:697:7: note:   no known conversion for argument 1 from 'std::__cxx11::string {aka std::__cxx11::basic_string<char>}' to 'const char*'
+c:\mingw\include\c++\5.1.0\fstream:682:7: note: candidate: std::basic_ofstream<_CharT, _Traits>::basic_ofstream() [with _CharT = char; _Traits = std::char_traits<char>]
+       basic_ofstream(): __ostream_type(), _M_filebuf()
+       ^
+c:\mingw\include\c++\5.1.0\fstream:682:7: note:   candidate expects 0 arguments, 2 provided
+c:\mingw\include\c++\5.1.0\fstream:656:11: note: candidate: std::basic_ofstream<char>::basic_ofstream(const std::basic_ofstream<char>&)
+     class basic_ofstream : public basic_ostream<_CharT,_Traits>
+           ^
+c:\mingw\include\c++\5.1.0\fstream:656:11: note:   candidate expects 1 argument, 2 provided
+../long_function.cpp: In function 'int main()':
+../long_function.cpp:78:57: error: 'writeToFile' was not declared in this scope
+  std::cout << writeToFile("hello.txt","hello, world!",10);
+                                                         ^
+make: *** [long_function.o] Error 1
+subdir.mk:18: recipe for target 'long_function.o' failed
+
+19:16:43 Build Finished (took 326ms)
+

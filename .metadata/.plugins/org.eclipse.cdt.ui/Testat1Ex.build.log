@@ -1,0 +1,6 @@
+11:03:16 **** Incremental Build of configuration Debug for project Testat1Ex ****
+Info: Internal Builder is used for build
+g++ "-LC:\\Users\\Zmote\\Dropbox\\cWorkSpace\\Testat1Lib\\Debug" -o Testat1Ex.exe main.o -lTestat1Lib 
+
+11:03:17 Build Finished (took 823ms)
+

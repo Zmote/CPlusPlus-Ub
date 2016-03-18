@@ -1,0 +1,68 @@
+#include "cute.h"
+#include "ide_listener.h"
+#include "xml_listener.h"
+#include "cute_runner.h"
+#include <iostream>
+
+#include "bounded_buffer_signatures_suite.h"
+#include "bounded_buffer_default_behavior_suite.h"
+#include "bounded_buffer_content_suite.h"
+//#include "bounded_buffer_semantic_suite.h"
+//#include "bounded_buffer_student_suite.h"
+
+
+void runAllTests(int argc, char const *argv[]) {
+	cute::xml_file_opener xmlfile(argc, argv);
+	cute::xml_listener<cute::ide_listener<> > lis(xmlfile.out);
+	cute::makeRunner(lis,argc,argv)(make_suite_bounded_buffer_signatures_suite(), "BoundedBuffer Signature Tests");
+	cute::makeRunner(lis,argc,argv)(make_suite_bounded_buffer_default_behavior_suite(), "BoundedBuffer Default Behavior Tests");
+	cute::makeRunner(lis,argc,argv)(make_suite_bounded_buffer_content_suite(), "BoundedBuffer Content Tests");
+//	cute::makeRunner(lis,argc,argv)(make_suite_bounded_buffer_semantic_suite(), "BoundedBuffer Semantic Tests");
+//	cute::makeRunner(lis,argc,argv)(make_suite_bounded_buffer_student_suite(), "BoundedBuffer Student Tests");
+}
+
+void outputTest() {
+		BoundedBuffer<int, 3> buffer { };
+		std::vector<int> frontValues { }, expectedValues { 1, 1, 2, 2, 2, 3, 4, 4, 5, 5, 5, 6, 7 };
+		buffer.push(1);
+		frontValues.push_back(buffer.front());
+		buffer.push(2);
+		frontValues.push_back(buffer.front());
+		buffer.pop();
+		frontValues.push_back(buffer.front());
+		buffer.push(3);
+		frontValues.push_back(buffer.front());
+		buffer.push(4);
+		frontValues.push_back(buffer.front());
+		buffer.pop();
+		frontValues.push_back(buffer.front());
+		buffer.pop();
+		frontValues.push_back(buffer.front());
+		buffer.push(5);
+		frontValues.push_back(buffer.front());
+		buffer.pop();
+		frontValues.push_back(buffer.front());
+		buffer.push(6);
+		frontValues.push_back(buffer.front());
+		buffer.push(7);
+		frontValues.push_back(buffer.front());
+		buffer.pop();
+		frontValues.push_back(buffer.front());
+		buffer.pop();
+		frontValues.push_back(buffer.front());
+		std::cout << "Excpected Values:\n";
+		for(int i: expectedValues){
+			std::cout << i << " ";
+		}
+		std::cout << "\nFront Values:\n";
+		for(int i: frontValues){
+			std::cout << i << " ";
+		}
+}
+
+int main(int argc, char const *argv[]) {
+	outputTest();
+	//runAllTests(argc, argv);
+	return 0;
+}
+

@@ -1,0 +1,12 @@
+#include <iostream>
+
+int main(){
+	int anAnswer{};
+	while(std::cin){
+		if(!(std::cin >> anAnswer)){
+			goto second;
+		}
+		std::cout << anAnswer;
+		second: std::cout << "Failed";
+	}
+}

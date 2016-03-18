@@ -1,0 +1,9 @@
+09:12:04 **** Incremental Build of configuration Debug for project Lecture Examples C++ ****
+Info: Internal Builder is used for build
+g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o "ws02\\tolower_chars\\tolower_chars.o" "..\\ws02\\tolower_chars\\tolower_chars.cpp" 
+g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o "ws01\\HelloTest\\src\\Test.o" "..\\ws01\\HelloTest\\src\\Test.cpp" 
+..\ws01\HelloTest\src\Test.cpp:1:18: fatal error: cute.h: No such file or directory
+compilation terminated.
+
+09:12:05 Build Finished (took 758ms)
+

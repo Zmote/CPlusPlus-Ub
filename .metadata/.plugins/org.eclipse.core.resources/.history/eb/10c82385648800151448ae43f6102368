@@ -1,0 +1,3 @@
+w04algo.h <--> countToLower <--> why is it a bad design? Is it?
+w04algo.cpp <--> output 1.0000 as 1 and not 1.0, valid?
+tracer.cpp <--> Move Constructor strucutre, check if correct.

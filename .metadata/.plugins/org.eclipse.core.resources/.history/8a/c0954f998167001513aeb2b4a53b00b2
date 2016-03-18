@@ -1,0 +1,49 @@
+#include <iostream>
+
+
+int main(){
+std::string name;
+	while(std::cin){
+		std::cin.ignore('ÿ')
+		name += std::cin.get();
+	}
+	std::cout << name;
+}
+
+
+/*int main(){
+	int anAnswer{};
+	while(std::cin){
+		if(!(std::cin >> anAnswer)){
+			if(std::cin.eof()){
+			std::cout << "EOF called";
+		}
+			if(std::cin.fail()){
+				std::cout << "I failed";
+			}
+		}else{
+			std::cout << anAnswer;;
+		}
+	}
+}*/
+
+/*
+ * 1.-----------------------------------------------------------------
+ *The streams failbit is set. The char's are still in the stream, but
+ *The the stream itself isn't accesible anymore --> you can't keep
+ *The reading in new numbers into the stream.
+ * */
+
+/*
+ *2.------------------------------------------------------------------
+ *With a tmp variable, that holds the current info of the stream and
+ *With adds it to my stream. The std::cin reads up to empty spaces and ignores whitespace,
+ *With that's why we need to add strings together.
+ * */
+
+/*
+ *3.------------------------------------------------------------------
+ *Because else it would manipulate only the passed variables within the function
+ *Because of getline and we'd have no side-effects on our original strings
+ * */
+
