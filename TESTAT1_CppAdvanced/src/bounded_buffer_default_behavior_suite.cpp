@@ -1,7 +1,7 @@
 #include "bounded_buffer_default_behavior_suite.h"
 #include "cute.h"
-#include "BoundedBuffer.h"
 #include <boost/type_index.hpp>
+#include "BoundedBuffer.h"
 
 
 void test_default_constructed_const_int_buffer_of_size_thousand_is_empty() {

@@ -1,0 +1,11 @@
+#include "BoundedBuffer.h"
+#include <iostream>
+
+int main(){
+	BoundedBuffer<int> buffer{23};
+	buffer.push(1);
+	buffer.push(2);
+	std::cout << buffer.front();
+	std::cout << buffer.pop();
+	stdd::cout << buffer.front();
+}

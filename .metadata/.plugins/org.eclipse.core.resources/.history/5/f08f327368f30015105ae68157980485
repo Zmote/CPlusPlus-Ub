@@ -1,0 +1,10 @@
+#include <iostream>
+
+int main(){
+	int * ip = new int{5};
+	int ** ipp = &ip;
+	int *** ippp = &ipp;
+	int ** ipp_2 = ipp;
+	int * ip_2 = *ipp;
+	int v = ***ippp;
+}

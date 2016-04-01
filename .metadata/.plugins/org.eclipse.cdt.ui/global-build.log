@@ -1,2 +1,5 @@
-Info: Nothing to build for TESTAT1_CppAdvanced
-Info: Nothing to build for TESTAT1_CppAdvanced
+00:20:11 **** Incremental Build of configuration Debug for project 04_DynamicBoundedBuffer ****
+Info: Internal Builder is used for build
+g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o 04_DynamicBoundedBuffer.exe main.o 
+Info: Nothing to build for 04_DynamicBoundedBuffer

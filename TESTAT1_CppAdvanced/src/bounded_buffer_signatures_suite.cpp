@@ -1,7 +1,7 @@
 #include "bounded_buffer_signatures_suite.h"
 #include "cute.h"
-#include "BoundedBuffer.h"
 #include <boost/type_index.hpp>
+#include "BoundedBuffer.h"
 
 
 void test_bounded_buffer_value_type_is_value() {

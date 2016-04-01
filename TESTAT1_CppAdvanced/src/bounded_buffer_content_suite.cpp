@@ -1,7 +1,7 @@
 #include "bounded_buffer_content_suite.h"
 #include "cute.h"
-#include "BoundedBuffer.h"
 #include <stdexcept>
+#include "BoundedBuffer.h"
 
 struct invoker {
 	constexpr invoker(unsigned long long n) :

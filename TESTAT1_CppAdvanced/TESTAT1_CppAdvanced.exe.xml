@@ -67,6 +67,19 @@
 		<testcase classname="BoundedBuffer Semantic Tests" name="test_element_in_buffer_is_copied_along_assignment_operator_multiple_copies"/>
 		<testcase classname="BoundedBuffer Semantic Tests" name="test_element_in_buffer_is_moved_along_assignment_operator_multiple_moves"/>
 	</testsuite>
-	<testsuite name="BoundedBuffer Student Tests" tests="0">
+	<testsuite name="BoundedBuffer Student Tests" tests="13">
+		<testcase classname="BoundedBuffer Student Tests" name="test_make_bounded_buffer_from_rvalue_argument_contains_one_element"/>
+		<testcase classname="BoundedBuffer Student Tests" name="test_make_bounded_buffer_from_rvalue_argument_object_moved"/>
+		<testcase classname="BoundedBuffer Student Tests" name="test_bounded_buffer_constructed_with_lvalue_argument_object_copied"/>
+		<testcase classname="BoundedBuffer Student Tests" name="test_bounded_buffer_constructed_with_const_lvalue_argument_object_copied"/>
+		<testcase classname="BoundedBuffer Student Tests" name="test_make_bounded_buffer_from_two_rvalue_arguments_contains_two_elements"/>
+		<testcase classname="BoundedBuffer Student Tests" name="test_make_bounded_buffer_from_two_lvalue_arguments_contains_two_elements"/>
+		<testcase classname="BoundedBuffer Student Tests" name="test_make_bounded_buffer_from_too_many_elements_throws"/>
+		<testcase classname="BoundedBuffer Student Tests" name="test_make_bounded_buffer_from_two_rvalue_arguments_first_element_moved"/>
+		<testcase classname="BoundedBuffer Student Tests" name="test_make_bounded_buffer_from_two_rvalue_arguments_second_element_moved"/>
+		<testcase classname="BoundedBuffer Student Tests" name="test_make_bounded_buffer_from_two_rvalue_arguments_first_element_copied"/>
+		<testcase classname="BoundedBuffer Student Tests" name="test_make_bounded_buffer_from_two_mixed_arguments_second_element_moved"/>
+		<testcase classname="BoundedBuffer Student Tests" name="test_make_bounded_buffer_from_two_rvalue_arguments_second_element_copied"/>
+		<testcase classname="BoundedBuffer Student Tests" name="test_make_bounded_buffer_from_two_mixed_arguments_first_element_moved"/>
 	</testsuite>
 </testsuites>

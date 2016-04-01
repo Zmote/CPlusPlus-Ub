@@ -32,6 +32,7 @@ public:
 	using const_reference = typename container_type::const_reference;
 	using reference = typename container_type::reference;
 
+
 	BoundedBuffer() = default;
 	BoundedBuffer(BoundedBuffer const & elem):myContainer{elem.myContainer},
 			elements{elem.elements},index{elem.index}{};
@@ -121,7 +122,25 @@ public:
 		index = elem.index;
 		elem.elements = swap_store_buffer.elements;
 		elem.index = swap_store_buffer.index;
+	};
 
+	void push_many(){
+
+	}
+
+	template<typename FIRST, typename...REST>
+	void push_many(FIRST && first, REST&&...rest) {
+	  push(std::forward<FIRST>(first));
+	  push_many(std::forward<decltype(rest)>(rest)...);
+	}
+
+	template<typename...TYPE>
+	static BoundedBuffer<T,SIZET> make_buffer(TYPE&&...param){
+		int const number_of_arguments = sizeof...(TYPE);
+		if(number_of_arguments > SIZET)throw std::invalid_argument{"Invalid argument"};
+		BoundedBuffer<T,SIZET> buffer{};
+		buffer.push_many(std::forward<TYPE>(param)...);
+		return buffer;
 	};
 };
 

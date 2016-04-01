@@ -1,0 +1,152 @@
+#ifndef BOUNDEDBUFFER_H_
+#define BOUNDEDBUFFER_H_
+#include <array>
+#include <stdexcept>
+#include <algorithm>
+
+template<typename T, std::size_t SIZET>
+class BoundedBuffer{
+	using container_type = std::array<T,SIZET>;
+	container_type myContainer;
+	unsigned int elements{0};
+	unsigned int index{0};
+	T * dynamic_container;
+	unsigned int dynamic_container_size = 10;
+
+	bool index_is_over_buffer_size() const {
+		return index > myContainer.size();
+	}
+
+	void pre_push_operation() const{
+		if(full()) throw std::logic_error{"Buffer is full"};
+	};
+
+	void post_push_operation(){
+		if(!index_is_over_buffer_size()){
+			elements++;
+		}
+		index++;
+	};
+
+public:
+	using size_type =  typename container_type::size_type;
+	using value_type = typename container_type::value_type;
+	using const_reference = typename container_type::const_reference;
+	using reference = typename container_type::reference;
+
+
+	BoundedBuffer(){
+		dynamic_container = new T[dynamic_container_size]{};
+	}
+
+	BoundedBuffer(BoundedBuffer const & elem):elements{elem.elements},index{elem.index},
+			dynamic_container_size{elem.dynamic_container_size}{
+		dynamic_container = new T[dynamic_container_size]{};
+		std::copy(elem.dynamic_container,elem.dynamic_container+elem.dynamic_container_size,dynamic_container);
+	}
+
+	BoundedBuffer(BoundedBuffer && elem):elements{std::move(elem.elements)},index{std::move(elem.index)},
+			dynamic_container_size{std::move(elem.dynamic_container_size)}{
+		dynamic_container = std::move(elem);
+	}
+
+	BoundedBuffer & operator=(BoundedBuffer const & elem){
+		dynamic_container = new T[elem.dynamic_container_size]{};
+		std::copy(elem.dynamic_container,elem.dynamic_container+elem.dynamic_container_size,dynamic_container);
+		elements = elem.elements;
+		index = elem.index;
+		return *this;
+	}
+
+	BoundedBuffer & operator=(BoundedBuffer && elem){
+		dynamic_container_size = std::move(elem.dynamic_container_size);
+		dynamic_container = std::addressof(elem.dynamic_container);
+		elements = std::move(elem.elements);
+		index = std::move(elem.index);
+		return *this;
+	}
+
+	bool empty() const{
+		return elements < 1;
+	};
+
+	bool full() const{
+		return elements == dynamic_container_size;
+	};
+	size_type size() const{
+		return elements;
+	}
+
+	reference front(){
+		if(empty()) throw std::logic_error{"BoundedBuffer is empty"};
+		return dynamic_container[0];
+	};
+	const_reference front() const{
+		if(empty()) throw std::logic_error{"BoundedBuffer is empty"};
+		T const const_ref = dynamic_container[0];
+		return const_ref;
+	};
+
+	reference back(){
+		if(empty()) throw std::logic_error{"BoundedBuffer is empty"};
+		return dynamic_container[((index-1)%dynamic_container_size)];
+	};
+
+	const_reference back() const{
+		if(empty()) throw std::logic_error{"BoundedBuffer is empty"};
+		return myContainer.at((index-1)%myContainer.size());
+	};
+
+	void push(value_type const & elem){
+		pre_push_operation();
+		myContainer.at(index%myContainer.size()) = elem;
+		post_push_operation();
+	};
+
+	void push(value_type && elem){
+		pre_push_operation();
+		myContainer.at(index%myContainer.size()) = std::move(elem);
+		post_push_operation();
+	};
+
+	void pop(){
+		if(empty()) throw std::logic_error{"BoundedBuffer is empty"};
+
+		for(unsigned int i = 0; i < myContainer.size()-1;i++){
+			myContainer.at(i) = myContainer.at(i+1);
+		}
+
+		if(!index_is_over_buffer_size()){
+			elements--;
+		}
+		index--;
+	};
+
+	void swap(BoundedBuffer & elem){
+		std::swap(myContainer,elem);
+		std::swap(myContainer.elements,elem.elements);
+		std::swap(myContainer.index,elem.index);
+	};
+
+	void push_many(){
+
+	}
+
+	template<typename FIRST, typename...REST>
+	void push_many(FIRST && first, REST&&...rest) {
+	  push(std::forward<FIRST>(first));
+	  push_many(std::forward<decltype(rest)>(rest)...);
+	}
+
+	template<typename...TYPE>
+	static BoundedBuffer<T,SIZET> make_buffer(TYPE&&...param){
+		int const number_of_arguments = sizeof...(TYPE);
+		if(number_of_arguments > SIZET)throw std::invalid_argument{"Invalid argument"};
+		BoundedBuffer<T,SIZET> buffer{};
+		buffer.push_many(std::forward<TYPE>(param)...);
+		return buffer;
+	};
+};
+
+
+#endif /* BOUNDEDBUFFER_H_ */

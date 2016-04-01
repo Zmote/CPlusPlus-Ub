@@ -1,0 +1,36 @@
+#include "bounded_buffer_student_suite.h"
+#include "cute.h"
+#include "BoundedBuffer.h"
+
+void test_make_bounded_buffer_from_rvalue_argument_contains_one_element() {
+	BoundedBuffer<MemoryOperationCounter, 15> buffer = BoundedBuffer<MemoryOperationCounter, 15>::make_buffer(MemoryOperationCounter{});
+	ASSERT_EQUAL(1, buffer.size());
+}
+
+void test_make_bounded_buffer_from_rvalue_argument_object_moved() {
+	MemoryOperationCounter expected{1, 0, true};
+	BoundedBuffer<MemoryOperationCounter, 15> buffer = BoundedBuffer<MemoryOperationCounter, 15>::make_buffer(MemoryOperationCounter{});
+	ASSERT_EQUAL(expected, buffer.front());
+}
+
+void test_bounded_buffer_constructed_with_lvalue_argument_object_copied() {
+	MemoryOperationCounter expected{0, 1, true};
+	MemoryOperationCounter insertee{};
+	BoundedBuffer<MemoryOperationCounter, 15> buffer = BoundedBuffer<MemoryOperationCounter, 15>::make_buffer(insertee);
+	ASSERT_EQUAL(expected, buffer.front());
+}
+
+void test_bounded_buffer_constructed_with_const_lvalue_argument_object_copied() {
+	MemoryOperationCounter expected{0, 1, true};
+	MemoryOperationCounter const insertee{};
+	BoundedBuffer<MemoryOperationCounter, 15> buffer = BoundedBuffer<MemoryOperationCounter, 15>::make_buffer(insertee);
+	ASSERT_EQUAL(expected, buffer.front());
+}
+
+cute::suite make_suite_bounded_buffer_student_suite(){
+	cute::suite s;
+	return s;
+}
+
+
+
