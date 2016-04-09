@@ -1,0 +1,16 @@
+<testsuites>
+	<testsuite name="AllTests" tests="8">
+		<testcase classname="AllTests" name="test_local_instance_creation_of_not_on_heap"/>
+		<testcase classname="AllTests" name="test_on_heap_creation_with_new_not_possible"/>
+		<testcase classname="AllTests" name="test_on_heap_array_creation_with_new_not_possible"/>
+		<testcase classname="AllTests" name="test_vector_with_not_on_heap_stil_works"/>
+		<testcase classname="AllTests" name="test_attempt_class_with_std_make_unique"/>
+		<testcase classname="AllTests" name="test_new_not_on_heap_as_parameter_for_std_unique_ptr"/>
+		<testcase classname="AllTests" name="test_std_make_shared_to_allocate_not_on_heap_on_heap"/>
+		<testcase classname="AllTests" name="test_create_new_object_and_then_rassign_cheat">
+			<error message="test_create_new_object_and_then_rassign_cheat std::bad_alloc" type="unexpected exception">
+std::bad_alloc
+			</error>
+		</testcase>
+	</testsuite>
+</testsuites>

@@ -3,7 +3,14 @@
 #include <array>
 #include <stdexcept>
 #include <algorithm>
+#include <type_traits>
+//TODO: change std::addressof to direct value access (ie. pointer should "point" directly to object, not to address of object
+//unnecessary level of indirection and potentially hazardous considering that address in the middle could be destroyed
 
+//TODO: you could use <memory> and the according smart poitners to realize the buffer as well. Worth thinking about it.
+
+//TODO: the idea of the "RingBuffer" is that it should automatically overwrite  objects if index out of "capacity" scope
+// see if you can find a solutation which requires no "index_is_over_buffer_size()" implementation
 template<typename T>
 class BoundedBuffer{
 	unsigned int elements{0};
@@ -41,8 +48,17 @@ public:
 	}
 
 	BoundedBuffer(int const buffer_size){
+		//TODO: Check --> if I do it with construcotr var, default constructor ones don't work and vice versa
+		// --> Antwort: placement new sollte beim pushen' geschehen
+		//Zusätzlich, pop Verhalte nicht wie bie stack, sondern entfernen von Vorne
+		// darum das Ringverhalten!, hängt zusammen, die elemente "traversieren" auf dem Ring"
+		char * raw_storage =  new char[(buffer_size*sizeof(T))];
+//		dynamic_container = static_cast<T*>(raw_storage);
+//		for(int i=0;i < buffer_size;i++){
+//			new (dynamic_container + i) T{0};
+//		}
 		dynamic_container_size = buffer_size;
-		dynamic_container = new T[buffer_size]{};
+		//dynamic_container = new T[buffer_size]{};
 	}
 
 	BoundedBuffer(BoundedBuffer const & elem):elements{elem.elements},index{elem.index},
@@ -53,7 +69,7 @@ public:
 
 	BoundedBuffer(BoundedBuffer && elem):elements{std::move(elem.elements)},index{std::move(elem.index)},
 			dynamic_container_size{std::move(elem.dynamic_container_size)}{
-		dynamic_container = std::addressof(elem.dynamic_container);
+		dynamic_container = *elem.dynamic_container;
 		elem.dynamic_container = nullptr;
 	}
 
@@ -109,7 +125,7 @@ public:
 	};
 
 	void push(value_type const & elem){
-		pre_push_operation();
+		pre_push_operation(); // placement new
 		dynamic_container[(index%dynamic_container_size)] = elem;
 		post_push_operation();
 	};

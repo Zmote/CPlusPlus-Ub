@@ -1,0 +1,3 @@
+Note: Try an implementation (like a struct) that has no default constructor
+and try using it with the dynamic bounded buffer and see if it works
+--> there should be more info to this on the exercise sites --> could be a part of the next testat

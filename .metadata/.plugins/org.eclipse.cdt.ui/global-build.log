@@ -1,5 +1,5 @@
-00:20:11 **** Incremental Build of configuration Debug for project 04_DynamicBoundedBuffer ****
+15:28:53 **** Incremental Build of configuration Debug for project 06_Iterators ****
 Info: Internal Builder is used for build
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
-g++ -o 04_DynamicBoundedBuffer.exe main.o 
-Info: Nothing to build for 04_DynamicBoundedBuffer
+g++ -std=c++1y "-IC:\\Users\\Zmote\\Dropbox\\cWorkSpace\\06_Iterators\\cute" "-IC:\\boost_1_60_0" "-IC:\\Program Files\\boost\\boost_1_59_0" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Test.o" "..\\src\\Test.cpp" 
+g++ -o 06_Iterators.exe "src\\Test.o" 
+Info: Nothing to build for 06_Iterators

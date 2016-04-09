@@ -1,1 +1,13 @@
-Info: Nothing to build for 04_DynamicBoundedBuffer
+13:03:33 **** Rebuild of configuration Debug for project 04_DynamicBoundedBuffer ****
+Info: Internal Builder is used for build
+g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+In file included from ..\main.cpp:1:0:
+..\BoundedBuffer.h: In instantiation of 'BoundedBuffer<T>::BoundedBuffer(int) [with T = X]':
+..\main.cpp:17:28:   required from here
+..\BoundedBuffer.h:55:10: warning: unused variable 'raw_storage' [-Wunused-variable]
+   char * raw_storage =  new char[(buffer_size*sizeof(T))];
+          ^
+g++ -o 04_DynamicBoundedBuffer.exe main.o 
+
+13:03:35 Build Finished (took 1s.742ms)
+

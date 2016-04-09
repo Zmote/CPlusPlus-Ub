@@ -1,0 +1,7 @@
+17:06:18 **** Incremental Build of configuration Debug for project 05_NotOnHeap ****
+Info: Internal Builder is used for build
+g++ -std=c++1y "-IC:\\Users\\Zmote\\Dropbox\\cWorkSpace\\05_NotOnHeap\\cute" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Test.o" "..\\src\\Test.cpp" 
+g++ -o 05_NotOnHeap.exe "src\\Test.o" 
+
+17:06:22 Build Finished (took 3s.332ms)
+
