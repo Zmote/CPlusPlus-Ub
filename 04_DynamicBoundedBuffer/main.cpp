@@ -3,6 +3,9 @@
 #include <iostream>
 
 int main(){
+
+	int const && val{int{3}};
+	std::cout << val;
 //	BoundedBuffer<int> buffer{23};
 //
 //	buffer.push(1);
@@ -14,17 +17,17 @@ int main(){
 //		buffer.pop();
 //	}
 
-	BoundedBuffer<X> buffer{23};
-	buffer.push(X{3});
-	buffer.push(X{3});
-	buffer.push(X{3});
-	buffer.push(X{5});
-	buffer.push(X{13});
-	buffer.push(X{34});
-	while(buffer.size()!=0){
-		std::cout << buffer.front().x << "\n";
-		buffer.pop();
-	}
+//	BoundedBuffer<X> buffer{23};
+//	buffer.push(X{3});
+//	buffer.push(X{3});
+//	buffer.push(X{3});
+//	buffer.push(X{5});
+//	buffer.push(X{13});
+//	buffer.push(X{34});
+//	while(buffer.size()!=0){
+//		std::cout << buffer.front().x << "\n";
+//		buffer.pop();
+//	}
 
 //	BoundedBuffer<Y> buffer{23};
 //	buffer.push(Y{});

@@ -5,14 +5,13 @@
 #include <algorithm>
 #include <type_traits>
 
-//TODO: the idea of the "RingBuffer" is that it should automatically overwrite  objects if index out of "capacity" scope
-// see if you can find a solutation which requires no "index_is_over_buffer_size()" implementation
+//TODO: Heap error fixed, but now it's pushing weird values, check out why
 template<typename T>
 class BoundedBuffer{
 	unsigned int head_;
 	unsigned int tail_;
 	unsigned int elements_;
-	void * dynamic_container_;
+	char * dynamic_container_;
 	unsigned int dynamic_container_size_ = 10;
 
 public:
@@ -23,28 +22,32 @@ public:
 
 
 	BoundedBuffer():head_{0},tail_{0},elements_{0}{
-		dynamic_container_ = new unsigned char[dynamic_container_size_*sizeof(T)];
+		dynamic_container_ = new char[(dynamic_container_size_)*sizeof(T)];
 	}
 	~BoundedBuffer(){
-		delete[] (T*)dynamic_container_;
+		while(!empty()){
+			pop();
+		}
+		delete[] dynamic_container_;
 	}
 
-	BoundedBuffer(int const buffer_size):BoundedBuffer(){
+	BoundedBuffer(int const buffer_size):head_{0},tail_{0},elements_{0}{
 		if(buffer_size <= 0) throw std::invalid_argument{"Capacity of BoundedBuffer can't be zero"};
 		dynamic_container_size_ = buffer_size;
+		dynamic_container_ = new char[(dynamic_container_size_)*sizeof(T)];
 	}
 
 	BoundedBuffer(BoundedBuffer const & elem):head_{elem.head_},tail_{elem.tail_},
 			elements_{elem.elements_}{
-		dynamic_container_ = new unsigned char[dynamic_container_size_*sizeof(T)];
 		dynamic_container_size_ = elem.dynamic_container_size_;
-		std::copy((T*)elem.dynamic_container_,((T*)dynamic_container_)+dynamic_container_size_,(T*)dynamic_container_);
+		dynamic_container_ = new char[(dynamic_container_size_)*sizeof(T)];
+		std::copy(elem.dynamic_container_,(dynamic_container_)+dynamic_container_size_,dynamic_container_);
 	}
 
 	BoundedBuffer(BoundedBuffer && elem):head_{std::move(elem.head_)},tail_{std::move(elem.tail_)},
 			elements_{std::move(elem.elements_)},dynamic_container_{std::move(elem.dynamic_container_)},
 			dynamic_container_size_{std::move(elem.dynamic_container_size_)}{
-		elem.dynamic_container_ = nullptr;
+				elem.dynamic_container_ = nullptr;
 	}
 
 	BoundedBuffer & operator=(BoundedBuffer const & elem){
@@ -52,8 +55,8 @@ public:
 		tail_ = elem.tail_;
 		elements_ = elem.elements_;
 		dynamic_container_size_ = elem.dynamic_container_size_;
-		dynamic_container_ = new unsigned char[dynamic_container_size_*sizeof(T)];
-		std::copy((T*)elem.dynamic_container_,((T*)dynamic_container_)+dynamic_container_size_,(T*)dynamic_container_);
+		dynamic_container_ = new char[(dynamic_container_size_)*sizeof(T)];
+		std::copy(elem.dynamic_container_,(dynamic_container_)+dynamic_container_size_,dynamic_container_);
 		return *this;
 	}
 
@@ -84,42 +87,44 @@ public:
 
 	reference front(){
 		if(empty()) throw std::logic_error{"Invalid use of front on empty BoundedBuffer"};
-		return *((T*)dynamic_container_+head_);
+		return *((T*)(dynamic_container_+head_));
 	}
 
 	const_reference front() const{
 		if(empty()) throw std::logic_error{"Invalid use of front on empty BoundedBuffer"};
-		return *((T*)dynamic_container_+head_);
+		return *((T*)(dynamic_container_+head_));
 	}
 
 	reference back(){
 		if(empty()) throw std::logic_error{"Invalid use of back on empty BoundedBuffer"};
-		return *((T*)dynamic_container_+tail_);
+		int back_tail_ = (tail_-1) < 0? dynamic_container_size_ -1: tail_-1;
+		return *((T*)(dynamic_container_+back_tail_));
 	}
 
 	const_reference back() const{
 		if(empty()) throw std::logic_error{"Invalid use of back on empty BoundedBuffer"};
-		return *((T*)dynamic_container_+tail_);
+		int back_tail_ = (tail_-1) < 0? dynamic_container_size_ -1: tail_-1;
+		return *((T*)(dynamic_container_+back_tail_));
 	}
 
 	void push(value_type const & elem){
 		if(full()) throw std::logic_error{"Invalid use of push on full BoundedBuffer"};
-		new (((T*)(dynamic_container_))+tail_) T{elem};
+		::new (dynamic_container_+tail_) T{elem};
 		tail_ = (tail_+1)%dynamic_container_size_;
 		elements_++;
 	}
 
 	void push(value_type && elem){
 		if(full()) throw std::logic_error{"Invalid use of push on full BoundedBuffer"};
-		new (((T*)(dynamic_container_))+tail_) T{std::move(elem)};
+		::new (dynamic_container_+tail_) T{std::move(elem)};
 		tail_ = (tail_+1)%dynamic_container_size_;
 		elements_++;
 	}
 
 	void pop(){
 		if(empty()) throw std::logic_error{"Invalid use of pop on empty BoundedBuffer"};
-		head_ = (tail_+(dynamic_container_size_-elements_))%dynamic_container_size_;
-
+		T* pointer = (T*)(dynamic_container_ + head_);
+		pointer->~T();
 		head_ = (head_+1)%dynamic_container_size_;
 		elements_--;
 	}

@@ -6,13 +6,13 @@
 
 template<typename T>
 class BoundedBuffer{
-	unsigned int elements{0};
-	unsigned int index{0};
-	T * dynamic_container;
-	unsigned int dynamic_container_size = 10;
+	unsigned int elements_{0};
+	unsigned int tail_{0};
+	T * dynamic_container_;
+	unsigned int dynamic_container_size_ = 10;
 
 	bool index_is_over_buffer_size() const {
-		return index > dynamic_container_size;
+		return tail_ > dynamic_container_size_;
 	}
 
 	void pre_push_operation() const{
@@ -21,9 +21,9 @@ class BoundedBuffer{
 
 	void post_push_operation(){
 		if(!index_is_over_buffer_size()){
-			elements++;
+			elements_++;
 		}
-		index++;
+		tail_++;
 	};
 
 public:
@@ -33,113 +33,113 @@ public:
 	using reference = T &;
 
 	BoundedBuffer(){
-		dynamic_container = new T[dynamic_container_size]{};
+		dynamic_container_ = new T[dynamic_container_size_]{};
 	}
 	~BoundedBuffer(){
-		delete[] dynamic_container;
+		delete[] dynamic_container_;
 	}
 
 	BoundedBuffer(int const buffer_size){
 		if(buffer_size == 0) throw std::invalid_argument{"Buffer size can't be zero"};
-		dynamic_container_size = buffer_size;
-		dynamic_container = new T[buffer_size]{};
+		dynamic_container_size_ = buffer_size;
+		dynamic_container_ = new T[buffer_size]{};
 	}
 
-	BoundedBuffer(BoundedBuffer const & elem):elements{elem.elements},index{elem.index},
-			dynamic_container_size{elem.dynamic_container_size}{
-		dynamic_container = new T[dynamic_container_size]{};
-		std::copy(elem.dynamic_container,elem.dynamic_container+elem.elements,dynamic_container);
+	BoundedBuffer(BoundedBuffer const & elem):elements_{elem.elements_},tail_{elem.tail_},
+			dynamic_container_size_{elem.dynamic_container_size_}{
+		dynamic_container_ = new T[dynamic_container_size_]{};
+		std::copy(elem.dynamic_container_,elem.dynamic_container_+elem.elements_,dynamic_container_);
 	}
 
-	BoundedBuffer(BoundedBuffer && elem):elements{std::move(elem.elements)},index{std::move(elem.index)},
-			dynamic_container_size{std::move(elem.dynamic_container_size)}{
-		dynamic_container = elem.dynamic_container;
-		elem.dynamic_container = nullptr;
+	BoundedBuffer(BoundedBuffer && elem):elements_{std::move(elem.elements_)},tail_{std::move(elem.tail_)},
+			dynamic_container_size_{std::move(elem.dynamic_container_size_)}{
+		dynamic_container_ = elem.dynamic_container_;
+		elem.dynamic_container_ = nullptr;
 	}
 
 	BoundedBuffer & operator=(BoundedBuffer const & elem){
 		if(this != &elem){
-			dynamic_container_size = elem.dynamic_container_size;
-			dynamic_container = new T[elem.dynamic_container_size]{};
-			std::copy(elem.dynamic_container,elem.dynamic_container+elem.elements,dynamic_container);
-			elements = elem.elements;
-			index = elem.index;
+			dynamic_container_size_ = elem.dynamic_container_size_;
+			dynamic_container_ = new T[elem.dynamic_container_size_]{};
+			std::copy(elem.dynamic_container_,elem.dynamic_container_+elem.elements_,dynamic_container_);
+			elements_ = elem.elements_;
+			tail_ = elem.tail_;
 		}
 		return *this;
 	}
 
 	BoundedBuffer & operator=(BoundedBuffer && elem){
-		dynamic_container_size = std::move(elem.dynamic_container_size);
-		dynamic_container = elem.dynamic_container;
-		elem.dynamic_container = nullptr;
-		elements = std::move(elem.elements);
-		index = std::move(elem.index);
+		dynamic_container_size_ = std::move(elem.dynamic_container_size_);
+		dynamic_container_ = elem.dynamic_container_;
+		elem.dynamic_container_ = nullptr;
+		elements_ = std::move(elem.elements_);
+		tail_ = std::move(elem.tail_);
 		return *this;
 	}
 
 	bool empty() const{
-		return elements < 1;
+		return elements_ < 1;
 	};
 
 	bool full() const{
-		return elements == dynamic_container_size;
+		return elements_ == dynamic_container_size_;
 	};
 	size_type size() const{
-		return elements;
+		return elements_;
 	}
 
 	size_type capacity() const{
-		return dynamic_container_size;
+		return dynamic_container_size_;
 	}
 
 	reference front(){
 		if(empty()) throw std::logic_error{"BoundedBuffer is empty"};
-		return dynamic_container[0];
+		return dynamic_container_[0];
 	};
 	const_reference front() const{
 		if(empty()) throw std::logic_error{"BoundedBuffer is empty"};
-		return dynamic_container[0];
+		return dynamic_container_[0];
 	};
 
 	reference back(){
 		if(empty()) throw std::logic_error{"BoundedBuffer is empty"};
-		return dynamic_container[((index-1)%dynamic_container_size)];
+		return dynamic_container_[((tail_-1)%dynamic_container_size_)];
 	};
 
 	const_reference back() const{
 		if(empty()) throw std::logic_error{"BoundedBuffer is empty"};
-		return dynamic_container[((index-1)%dynamic_container_size)];
+		return dynamic_container_[((tail_-1)%dynamic_container_size_)];
 	};
 
 	void push(value_type const & elem){
 		pre_push_operation();
-		dynamic_container[(index%dynamic_container_size)] = elem;
+		dynamic_container_[(tail_%dynamic_container_size_)] = elem;
 		post_push_operation();
 	};
 
 	void push(value_type && elem){
 		pre_push_operation();
-		dynamic_container[(index%dynamic_container_size)] = std::move(elem);
+		dynamic_container_[(tail_%dynamic_container_size_)] = std::move(elem);
 		post_push_operation();
 	};
 
 	void pop(){
 		if(empty()) throw std::logic_error{"BoundedBuffer is empty"};
 
-		for(unsigned int i = 0; i <dynamic_container_size-1;i++){
-			dynamic_container[i] = std::move(dynamic_container[i+1]);
+		for(unsigned int i = 0; i <dynamic_container_size_-1;i++){
+			dynamic_container_[i] = std::move(dynamic_container_[i+1]);
 		}
 
 		if(!index_is_over_buffer_size()){
-			elements--;
+			elements_--;
 		}
-		index--;
+		tail_--;
 	};
 
 	void swap(BoundedBuffer & elem){
-		std::swap(dynamic_container,elem.dynamic_container);
-		std::swap(elements,elem.elements);
-		std::swap(index,elem.index);
+		std::swap(dynamic_container_,elem.dynamic_container_);
+		std::swap(elements_,elem.elements_);
+		std::swap(tail_,elem.tail_);
 	};
 
 	void push_many(){
