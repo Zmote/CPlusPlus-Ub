@@ -1,13 +1,14 @@
 #ifndef BOUNDEDBUFFER_H_
 #define BOUNDEDBUFFER_H_
-#include <array>
+
 #include <stdexcept>
 #include <iterator>
+#include <memory>
 #include <algorithm>
 #include <type_traits>
 
-//TODO: implement iterator
-//TODO: fix errors
+//TODO: implement iterator logic --> proper implementation of iterator ops outstanding
+//TODO: Minor fix of destructor op, 2x instead of 1x
 
 template<typename T>
 class BoundedBuffer{
@@ -23,8 +24,175 @@ public:
 	using const_reference = T const &;
 	using reference = T &;
 
-	struct iterator:std::iterator<std::output_iterator_tag,BoundedBuffer>{
-		//Iterator logic here
+	struct iterator:std::iterator<std::random_access_iterator_tag,BoundedBuffer>{
+		using difference_type = typename iterator::difference_type;
+		value_type* value;
+		value_type* start;
+		value_type* end;
+		char * dynamic_container_;
+		unsigned int dynamic_container_size_;
+		explicit iterator(value_type* start,value_type* end, char * dynamic_c, unsigned int dynamic_c_s)
+		:value{start},start{start},end{end},dynamic_container_{dynamic_c},dynamic_container_size_{dynamic_c_s}{}
+
+		reference & operator*()const{
+			return *value;
+		}
+
+		value_type* operator->() const{
+			return value;
+		}
+
+		bool operator==(iterator const & it) const{return value == it.value;}
+		bool operator!=(iterator const & it) const{return !(*this == it);}
+		bool operator<(iterator const & it)const{return value < it.value;}
+		bool operator>(iterator const & it)const{return value > it.value;}
+
+		reference operator[](int index){
+
+		}
+
+		iterator & operator--(){
+			auto buffer = reinterpret_cast<value_type*>(dynamic_container_);
+			int currentIndex = value - buffer;
+			int previousIndex = currentIndex-1 < 0?dynamic_container_size_-1:currentIndex-1;
+			value = reinterpret_cast<value_type*>(dynamic_container_+(previousIndex));
+			return *this;
+		}
+
+		iterator & operator--(int){
+			auto old = *this;
+			--(*this);
+			return old;
+		}
+		iterator & operator-(int const & count){
+
+		}
+		difference_type & operator-(iterator const & it){
+
+		}
+
+		iterator & operator-=(int const & count){
+
+		}
+
+		difference_type & operator-=(iterator const & it){
+
+		}
+
+		iterator & operator++(){
+			auto buffer = reinterpret_cast<value_type*>(dynamic_container_);
+			int currentIndex = value - buffer;
+			value = reinterpret_cast<value_type*>(dynamic_container_+(((currentIndex+1)%dynamic_container_size_)*sizeof(T)));
+			if(value == end) throw std::logic_error{"Iterator over end"};
+			return *this;
+		}
+
+		iterator & operator++(int){
+			auto old = *this;
+			++(*this);
+			return old;
+		}
+
+		iterator & operator+(int const & count){
+			for(int i = 0; i < count;i++){
+				++(*this);
+			}
+			return *this;
+		}
+
+		difference_type & operator+(iterator const & it){
+
+		}
+		iterator & operator+=(int const & count){
+			return *this + count;
+		}
+
+		difference_type & operator+=(iterator const & it){
+
+		}
+	};
+
+	struct const_iterator:std::iterator<std::random_access_iterator_tag,BoundedBuffer>{
+		using difference_type = typename iterator::difference_type;
+		value_type const * value;
+		value_type const * start;
+		value_type const * end;
+		char * dynamic_container_;
+		unsigned int dynamic_container_size_;
+		explicit const_iterator(value_type const * start, value_type const * end, char * dynamic_c, unsigned int dynamic_c_s)
+		:value{start}, start{start},end{end},dynamic_container_{dynamic_c},dynamic_container_size_{dynamic_c_s}{}
+
+		const_reference operator*()const{return *value;}
+
+		value_type* operator->() const{
+			return value;
+		}
+
+		bool operator==(const_iterator const & it) const{return value == it.value;}
+		bool operator!=(const_iterator const & it) const{return !(*this == it);}
+		bool operator<(const_iterator const & it)const{return value < it.value;}
+		bool operator>(const_iterator const & it)const{return value > it.value;}
+
+		const_reference operator[](int index){
+
+		}
+
+		const_iterator & operator--(){
+			auto buffer = reinterpret_cast<value_type*>(dynamic_container_);
+			int currentIndex = value - buffer;
+			int previousIndex = currentIndex-1 < 0?dynamic_container_size_-1:currentIndex-1;
+			value = reinterpret_cast<value_type*>(dynamic_container_+(previousIndex));
+			return *this;
+		}
+
+		const_iterator & operator--(int){
+			auto old = *this;
+			--(*this);
+			return old;
+		}
+		const_iterator & operator-(int const & count){
+
+		}
+
+		difference_type & operator-(const_iterator const & cit){
+
+		}
+
+		const_iterator & operator-=(int const & count){
+
+		}
+
+		difference_type & operator-=(const_iterator const & cit){
+
+		}
+
+		const_iterator & operator++(){
+			auto buffer = reinterpret_cast<value_type*>(dynamic_container_);
+			int currentIndex = value - buffer;
+			value = reinterpret_cast<value_type*>(dynamic_container_+(((currentIndex+1)%dynamic_container_size_)*sizeof(T)));
+
+			return *this;
+		}
+
+		const_iterator & operator++(int){
+			auto old = *this;
+			++(*this);
+			return old;
+		}
+
+		const_iterator & operator+(int const & count){
+
+		}
+		difference_type & operator+(const_iterator const & cit){
+
+		}
+
+		const_iterator & operator+=(int const & count){
+
+		}
+		difference_type & operator+=(const_iterator const & cit){
+
+		}
 	};
 
 	void clear(){
@@ -207,13 +375,73 @@ public:
 		return buffer;
 	}
 
-	const_reference begin()const{
-
+	iterator begin(){
+		value_type* pointer_to_start = reinterpret_cast<value_type*>(dynamic_container_);
+		value_type* pointer_to_end = reinterpret_cast<value_type*>(dynamic_container_);
+		if(size() > 0){
+			auto buffer = reinterpret_cast<value_type*>(dynamic_container_);
+			size_t index_of_front = &front() - buffer;
+			size_t index_of_back = &back() - buffer;
+			pointer_to_start = reinterpret_cast<value_type*>(dynamic_container_+(index_of_front*sizeof(T)));
+			pointer_to_end = reinterpret_cast<value_type*>(dynamic_container_+(index_of_back*sizeof(T)));
+		}
+		return iterator{pointer_to_start, pointer_to_end,dynamic_container_,dynamic_container_size_};
 	}
 
-	const_reference end()const{
-
+	iterator end(){
+		value_type* pointer_to_start = reinterpret_cast<value_type*>(dynamic_container_);
+		value_type* pointer_to_end = reinterpret_cast<value_type*>(dynamic_container_);
+		if(size() > 0){
+			auto buffer = reinterpret_cast<value_type*>(dynamic_container_);
+			size_t index_of_front = &front() - buffer;
+			size_t index_of_back = &back() - buffer;
+			pointer_to_start = reinterpret_cast<value_type*>(dynamic_container_+(index_of_front*sizeof(T)));
+			pointer_to_end = reinterpret_cast<value_type*>(dynamic_container_+(index_of_back*sizeof(T)));
+		}
+		return iterator{pointer_to_start, pointer_to_end,dynamic_container_,dynamic_container_size_};
 	}
+
+	const_iterator begin() const{
+		value_type const * pointer_to_start = reinterpret_cast<value_type const *>(dynamic_container_);
+		value_type const * pointer_to_end = reinterpret_cast<value_type*>(dynamic_container_);
+		if(size()>0){
+			pointer_to_start = &front();
+			pointer_to_end = &back();
+		}
+		return const_iterator{pointer_to_start,pointer_to_end,dynamic_container_,dynamic_container_size_};
+	}
+
+	const_iterator end() const{
+		value_type const * pointer_to_start = reinterpret_cast<value_type const *>(dynamic_container_);
+		value_type const * pointer_to_end = reinterpret_cast<value_type const *>(dynamic_container_);
+		if(size()>0){
+			pointer_to_start = &front();
+			pointer_to_end = &back();
+		}
+		return const_iterator{pointer_to_start, pointer_to_end,dynamic_container_,dynamic_container_size_};
+	}
+
+	const_iterator cbegin()const{
+		value_type const * pointer_to_start = reinterpret_cast<value_type const *>(dynamic_container_);
+		value_type const * pointer_to_end = reinterpret_cast<value_type const *>(dynamic_container_);
+		if(size()>0){
+			pointer_to_start = &front();
+			pointer_to_end = &back();
+		}
+		return const_iterator{pointer_to_start, pointer_to_end,dynamic_container_,dynamic_container_size_};
+	}
+
+	const_iterator cend()const{
+		value_type const * pointer_to_start = reinterpret_cast<value_type const *>(dynamic_container_);
+		value_type const * pointer_to_end = reinterpret_cast<value_type const *>(dynamic_container_);
+		if(size()>0){
+			pointer_to_start = &front();
+			pointer_to_end = &back();
+		}
+		return const_iterator{pointer_to_start,pointer_to_end,dynamic_container_,dynamic_container_size_};
+	}
+
+
 };
 
 

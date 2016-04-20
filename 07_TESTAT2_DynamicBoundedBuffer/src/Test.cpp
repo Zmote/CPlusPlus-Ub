@@ -10,6 +10,7 @@
 #include "bounded_buffer_student_suite.h"
 #include "bounded_buffer_heap_memory_suite.h"
 #include "bounded_buffer_non_default_constructible_element_type_suite.h"
+#include "bounded_buffer_iterator_suite.h"
 #include "BoundedBuffer.h"
 #include <iostream>
 
@@ -24,6 +25,7 @@ void runAllTests(int argc, char const *argv[]) {
 	cute::makeRunner(lis,argc,argv)(make_suite_bounded_buffer_student_suite(), "BoundedBuffer Student Tests");
 	cute::makeRunner(lis,argc,argv)(make_suite_bounded_buffer_heap_memory_suite(), "BoundedBuffer Heap Memory Tests");
 	cute::makeRunner(lis,argc,argv)(make_suite_bounded_buffer_non_default_constructible_element_type_suite(), "Non-Default Constructible Element Type Tests");
+	cute::makeRunner(lis,argc,argv)(make_suite_bounded_buffer_iterator_suite(),"Iterator Suite Tests");
 }
 
 int main(int argc, char const *argv[]) {
