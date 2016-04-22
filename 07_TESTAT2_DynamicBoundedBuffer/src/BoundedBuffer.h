@@ -3,12 +3,8 @@
 
 #include <stdexcept>
 #include <iterator>
-#include <memory>
 #include <algorithm>
 #include <type_traits>
-
-//TODO: implement iterator logic --> proper implementation of iterator ops outstanding
-//TODO: Minor fix of destructor op, 2x instead of 1x
 
 template<typename T>
 class BoundedBuffer{
@@ -21,180 +17,140 @@ class BoundedBuffer{
 public:
 	using size_type =  std::size_t;
 	using value_type = T;
+	using const_value_type = T const;
 	using const_reference = T const &;
 	using reference = T &;
 
-	struct iterator:std::iterator<std::random_access_iterator_tag,BoundedBuffer>{
-		using difference_type = typename iterator::difference_type;
-		value_type* value;
-		value_type* start;
-		value_type* end;
+	template<typename TYPE = value_type>
+	struct iter:std::iterator<std::random_access_iterator_tag,BoundedBuffer>{
+		using difference_type = typename iter::difference_type;
+		using TYPE_pointer = TYPE *;
+		TYPE_pointer value;
+		TYPE_pointer start;
+		TYPE_pointer end;
 		char * dynamic_container_;
 		unsigned int dynamic_container_size_;
-		explicit iterator(value_type* start,value_type* end, char * dynamic_c, unsigned int dynamic_c_s)
-		:value{start},start{start},end{end},dynamic_container_{dynamic_c},dynamic_container_size_{dynamic_c_s}{}
 
-		reference & operator*()const{
+		explicit iter(TYPE_pointer value,TYPE_pointer start,TYPE_pointer end, char * dynamic_c, unsigned int dynamic_c_s)
+		:value{value},start{start},end{end},dynamic_container_{dynamic_c},dynamic_container_size_{dynamic_c_s}{}
+
+		TYPE & operator*()const{
+			if(value == end){
+				throw std::logic_error{"Can't access elem at end"};
+			}
 			return *value;
 		}
 
-		value_type* operator->() const{
+		TYPE_pointer operator->() const{
 			return value;
 		}
-
-		bool operator==(iterator const & it) const{return value == it.value;}
-		bool operator!=(iterator const & it) const{return !(*this == it);}
-		bool operator<(iterator const & it)const{return value < it.value;}
-		bool operator>(iterator const & it)const{return value > it.value;}
-
-		reference operator[](int index){
-
+		void check_if_buffers_same(iter const & it) const{
+			if(this->dynamic_container_ != it.dynamic_container_) throw std::logic_error{"Relative comparison on different buffers not possible"};
 		}
 
-		iterator & operator--(){
-			auto buffer = reinterpret_cast<value_type*>(dynamic_container_);
+		bool operator==(iter const & it) const{check_if_buffers_same(it);return value == it.value;}
+		bool operator!=(iter const & it) const{check_if_buffers_same(it);return !(*this == it);}
+		bool operator<(iter const & it)const{check_if_buffers_same(it);return value < it.value;}
+		bool operator>(iter const & it)const{check_if_buffers_same(it);return value > it.value;}
+
+		reference operator[](int index){
+			auto buffer = reinterpret_cast<TYPE_pointer>(dynamic_container_);
 			int currentIndex = value - buffer;
-			int previousIndex = currentIndex-1 < 0?dynamic_container_size_-1:currentIndex-1;
-			value = reinterpret_cast<value_type*>(dynamic_container_+(previousIndex));
+			int newIndex = (currentIndex+index)%(dynamic_container_size_+1);
+			return *(buffer+newIndex);
+		}
+
+		iter & operator--(){
+			if(value == start)throw std::logic_error{"Reached start, can't go below"};
+			auto buffer = reinterpret_cast<TYPE_pointer>(dynamic_container_);
+			int currentIndex = value - buffer;
+			int previousIndex = currentIndex - 1 < 0? dynamic_container_size_+ 1:currentIndex -1;
+			value = reinterpret_cast<TYPE_pointer>(dynamic_container_+(previousIndex*sizeof(T)));
 			return *this;
 		}
 
-		iterator & operator--(int){
+		iter operator--(int){
 			auto old = *this;
 			--(*this);
 			return old;
 		}
-		iterator & operator-(int const & count){
 
-		}
-		difference_type & operator-(iterator const & it){
-
-		}
-
-		iterator & operator-=(int const & count){
-
-		}
-
-		difference_type & operator-=(iterator const & it){
-
-		}
-
-		iterator & operator++(){
-			auto buffer = reinterpret_cast<value_type*>(dynamic_container_);
-			int currentIndex = value - buffer;
-			value = reinterpret_cast<value_type*>(dynamic_container_+(((currentIndex+1)%dynamic_container_size_)*sizeof(T)));
-			if(value == end) throw std::logic_error{"Iterator over end"};
-			return *this;
-		}
-
-		iterator & operator++(int){
-			auto old = *this;
-			++(*this);
-			return old;
-		}
-
-		iterator & operator+(int const & count){
-			for(int i = 0; i < count;i++){
-				++(*this);
+		iter & operator-(int const & count){
+			for(int i = 0; i < count; i++){
+				*this = --(*this);
 			}
 			return *this;
 		}
 
-		difference_type & operator+(iterator const & it){
-
-		}
-		iterator & operator+=(int const & count){
-			return *this + count;
+		iter & operator-=(int const & count){
+			return *this - count;
 		}
 
-		difference_type & operator+=(iterator const & it){
 
-		}
-	};
 
-	struct const_iterator:std::iterator<std::random_access_iterator_tag,BoundedBuffer>{
-		using difference_type = typename iterator::difference_type;
-		value_type const * value;
-		value_type const * start;
-		value_type const * end;
-		char * dynamic_container_;
-		unsigned int dynamic_container_size_;
-		explicit const_iterator(value_type const * start, value_type const * end, char * dynamic_c, unsigned int dynamic_c_s)
-		:value{start}, start{start},end{end},dynamic_container_{dynamic_c},dynamic_container_size_{dynamic_c_s}{}
-
-		const_reference operator*()const{return *value;}
-
-		value_type* operator->() const{
-			return value;
-		}
-
-		bool operator==(const_iterator const & it) const{return value == it.value;}
-		bool operator!=(const_iterator const & it) const{return !(*this == it);}
-		bool operator<(const_iterator const & it)const{return value < it.value;}
-		bool operator>(const_iterator const & it)const{return value > it.value;}
-
-		const_reference operator[](int index){
-
-		}
-
-		const_iterator & operator--(){
-			auto buffer = reinterpret_cast<value_type*>(dynamic_container_);
+		iter & operator++(){
+			if(value == end) throw std::logic_error{"Iterator over end"};
+			auto buffer = reinterpret_cast<TYPE_pointer>(dynamic_container_);
 			int currentIndex = value - buffer;
-			int previousIndex = currentIndex-1 < 0?dynamic_container_size_-1:currentIndex-1;
-			value = reinterpret_cast<value_type*>(dynamic_container_+(previousIndex));
+			value = reinterpret_cast<TYPE_pointer>(dynamic_container_+(((currentIndex+1)%(dynamic_container_size_+1))*sizeof(T)));
 			return *this;
 		}
 
-		const_iterator & operator--(int){
-			auto old = *this;
-			--(*this);
-			return old;
-		}
-		const_iterator & operator-(int const & count){
-
-		}
-
-		difference_type & operator-(const_iterator const & cit){
-
-		}
-
-		const_iterator & operator-=(int const & count){
-
-		}
-
-		difference_type & operator-=(const_iterator const & cit){
-
-		}
-
-		const_iterator & operator++(){
-			auto buffer = reinterpret_cast<value_type*>(dynamic_container_);
-			int currentIndex = value - buffer;
-			value = reinterpret_cast<value_type*>(dynamic_container_+(((currentIndex+1)%dynamic_container_size_)*sizeof(T)));
-
-			return *this;
-		}
-
-		const_iterator & operator++(int){
+		iter operator++(int){
 			auto old = *this;
 			++(*this);
 			return old;
 		}
 
-		const_iterator & operator+(int const & count){
-
+		iter & operator+(int const & count){
+			for(int i = 0; i < count;i++){
+				*this = ++(*this);
+			}
+			return *this;
 		}
-		difference_type & operator+(const_iterator const & cit){
 
+		iter & operator+=(int const & count){
+			return *this + count;
 		}
 
-		const_iterator & operator+=(int const & count){
-
+		difference_type operator-(iter const & it){
+			iter internal{*this};
+			difference_type difference{0};
+			if(internal.value < it.value){
+				internal = --(internal);
+			}
+			while(internal != it){
+				internal = --(internal);
+				difference++;
+			}
+			return difference;
 		}
-		difference_type & operator+=(const_iterator const & cit){
 
+		difference_type operator-=(iter const & it){
+			return (*this) - it;
 		}
 	};
+	using iterator = iter<>;
+	using const_iterator = iter<const_value_type>;
 
+private:
+	template<typename ITERTYPE = iterator, typename VALUETYPE = value_type>
+	ITERTYPE init_iterator(bool start_iter) const{
+		VALUETYPE * value_ptr = reinterpret_cast<VALUETYPE*>(dynamic_container_);
+		VALUETYPE * start_ptr = reinterpret_cast<VALUETYPE*>(dynamic_container_);
+		VALUETYPE * end_ptr = reinterpret_cast<VALUETYPE*>(dynamic_container_);
+		if(!empty()){
+			start_ptr = reinterpret_cast<VALUETYPE*>(dynamic_container_+(head_*sizeof(T)));
+			end_ptr = reinterpret_cast<VALUETYPE*>(dynamic_container_+(tail_*sizeof(T)));
+			value_ptr = start_ptr;
+			if(!start_iter){
+				value_ptr = end_ptr;
+			}
+		}
+		return ITERTYPE{value_ptr,start_ptr,end_ptr,dynamic_container_,dynamic_container_size_};
+	}
+
+public:
 	void clear(){
 		while(!empty()){
 			pop();
@@ -217,7 +173,7 @@ public:
 	BoundedBuffer(int const buffer_size):head_{0},tail_{0},elements_{0}{
 		if(buffer_size <= 0) throw std::invalid_argument{"Capacity of BoundedBuffer can't be zero"};
 		dynamic_container_size_ = buffer_size;
-		dynamic_container_ = new char[(dynamic_container_size_)*sizeof(T)];
+		dynamic_container_ = new char[(dynamic_container_size_+1)*sizeof(T)];
 	}
 
 	BoundedBuffer(BoundedBuffer const & elem){
@@ -229,7 +185,7 @@ public:
 				if(dynamic_container_){
 					delete[] dynamic_container_;
 				}
-				dynamic_container_ = new char[(elem.capacity())*sizeof(T)];
+				dynamic_container_ = new char[(elem.capacity()+1)*sizeof(T)];
 				dynamic_container_size_ = elem.dynamic_container_size_;
 			}
 			auto elembuffer=reinterpret_cast<value_type*>(elem.dynamic_container_);
@@ -237,16 +193,22 @@ public:
 				size_t index_in_elem_buffer = &elem.front()-elembuffer;
 				for(unsigned int i = 0; i < elem.size();i++){
 					push(elembuffer[index_in_elem_buffer++]);
-					if (index_in_elem_buffer>=elem.capacity())index_in_elem_buffer=0;
+					if (index_in_elem_buffer>=elem.capacity()+1)index_in_elem_buffer=0;
 				}
 			}
 		}
 	}
 
-	BoundedBuffer(BoundedBuffer && elem):head_{std::move(elem.head_)},tail_{std::move(elem.tail_)},
-			elements_{std::move(elem.elements_)},dynamic_container_{std::move(elem.dynamic_container_)},
-			dynamic_container_size_{std::move(elem.dynamic_container_size_)}{
-				elem.dynamic_container_ = nullptr;
+	BoundedBuffer(BoundedBuffer && elem){
+		if (this != &elem){
+			clear();
+			if(size() != elem.size()){
+				delete [] dynamic_container_;
+				dynamic_container_=nullptr;
+				dynamic_container_size_=0;
+			}
+			swap(elem);
+		}
 	}
 
 	BoundedBuffer & operator=(BoundedBuffer const & elem){
@@ -258,7 +220,7 @@ public:
 				if(dynamic_container_){
 					delete[] dynamic_container_;
 				}
-				dynamic_container_ = new char[(elem.capacity())*sizeof(T)];
+				dynamic_container_ = new char[(elem.capacity()+1)*sizeof(T)];
 				dynamic_container_size_ = elem.dynamic_container_size_;
 			}
 			auto elembuffer=reinterpret_cast<value_type*>(elem.dynamic_container_);
@@ -266,7 +228,7 @@ public:
 				size_t index_in_elem_buffer = &elem.front()-elembuffer;
 				for(unsigned int i = 0; i < elem.size();i++){
 					push(elembuffer[index_in_elem_buffer++]);
-					if (index_in_elem_buffer>=elem.capacity())index_in_elem_buffer=0;
+					if (index_in_elem_buffer>=elem.capacity()+1)index_in_elem_buffer=0;
 				}
 			}
 		}
@@ -314,13 +276,13 @@ public:
 
 	reference back(){
 		if(empty()) throw std::logic_error{"Invalid use of back on empty BoundedBuffer"};
-		int back_tail_ = tail_ == 0? capacity()-1:tail_-1;
+		int back_tail_ = tail_ == 0? capacity():tail_-1;
 		return *(reinterpret_cast<value_type*>(dynamic_container_+(back_tail_*sizeof(value_type))));
 	}
 
 	const_reference back() const{
 		if(empty()) throw std::logic_error{"Invalid use of back on empty BoundedBuffer"};
-		int back_tail_ = tail_ == 0? capacity()-1:tail_-1;
+		int back_tail_ = tail_ == 0? capacity():tail_-1;
 		return *(reinterpret_cast<value_type*>((dynamic_container_+(back_tail_*sizeof(value_type)))));
 	}
 
@@ -328,7 +290,7 @@ public:
 		if(full()) throw std::logic_error{"Invalid use of push on full BoundedBuffer"};
 		auto pointer = reinterpret_cast<value_type*>(dynamic_container_ +(tail_*sizeof(value_type)));
 		new (pointer) value_type{elem};
-		tail_ = (tail_+1)%capacity();
+		tail_ = (tail_+1)%(capacity()+1);
 		elements_++;
 	}
 
@@ -336,7 +298,7 @@ public:
 		if(full()) throw std::logic_error{"Invalid use of push on full BoundedBuffer"};
 		auto pointer = reinterpret_cast<value_type*>(dynamic_container_ +(tail_*sizeof(value_type)));
 		new (pointer) value_type{std::move(elem)};
-		tail_ = (tail_+1)%capacity();
+		tail_ = (tail_+1)%(capacity()+1);
 		elements_++;
 	}
 
@@ -344,7 +306,7 @@ public:
 		if(empty()) throw std::logic_error{"Invalid use of pop on empty BoundedBuffer"};
 		value_type* pointer = reinterpret_cast<value_type*>(dynamic_container_ + (head_*sizeof(value_type)));
 		pointer->~T();
-		head_ = (head_+1)%capacity();
+		head_ = (head_+1)%(capacity()+1);
 		elements_--;
 	}
 
@@ -376,72 +338,28 @@ public:
 	}
 
 	iterator begin(){
-		value_type* pointer_to_start = reinterpret_cast<value_type*>(dynamic_container_);
-		value_type* pointer_to_end = reinterpret_cast<value_type*>(dynamic_container_);
-		if(size() > 0){
-			auto buffer = reinterpret_cast<value_type*>(dynamic_container_);
-			size_t index_of_front = &front() - buffer;
-			size_t index_of_back = &back() - buffer;
-			pointer_to_start = reinterpret_cast<value_type*>(dynamic_container_+(index_of_front*sizeof(T)));
-			pointer_to_end = reinterpret_cast<value_type*>(dynamic_container_+(index_of_back*sizeof(T)));
-		}
-		return iterator{pointer_to_start, pointer_to_end,dynamic_container_,dynamic_container_size_};
+		return init_iterator<>(true);
 	}
 
 	iterator end(){
-		value_type* pointer_to_start = reinterpret_cast<value_type*>(dynamic_container_);
-		value_type* pointer_to_end = reinterpret_cast<value_type*>(dynamic_container_);
-		if(size() > 0){
-			auto buffer = reinterpret_cast<value_type*>(dynamic_container_);
-			size_t index_of_front = &front() - buffer;
-			size_t index_of_back = &back() - buffer;
-			pointer_to_start = reinterpret_cast<value_type*>(dynamic_container_+(index_of_front*sizeof(T)));
-			pointer_to_end = reinterpret_cast<value_type*>(dynamic_container_+(index_of_back*sizeof(T)));
-		}
-		return iterator{pointer_to_start, pointer_to_end,dynamic_container_,dynamic_container_size_};
+		return init_iterator<>(false);
 	}
 
 	const_iterator begin() const{
-		value_type const * pointer_to_start = reinterpret_cast<value_type const *>(dynamic_container_);
-		value_type const * pointer_to_end = reinterpret_cast<value_type*>(dynamic_container_);
-		if(size()>0){
-			pointer_to_start = &front();
-			pointer_to_end = &back();
-		}
-		return const_iterator{pointer_to_start,pointer_to_end,dynamic_container_,dynamic_container_size_};
+		return init_iterator<const_iterator,const_value_type>(true);
 	}
 
 	const_iterator end() const{
-		value_type const * pointer_to_start = reinterpret_cast<value_type const *>(dynamic_container_);
-		value_type const * pointer_to_end = reinterpret_cast<value_type const *>(dynamic_container_);
-		if(size()>0){
-			pointer_to_start = &front();
-			pointer_to_end = &back();
-		}
-		return const_iterator{pointer_to_start, pointer_to_end,dynamic_container_,dynamic_container_size_};
+		return init_iterator<const_iterator,const_value_type>(false);
 	}
 
-	const_iterator cbegin()const{
-		value_type const * pointer_to_start = reinterpret_cast<value_type const *>(dynamic_container_);
-		value_type const * pointer_to_end = reinterpret_cast<value_type const *>(dynamic_container_);
-		if(size()>0){
-			pointer_to_start = &front();
-			pointer_to_end = &back();
-		}
-		return const_iterator{pointer_to_start, pointer_to_end,dynamic_container_,dynamic_container_size_};
+	const_iterator const cbegin()const{
+		return begin();
 	}
 
-	const_iterator cend()const{
-		value_type const * pointer_to_start = reinterpret_cast<value_type const *>(dynamic_container_);
-		value_type const * pointer_to_end = reinterpret_cast<value_type const *>(dynamic_container_);
-		if(size()>0){
-			pointer_to_start = &front();
-			pointer_to_end = &back();
-		}
-		return const_iterator{pointer_to_start,pointer_to_end,dynamic_container_,dynamic_container_size_};
+	const_iterator const cend()const{
+		return end();
 	}
-
-
 };
 
 
