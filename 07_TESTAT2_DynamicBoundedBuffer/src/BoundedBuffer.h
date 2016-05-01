@@ -6,14 +6,6 @@
 #include <algorithm>
 #include <boost/operators.hpp>
 
-//TODO: relevant für die exception implementation des Testats
-//übungsnotiz: pop() noexcept(false)
-//braucht man im dtor : -C ?
-//pop();
-//	checknotempty();
-//  dopop();
-// private: void dopop() noexcept{...}
-
 template<typename T>
 class BoundedBuffer {
 	unsigned int head_ { 0 };
@@ -28,22 +20,23 @@ public:
 	using reference = T &;
 
 private:
-	value_type * get_element_pointer_at(size_type index) const {
+	value_type * get_element_pointer_at(size_type index) const noexcept{
 		return (reinterpret_cast<value_type*>(dynamic_container_ + (index * sizeof(value_type))));
 	}
 
 	void fill_buffer_from(const BoundedBuffer& elem) {
 		auto elembuffer = reinterpret_cast<value_type*>(elem.dynamic_container_);
 		if (elem.size() > 0) {
+			BoundedBuffer temporary{elem.capacity()};
 			size_t index_in_elem_buffer = &elem.front() - elembuffer;
 			for (unsigned int i = 0; i < elem.size(); i++) {
-				push(elembuffer[index_in_elem_buffer++]);
+				temporary.push(elembuffer[index_in_elem_buffer++]);
 				if (index_in_elem_buffer >= elem.capacity())
 					index_in_elem_buffer = 0;
 			}
+			*this = std::move(temporary);
 		}
 	}
-
 	void check_if_front_accessible() const {
 		if (empty())
 			throw std::logic_error { "Invalid use of front on empty BoundedBuffer" };
@@ -59,12 +52,13 @@ private:
 			throw std::logic_error { "Invalid use of push on full BoundedBuffer" };
 	}
 
-	void initialize_container(size_type container_capacity) {
+	void initialize_container(size_type container_capacity) noexcept {
 		dynamic_container_ = new char[(container_capacity) * sizeof(T)];
 		dynamic_container_size_ = container_capacity;
 	}
 
 	int calculate_back_tail_index() const {
+		if(!capacity()) throw std::invalid_argument{"Modulo through zero not possible"};
 		return tail() == 0 ? capacity() - 1 : tail() - 1;
 	}
 
@@ -72,9 +66,8 @@ private:
 	struct iter: boost::random_access_iterator_helper<iter<TYPE>, TYPE> {
 		using difference_type = typename iter::difference_type;
 
-		explicit iter(BoundedBuffer const & input_buff, size_type input_index) :
-				buffer { input_buff }, index { input_index } {
-		}
+		explicit iter(BoundedBuffer const & input_buff, size_type input_index) noexcept :
+				buffer { input_buff }, index { input_index }{}
 
 		value_type & operator[](int iter_index) const {
 			return buffer[buffer.head_ + iter_index];
@@ -128,10 +121,10 @@ private:
 			return diff;
 		}
 
-		iter & operator+=(size_type distance) {
+		iter & operator+=(size_type distance){
 			return *this + distance;
 		}
-		iter & operator-=(size_type distance) {
+		iter & operator-=(size_type distance){
 			return *this - distance;
 		}
 		bool operator==(const iter & rhs) const {
@@ -164,7 +157,7 @@ private:
 		void decrement_iterator() {
 			index = index == 0 ? buffer.capacity() : index - 1;
 		}
-		void check_if_iterator_at_start() {
+		void check_if_iterator_at_start() const {
 			if (index == 0)
 				throw std::logic_error { "Can't decreement below begin" };
 		}
@@ -174,7 +167,7 @@ public:
 	using iterator = iter<>;
 	using const_iterator = iter<const value_type>;
 
-	void clear() {
+	void clear() noexcept {
 		while (!empty())
 			pop();
 		head_ = 0;
@@ -182,8 +175,9 @@ public:
 
 	BoundedBuffer():head_ { 0 }, elements_ { 0 }, dynamic_container_ { nullptr }, dynamic_container_size_ { 0 } {}
 
-	~BoundedBuffer() {
-		clear();
+	~BoundedBuffer(){
+		while(!empty())
+			dopop();
 		delete[] dynamic_container_;
 	}
 
@@ -198,11 +192,11 @@ public:
 		fill_buffer_from(elem);
 	}
 
-	BoundedBuffer(BoundedBuffer && elem) {
+	BoundedBuffer(BoundedBuffer && elem) noexcept {
 		swap(elem);
 	}
 
-	BoundedBuffer & operator=(BoundedBuffer const & elem) {
+	BoundedBuffer & operator=(BoundedBuffer const & elem) noexcept{
 		if (this != &elem) {
 			BoundedBuffer temporaryBuffer{elem};
 			swap(temporaryBuffer);
@@ -210,7 +204,7 @@ public:
 		return *this;
 	}
 
-	BoundedBuffer & operator=(BoundedBuffer && elem) {
+	BoundedBuffer & operator=(BoundedBuffer && elem) noexcept{
 		if (this != &elem) {
 			swap(elem);
 		}
@@ -226,23 +220,23 @@ public:
 		return get_element_pointer_at(0)[access_index];
 	}
 
-	bool empty() const {
+	bool empty() const noexcept {
 		return elements_ == 0;
 	}
 
-	size_type size() const {
+	size_type size() const noexcept {
 		return elements_;
 	}
 
-	size_type capacity() const {
+	size_type capacity() const noexcept {
 		return dynamic_container_size_;
 	}
 
-	unsigned int tail() const {
+	size_type tail() const{
 		return (head_ + elements_) % capacity();
 	}
 
-	bool full() const {
+	bool full() const noexcept{
 		return elements_ == capacity();
 	}
 
@@ -277,15 +271,19 @@ public:
 		new (get_element_pointer_at(tail())) value_type { std::move(elem) };
 		elements_++;
 	}
-
-	void pop() {
-		if (empty()) throw std::logic_error { "Invalid use of pop on empty BoundedBuffer" };
+private:
+	void dopop() noexcept(true){
 		get_element_pointer_at(head_)->~T();
 		head_ = (head_ + 1) % (capacity());
 		elements_--;
 	}
+public:
+	void pop() noexcept(false) {
+		if (empty()) throw std::logic_error { "Invalid use of pop on empty BoundedBuffer" };
+		dopop();
+	}
 
-	void swap(BoundedBuffer & elem) {
+	void swap(BoundedBuffer & elem) noexcept{
 		std::swap(dynamic_container_, elem.dynamic_container_);
 		std::swap(head_, elem.head_);
 		std::swap(elements_, elem.elements_);
@@ -310,27 +308,27 @@ public:
 		return buffer;
 	}
 
-	iterator begin() {
+	iterator begin() noexcept {
 		return iterator {*this,0};
 	}
 
-	iterator end() {
+	iterator end() noexcept {
 		return iterator {*this,elements_};
 	}
 
-	const_iterator begin() const {
+	const_iterator begin() const noexcept {
 		return const_iterator {*this,0};
 	}
 
-	const_iterator end() const {
+	const_iterator end() const noexcept {
 		return const_iterator {*this,elements_};
 	}
 
-	const_iterator const cbegin()const {
+	const_iterator const cbegin()const noexcept{
 		return begin();
 	}
 
-	const_iterator const cend()const {
+	const_iterator const cend()const noexcept{
 		return end();
 	}
 };
