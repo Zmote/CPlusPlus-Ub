@@ -1,14 +1,11 @@
 #ifndef SRC_BOUNDEDQUEUE_H_
 #define SRC_BOUNDEDQUEUE_H_
 
-#include <queue>
 #include <stdexcept>
 #include <mutex>
 #include <condition_variable>
-#include <algorithm>
 #include <memory>
 #include <chrono>
-#include <ratio>
 
 template<typename T,typename M = std::mutex,typename CV = std::condition_variable>
 class BoundedQueue{
