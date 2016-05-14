@@ -173,16 +173,19 @@ private:
     CV notFull{};
 
 	void dopush(const_reference elem){
+		if(dofull()) throw std::logic_error{"Can't push to full Queue"};
 		new (get_element_pointer_at(tail())) value_type{elem};
 		elements_++;
 	}
 
 	void dopush(value_type && elem){
+		if(dofull()) throw std::logic_error{"Can't push to full Queue"};
 		new (get_element_pointer_at(tail())) value_type{std::move(elem)};
 		elements_++;
 	}
 
 	value_type dopop(){
+		if(doempty()) throw std::logic_error{"Can't pop from empty Queue"};
 		value_type * value_to_pop = get_element_pointer_at(head_);
 		value_type return_value{std::move(*value_to_pop)};
 		value_to_pop->~T();
