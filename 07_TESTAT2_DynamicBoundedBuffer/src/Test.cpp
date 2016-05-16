@@ -11,9 +11,6 @@
 #include "bounded_buffer_heap_memory_suite.h"
 #include "bounded_buffer_non_default_constructible_element_type_suite.h"
 #include "bounded_buffer_iterator_suite.h"
-#include "BoundedBuffer.h"
-#include <iostream>
-
 
 void runAllTests(int argc, char const *argv[]) {
 	cute::xml_file_opener xmlfile(argc, argv);

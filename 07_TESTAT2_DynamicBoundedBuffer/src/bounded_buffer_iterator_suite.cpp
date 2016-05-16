@@ -2,6 +2,7 @@
 #include "BoundedBuffer.h"
 #include "cute.h"
 #include "times_literal.hpp"
+#include <iostream>
 
 
 using namespace times::literal;
@@ -463,12 +464,12 @@ cute::suite make_suite_bounded_buffer_iterator_suite(){
 }
 
 std::ostream & operator<<(std::ostream & out, BoundedBuffer<int>::const_iterator it){
-	out << it.value;
+	out << *it;
 	return out;
 }
 
 std::ostream & operator<<(std::ostream & out, BoundedBuffer<int>::iterator it){
-	out << it.value;
+	out << *it;
 	return out;
 }
 
