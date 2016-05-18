@@ -7,6 +7,8 @@
 #include <memory>
 #include <chrono>
 
+//TODO: Tests green, but sometimes it takes a long time to continue
+
 template<typename T,typename M = std::mutex,typename CV = std::condition_variable>
 class BoundedQueue{
 public:
@@ -24,11 +26,12 @@ public:
 
 	BoundedQueue(BoundedQueue const & other_queue)
 	:BoundedQueue{other_queue.queue_size_}{
-		if(!other_queue.empty()){
-			for(unsigned int i = 0; i < other_queue.size();i++){
+		ulock lock{other_queue.lock_};
+		if(!other_queue.doempty()){
+			for(unsigned int i = 0; i < other_queue.elements_;i++){
 				value_type const & elem_in_queue =
-						*other_queue.get_element_pointer_at(((other_queue.head_ + i)%other_queue.capacity()));
-				this->push(elem_in_queue);
+						*other_queue.get_element_pointer_at(((other_queue.head_ + i)%other_queue.docapacity()));
+				this->dopush(elem_in_queue);
 			}
 		}
 	}
@@ -38,11 +41,13 @@ public:
 	}
 
 	~BoundedQueue(){
-		while(!empty())
-			this->clear();
+		ulock lock{this->lock_};
+		clear();
 	}
 
-	BoundedQueue & operator=(BoundedQueue const & other_queue) noexcept{
+	BoundedQueue & operator=(BoundedQueue const & other_queue) noexcept {
+		//TODO: Ask --> why do I need to hold lock here too,
+		//the copy-ctr and swap do already lock one or both of the buffers
 		if(this != &other_queue){
 			BoundedQueue temporaryBuffer{other_queue};
 			swap(temporaryBuffer);
@@ -50,9 +55,9 @@ public:
 		return *this;
 	}
 
-	BoundedQueue & operator=(BoundedQueue && other_queue)noexcept{
+	BoundedQueue & operator=(BoundedQueue && other_queue) noexcept {
 		if(this != &other_queue){
-			swap(other_queue);
+			this->swap(other_queue);
 		}
 		return *this;
 	}
@@ -70,7 +75,8 @@ public:
 		return dosize();
 	}
 	size_type capacity() const noexcept{
-		return queue_size_;
+		ulock lock{this->lock_};
+		return docapacity();
 	}
 
 	value_type pop(){
@@ -86,7 +92,7 @@ public:
 		if(doempty()){
 			return false;
 		}
-		this->dopop();
+		elem = this->dopop();
 		notFull.notify_one();
 		return true;
 	}
@@ -94,7 +100,7 @@ public:
 	bool try_pop_for(reference elem, std::chrono::duration<float> timespan){
 		ulock lock{this->lock_};
 		if(notEmpty.wait_for(lock,timespan,[this]{return !doempty();})){
-			this->dopop();
+			elem = this->dopop();
 			notFull.notify_one();
 			return true;
 		}
@@ -156,7 +162,12 @@ public:
 	void swap(BoundedQueue & other_queue){
 		ulock otherlock{other_queue.lock_,std::defer_lock};
 		ulock lock{this->lock_,std::defer_lock};
-		std::lock(otherlock,lock);
+		//TODO: check if this is supposed to be done differently
+		try{
+			std::lock(otherlock,lock);
+		}catch(std::system_error const & ex){
+			throw std::logic_error{"Lock aqcquire failed"};
+		}
 		std::swap(queue_,other_queue.queue_);
 		std::swap(elements_,other_queue.elements_);
 		std::swap(queue_size_,other_queue.queue_size_);
@@ -189,7 +200,7 @@ private:
 		value_type * value_to_pop = get_element_pointer_at(head_);
 		value_type return_value{std::move(*value_to_pop)};
 		value_to_pop->~T();
-		head_ = (head_ + 1) % (capacity());
+		head_ = (head_ + 1) % (docapacity());
 		elements_--;
 		return return_value;
 	}
@@ -206,10 +217,23 @@ private:
 		return elements_;
 	}
 
+	size_type docapacity() const noexcept{
+		return queue_size_;
+	}
+
+	void doswap(BoundedQueue & other_queue){
+		std::swap(queue_,other_queue.queue_);
+		std::swap(elements_,other_queue.elements_);
+		std::swap(queue_size_,other_queue.queue_size_);
+		std::swap(head_,other_queue.head_);
+	}
+
 	void clear(){
-		get_element_pointer_at(head_)->~T();
-		head_ = (head_ + 1) % (capacity());
-		elements_--;
+		while(!doempty()){
+			get_element_pointer_at(head_)->~T();
+			head_ = (head_ + 1) % (docapacity());
+			elements_--;
+		}
 	}
 
 	value_type * get_element_pointer_at(size_type index) const noexcept{
@@ -217,7 +241,7 @@ private:
 	}
 
 	size_type tail() const{
-		return (head_ + elements_) % capacity();
+		return (head_ + elements_) % docapacity();
 	}
 };
 
