@@ -109,11 +109,10 @@ public:
 		notEmpty.notify_one();
 	}
 
-	template<typename TYPE>
-	void push(TYPE && elem){
+	void push(value_type && elem){
 		ulock lock{this->lock_};
 		notFull.wait(lock,[this]{return !this->dofull();});
-		dopush(std::forward<TYPE>(elem));
+		dopush(std::move(elem));
 		notEmpty.notify_one();
 	}
 
