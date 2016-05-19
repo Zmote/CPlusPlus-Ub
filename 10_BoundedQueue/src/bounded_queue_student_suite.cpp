@@ -110,6 +110,9 @@ void test_multiple_threads_calling_pop_on_partially_full_queue_with_insufficent_
 }
 
 void test_multiple_threads_calling_push_while_one_calls_pop_on_empty_queue(){
+	//In rare cases, this test might fail(because pop is execute first)
+	//how could I do this check better, + is it testat relevant?
+	//all following tests suffer from the same problem
 	BoundedQueue<int> queue{5};
 	int value{3};
 	std::thread t1{[&]{queue.try_push(value);}};

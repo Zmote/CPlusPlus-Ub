@@ -102,43 +102,24 @@ public:
 		return false;
 	}
 
-	void push(const_reference elem){
+	template<typename TYPE>
+	void push(TYPE && elem){
 		ulock lock{this->lock_};
 		notFull.wait(lock,[this]{return !this->dofull();});
-		dopush(elem);
+		dopush(std::forward<TYPE>(elem));
 		notEmpty.notify_one();
 	}
 
-	void push(value_type && elem){
-		ulock lock{this->lock_};
-		notFull.wait(lock,[this]{return !this->dofull();});
-		dopush(std::move(elem));
-		notEmpty.notify_one();
+	template<typename TYPE>
+	bool try_push(TYPE && elem){
+		return try_push_for(std::forward<TYPE>(elem),std::chrono::nanoseconds{0});
 	}
 
-	bool try_push(value_type const & elem){
-		return try_push_for(elem,std::chrono::nanoseconds{0});
-	}
-
-	bool try_push(value_type && elem){
-		return try_push_for(std::move(elem),std::chrono::nanoseconds{0});
-	}
-	template<typename DURATION>
-	bool try_push_for(const_reference elem, DURATION timespan){
+	template<typename TYPE, typename DURATION>
+	bool try_push_for(TYPE && elem, DURATION timespan){
 		ulock lock{this->lock_};
 		if(notFull.wait_for(lock,timespan,[this]{return !dofull();})){
-			this->dopush(elem);
-			notEmpty.notify_one();
-			return true;
-		}
-		return false;
-	}
-
-	template<typename DURATION>
-	bool try_push_for(value_type && elem, DURATION timespan){
-		ulock lock{this->lock_};
-		if(notFull.wait_for(lock,timespan,[this]{return !dofull();})){
-			this->dopush(std::move(elem));
+			this->dopush(std::forward<TYPE>(elem));
 			notEmpty.notify_one();
 			return true;
 		}
