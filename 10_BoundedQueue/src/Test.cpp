@@ -14,7 +14,6 @@
 
 
 void runAllTests(int argc, char const *argv[]){
-	//TODO add your test here
 	cute::xml_file_opener xmlfile(argc,argv);
 	cute::xml_listener<cute::ide_listener<> >  lis(xmlfile.out);
 	cute::makeRunner(lis,argc,argv)(make_suite_bounded_queue_signatures_suite(), "BoundedQueue API Tests");

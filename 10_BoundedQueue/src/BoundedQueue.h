@@ -46,8 +46,8 @@ public:
 	}
 
 	BoundedQueue & operator=(BoundedQueue const & other_queue) noexcept {
-		//TODO: Ask --> why do I need to hold lock here too,
-		//the copy-ctr and swap do already lock one or both of the buffers
+		//TODO: Lock is already held by the ctor and swap function,
+		//why is there additional need for further locks?
 		if(this != &other_queue){
 			BoundedQueue temporaryBuffer{other_queue};
 			swap(temporaryBuffer);
@@ -57,7 +57,7 @@ public:
 
 	BoundedQueue & operator=(BoundedQueue && other_queue) noexcept {
 		if(this != &other_queue){
-			this->swap(other_queue);
+			swap(other_queue);
 		}
 		return *this;
 	}
@@ -88,16 +88,11 @@ public:
 	}
 
 	bool try_pop(reference elem){
-		ulock lock{this->lock_};
-		if(doempty()){
-			return false;
-		}
-		elem = this->dopop();
-		notFull.notify_one();
-		return true;
+		return try_pop_for(elem,std::chrono::nanoseconds{0});
 	}
 
-	bool try_pop_for(reference elem, std::chrono::duration<float> timespan){
+	template<typename DURATION>
+	bool try_pop_for(reference elem, DURATION timespan){
 		ulock lock{this->lock_};
 		if(notEmpty.wait_for(lock,timespan,[this]{return !doempty();})){
 			elem = this->dopop();
@@ -114,32 +109,23 @@ public:
 		notEmpty.notify_one();
 	}
 
-	void push(value_type && elem){
+	template<typename TYPE>
+	void push(TYPE && elem){
 		ulock lock{this->lock_};
 		notFull.wait(lock,[this]{return !this->dofull();});
-		dopush(std::move(elem));
+		dopush(std::forward<TYPE>(elem));
 		notEmpty.notify_one();
 	}
 
 	bool try_push(value_type const & elem){
-		ulock lock{this->lock_};
-		if(dofull())
-			return false;
-		this->dopush(elem);
-		notEmpty.notify_one();
-		return true;
+		return try_push_for(elem,std::chrono::nanoseconds{0});
 	}
 
 	bool try_push(value_type && elem){
-		ulock lock{this->lock_};
-		if(dofull())
-			return false;
-		this->dopush(std::move(elem));
-		notEmpty.notify_one();
-		return true;
+		return try_push_for(std::move(elem),std::chrono::nanoseconds{0});
 	}
-
-	bool try_push_for(const_reference elem, std::chrono::duration<float> timespan){
+	template<typename DURATION>
+	bool try_push_for(const_reference elem, DURATION timespan){
 		ulock lock{this->lock_};
 		if(notFull.wait_for(lock,timespan,[this]{return !dofull();})){
 			this->dopush(elem);
@@ -149,7 +135,8 @@ public:
 		return false;
 	}
 
-	bool try_push_for(value_type && elem, std::chrono::duration<float> timespan){
+	template<typename DURATION>
+	bool try_push_for(value_type && elem, DURATION timespan){
 		ulock lock{this->lock_};
 		if(notFull.wait_for(lock,timespan,[this]{return !dofull();})){
 			this->dopush(std::move(elem));
@@ -163,10 +150,16 @@ public:
 		ulock otherlock{other_queue.lock_,std::defer_lock};
 		ulock lock{this->lock_,std::defer_lock};
 		//TODO: check if this is supposed to be done differently
-		try{
-			std::lock(otherlock,lock);
-		}catch(std::system_error const & ex){
-			throw std::logic_error{"Lock aqcquire failed"};
+		for(int i = 0; i < 3;){
+			try{
+				std::lock(otherlock,lock);
+				break;
+			}catch(std::system_error const & ex){
+				i++;
+				if(i == 3){
+					throw std::logic_error{"Lock acquisition failed"};
+				}
+			}
 		}
 		std::swap(queue_,other_queue.queue_);
 		std::swap(elements_,other_queue.elements_);
