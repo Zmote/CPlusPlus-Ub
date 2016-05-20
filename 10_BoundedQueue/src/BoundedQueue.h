@@ -6,8 +6,8 @@
 #include <condition_variable>
 #include <memory>
 #include <chrono>
-
-//TODO: Tests green, but sometimes it takes a long time to continue
+#include <type_traits>
+#include <system_error>
 
 template<typename T,typename M = std::mutex,typename CV = std::condition_variable>
 class BoundedQueue{
@@ -25,8 +25,10 @@ public:
 	}
 
 	BoundedQueue(BoundedQueue const & other_queue)
-	:BoundedQueue{other_queue.queue_size_}{
+	:elements_{0},head_{0}{
 		ulock lock{other_queue.lock_};
+		queue_size_ = other_queue.queue_size_;
+		queue_ = std::make_unique<char[]>(queue_size_*sizeof(T));
 		if(!other_queue.doempty()){
 			for(unsigned int i = 0; i < other_queue.elements_;i++){
 				value_type const & elem_in_queue =
@@ -46,8 +48,6 @@ public:
 	}
 
 	BoundedQueue & operator=(BoundedQueue const & other_queue) noexcept {
-		//TODO: Lock is already held by the ctor and swap function,
-		//why is there additional need for further locks?
 		if(this != &other_queue){
 			BoundedQueue temporaryBuffer{other_queue};
 			swap(temporaryBuffer);
@@ -91,8 +91,8 @@ public:
 		return try_pop_for(elem,std::chrono::nanoseconds{0});
 	}
 
-	template<typename DURATION>
-	bool try_pop_for(reference elem, DURATION timespan){
+	template<typename REP,typename RATIO>
+	bool try_pop_for(reference elem, std::chrono::duration<REP,RATIO> timespan){
 		ulock lock{this->lock_};
 		if(notEmpty.wait_for(lock,timespan,[this]{return !doempty();})){
 			elem = this->dopop();
@@ -102,7 +102,7 @@ public:
 		return false;
 	}
 
-	template<typename TYPE>
+	template<typename TYPE,typename = std::enable_if_t<std::is_convertible<std::decay_t<TYPE>,T>{}>>
 	void push(TYPE && elem){
 		ulock lock{this->lock_};
 		notFull.wait(lock,[this]{return !this->dofull();});
@@ -110,13 +110,14 @@ public:
 		notEmpty.notify_one();
 	}
 
-	template<typename TYPE>
+	template<typename TYPE, typename = std::enable_if_t<std::is_convertible<std::decay_t<TYPE>,T>{}>>
 	bool try_push(TYPE && elem){
 		return try_push_for(std::forward<TYPE>(elem),std::chrono::nanoseconds{0});
 	}
 
-	template<typename TYPE, typename DURATION>
-	bool try_push_for(TYPE && elem, DURATION timespan){
+	template<typename TYPE,typename REP, typename RATIO,
+	typename = std::enable_if_t<std::is_convertible<std::decay_t<TYPE>,T>{}>>
+	bool try_push_for(TYPE && elem, std::chrono::duration<REP,RATIO> timespan){
 		ulock lock{this->lock_};
 		if(notFull.wait_for(lock,timespan,[this]{return !dofull();})){
 			this->dopush(std::forward<TYPE>(elem));
@@ -129,15 +130,18 @@ public:
 	void swap(BoundedQueue & other_queue){
 		ulock otherlock{other_queue.lock_,std::defer_lock};
 		ulock lock{this->lock_,std::defer_lock};
-		//TODO: check if this is supposed to be done differently
 		for(int i = 0; i < 3;){
 			try{
 				std::lock(otherlock,lock);
 				break;
 			}catch(std::system_error const & ex){
-				i++;
-				if(i == 3){
-					throw std::logic_error{"Lock acquisition failed"};
+				if(ex.code() == std::errc::resource_unavailable_try_again){
+					i++;
+					if(i == 3){
+						throw std::logic_error{"Lock acquisition timed out"};
+					}
+				}else{
+					throw std::logic_error{ex.what()};
 				}
 			}
 		}
@@ -192,13 +196,6 @@ private:
 
 	size_type docapacity() const noexcept{
 		return queue_size_;
-	}
-
-	void doswap(BoundedQueue & other_queue){
-		std::swap(queue_,other_queue.queue_);
-		std::swap(elements_,other_queue.elements_);
-		std::swap(queue_size_,other_queue.queue_size_);
-		std::swap(head_,other_queue.head_);
 	}
 
 	void clear(){
