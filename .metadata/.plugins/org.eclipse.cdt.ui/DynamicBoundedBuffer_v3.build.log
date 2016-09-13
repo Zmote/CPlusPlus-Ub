@@ -1,0 +1,13 @@
+14:35:46 **** Rebuild of configuration Debug for project DynamicBoundedBuffer_v3 ****
+Info: Internal Builder is used for build
+g++ -std=c++1y "-IC:\\Users\\shoda_000\\Dropbox\\cWorkSpace\\DynamicBoundedBuffer_v3\\cute" "-IC:\\Program Files\\boost\\boost_1_59_0" "-IC:\\boost_1_60_0" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\bounded_buffer_signatures_suite.o" "..\\src\\bounded_buffer_signatures_suite.cpp" 
+g++ -std=c++1y "-IC:\\Users\\shoda_000\\Dropbox\\cWorkSpace\\DynamicBoundedBuffer_v3\\cute" "-IC:\\Program Files\\boost\\boost_1_59_0" "-IC:\\boost_1_60_0" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\bounded_buffer_heap_memory_suite.o" "..\\src\\bounded_buffer_heap_memory_suite.cpp" 
+g++ -std=c++1y "-IC:\\Users\\shoda_000\\Dropbox\\cWorkSpace\\DynamicBoundedBuffer_v3\\cute" "-IC:\\Program Files\\boost\\boost_1_59_0" "-IC:\\boost_1_60_0" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Test.o" "..\\src\\Test.cpp" 
+g++ -std=c++1y "-IC:\\Users\\shoda_000\\Dropbox\\cWorkSpace\\DynamicBoundedBuffer_v3\\cute" "-IC:\\Program Files\\boost\\boost_1_59_0" "-IC:\\boost_1_60_0" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\bounded_buffer_student_suite.o" "..\\src\\bounded_buffer_student_suite.cpp" 
+g++ -std=c++1y "-IC:\\Users\\shoda_000\\Dropbox\\cWorkSpace\\DynamicBoundedBuffer_v3\\cute" "-IC:\\Program Files\\boost\\boost_1_59_0" "-IC:\\boost_1_60_0" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\bounded_buffer_semantic_suite.o" "..\\src\\bounded_buffer_semantic_suite.cpp" 
+g++ -std=c++1y "-IC:\\Users\\shoda_000\\Dropbox\\cWorkSpace\\DynamicBoundedBuffer_v3\\cute" "-IC:\\Program Files\\boost\\boost_1_59_0" "-IC:\\boost_1_60_0" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\bounded_buffer_content_suite.o" "..\\src\\bounded_buffer_content_suite.cpp" 
+g++ -std=c++1y "-IC:\\Users\\shoda_000\\Dropbox\\cWorkSpace\\DynamicBoundedBuffer_v3\\cute" "-IC:\\Program Files\\boost\\boost_1_59_0" "-IC:\\boost_1_60_0" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\bounded_buffer_default_behavior_suite.o" "..\\src\\bounded_buffer_default_behavior_suite.cpp" 
+g++ -o DynamicBoundedBuffer_v3.exe "src\\Test.o" "src\\bounded_buffer_content_suite.o" "src\\bounded_buffer_default_behavior_suite.o" "src\\bounded_buffer_heap_memory_suite.o" "src\\bounded_buffer_semantic_suite.o" "src\\bounded_buffer_signatures_suite.o" "src\\bounded_buffer_student_suite.o" 
+
+14:35:57 Build Finished (took 10s.817ms)
+

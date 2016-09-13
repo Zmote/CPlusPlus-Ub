@@ -1,0 +1,9 @@
+#include <stdio.h>
+
+int main(){
+	int zahlen[3] = {1,2,3};
+	int i;
+	int arrlength = sizeof(zahlen)/sizeof(zahlen[0];)
+}
+
+

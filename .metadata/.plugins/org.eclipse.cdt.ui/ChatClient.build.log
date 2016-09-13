@@ -1,0 +1,79 @@
+13:05:35 **** Incremental Build of configuration Debug for project ChatClient ****
+Info: Internal Builder is used for build
+g++ -std=c++1y "-IC:\\boost_1_61_0" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o ChatClient.exe main.o 
+main.o: In function `__static_initialization_and_destruction_0':
+C:/boost_1_61_0/boost/system/error_code.hpp:221: undefined reference to `boost::system::generic_category()'
+C:/boost_1_61_0/boost/system/error_code.hpp:222: undefined reference to `boost::system::generic_category()'
+C:/boost_1_61_0/boost/system/error_code.hpp:223: undefined reference to `boost::system::system_category()'
+main.o: In function `boost::system::error_code::error_code()':
+C:/boost_1_61_0/boost/system/error_code.hpp:322: undefined reference to `boost::system::system_category()'
+main.o: In function `boost::asio::error::get_system_category()':
+C:/boost_1_61_0/boost/asio/error.hpp:230: undefined reference to `boost::system::system_category()'
+main.o: In function `boost::asio::detail::winsock_init_base::startup(boost::asio::detail::winsock_init_base::data&, unsigned char, unsigned char)':
+C:/boost_1_61_0/boost/asio/detail/impl/winsock_init.ipp:39: undefined reference to `__imp_WSAStartup'
+main.o: In function `boost::asio::detail::winsock_init_base::cleanup(boost::asio::detail::winsock_init_base::data&)':
+C:/boost_1_61_0/boost/asio/detail/impl/winsock_init.ipp:56: undefined reference to `__imp_WSACleanup'
+main.o: In function `boost::asio::detail::win_fd_set_adapter::is_set(unsigned long long) const':
+C:/boost_1_61_0/boost/asio/detail/win_fd_set_adapter.hpp:83: undefined reference to `__WSAFDIsSet'
+main.o: In function `boost::asio::detail::socket_ops::clear_last_error()':
+C:/boost_1_61_0/boost/asio/detail/impl/socket_ops.ipp:69: undefined reference to `__imp_WSASetLastError'
+main.o: In function `boost::asio::detail::socket_ops::close(unsigned long long, unsigned char&, bool, boost::system::error_code&)':
+C:/boost_1_61_0/boost/asio/detail/impl/socket_ops.ipp:317: undefined reference to `__imp_closesocket'
+C:/boost_1_61_0/boost/asio/detail/impl/socket_ops.ipp:334: undefined reference to `__imp_ioctlsocket'
+C:/boost_1_61_0/boost/asio/detail/impl/socket_ops.ipp:349: undefined reference to `__imp_closesocket'
+main.o: In function `boost::asio::detail::socket_ops::set_internal_non_blocking(unsigned long long, unsigned char&, bool, boost::system::error_code&)':
+C:/boost_1_61_0/boost/asio/detail/impl/socket_ops.ipp:426: undefined reference to `__imp_ioctlsocket'
+main.o: In function `boost::asio::detail::socket_ops::non_blocking_connect(unsigned long long, boost::system::error_code&)':
+C:/boost_1_61_0/boost/asio/detail/impl/socket_ops.ipp:576: undefined reference to `__imp_select'
+main.o: In function `boost::asio::detail::socket_ops::listen(unsigned long long, int, boost::system::error_code&)':
+C:/boost_1_61_0/boost/asio/detail/impl/socket_ops.ipp:694: undefined reference to `__imp_listen'
+main.o: In function `boost::asio::detail::socket_ops::recv(unsigned long long, _WSABUF*, unsigned long long, int, boost::system::error_code&)':
+C:/boost_1_61_0/boost/asio/detail/impl/socket_ops.ipp:770: undefined reference to `__imp_WSARecv'
+main.o: In function `boost::asio::detail::socket_ops::send(unsigned long long, _WSABUF const*, unsigned long long, int, boost::system::error_code&)':
+C:/boost_1_61_0/boost/asio/detail/impl/socket_ops.ipp:1153: undefined reference to `__imp_WSASend'
+main.o: In function `boost::asio::detail::socket_ops::socket(int, int, int, boost::system::error_code&)':
+C:/boost_1_61_0/boost/asio/detail/impl/socket_ops.ipp:1381: undefined reference to `__imp_WSASocketW'
+C:/boost_1_61_0/boost/asio/detail/impl/socket_ops.ipp:1393: undefined reference to `__imp_setsockopt'
+main.o: In function `boost::asio::detail::socket_ops::ioctl(unsigned long long, unsigned char&, int, unsigned long*, boost::system::error_code&)':
+C:/boost_1_61_0/boost/asio/detail/impl/socket_ops.ipp:1711: undefined reference to `__imp_ioctlsocket'
+main.o: In function `boost::asio::detail::socket_ops::select(int, fd_set*, fd_set*, fd_set*, timeval*, boost::system::error_code&)':
+C:/boost_1_61_0/boost/asio/detail/impl/socket_ops.ipp:1780: undefined reference to `__imp_select'
+main.o: In function `boost::asio::detail::socket_ops::translate_addrinfo_error(int)':
+C:/boost_1_61_0/boost/asio/detail/impl/socket_ops.ipp:3201: undefined reference to `__imp_WSAGetLastError'
+main.o: In function `boost::asio::detail::socket_ops::getaddrinfo(char const*, char const*, addrinfo const&, addrinfo**, boost::system::error_code&)':
+C:/boost_1_61_0/boost/asio/detail/impl/socket_ops.ipp:3219: undefined reference to `__imp_getaddrinfo'
+main.o: In function `boost::asio::detail::socket_ops::freeaddrinfo(addrinfo*)':
+C:/boost_1_61_0/boost/asio/detail/impl/socket_ops.ipp:3262: undefined reference to `__imp_freeaddrinfo'
+main.o: In function `boost::asio::detail::socket_ops::host_to_network_long(unsigned long)':
+C:/boost_1_61_0/boost/asio/detail/impl/socket_ops.ipp:3403: undefined reference to `__imp_htonl'
+main.o: In function `boost::asio::detail::win_iocp_socket_service_base::start_send_op(boost::asio::detail::win_iocp_socket_service_base::base_implementation_type&, _WSABUF*, unsigned long long, int, bool, boost::asio::detail::win_iocp_operation*)':
+C:/boost_1_61_0/boost/asio/detail/impl/win_iocp_socket_service_base.ipp:357: undefined reference to `__imp_WSASend'
+C:/boost_1_61_0/boost/asio/detail/impl/win_iocp_socket_service_base.ipp:358: undefined reference to `__imp_WSAGetLastError'
+main.o: In function `boost::asio::detail::win_iocp_socket_service_base::start_receive_op(boost::asio::detail::win_iocp_socket_service_base::base_implementation_type&, _WSABUF*, unsigned long long, int, bool, boost::asio::detail::win_iocp_operation*)':
+C:/boost_1_61_0/boost/asio/detail/impl/win_iocp_socket_service_base.ipp:413: undefined reference to `__imp_WSARecv'
+C:/boost_1_61_0/boost/asio/detail/impl/win_iocp_socket_service_base.ipp:414: undefined reference to `__imp_WSAGetLastError'
+main.o: In function `boost::asio::detail::win_iocp_socket_service_base::start_connect_op(boost::asio::detail::win_iocp_socket_service_base::base_implementation_type&, int, int, sockaddr const*, unsigned long long, boost::asio::detail::win_iocp_socket_connect_op_base*)':
+C:/boost_1_61_0/boost/asio/detail/impl/win_iocp_socket_service_base.ipp:584: undefined reference to `__imp_WSAGetLastError'
+main.o: In function `boost::asio::detail::win_iocp_socket_service_base::get_connect_ex(boost::asio::detail::win_iocp_socket_service_base::base_implementation_type&, int)':
+C:/boost_1_61_0/boost/asio/detail/impl/win_iocp_socket_service_base.ipp:690: undefined reference to `__imp_WSAIoctl'
+main.o: In function `unsigned long long boost::asio::detail::socket_ops::call_accept<int>(int boost::asio::detail::socket_ops::msghdr::*, unsigned long long, sockaddr*, unsigned long long*)':
+C:/boost_1_61_0/boost/asio/detail/impl/socket_ops.ipp:96: undefined reference to `__imp_accept'
+main.o: In function `unsigned long long boost::asio::detail::socket_ops::error_wrapper<unsigned long long>(unsigned long long, boost::system::error_code&)':
+C:/boost_1_61_0/boost/asio/detail/impl/socket_ops.ipp:82: undefined reference to `__imp_WSAGetLastError'
+main.o: In function `int boost::asio::detail::socket_ops::call_bind<int>(int boost::asio::detail::socket_ops::msghdr::*, unsigned long long, sockaddr const*, unsigned long long)':
+C:/boost_1_61_0/boost/asio/detail/impl/socket_ops.ipp:276: undefined reference to `__imp_bind'
+main.o: In function `int boost::asio::detail::socket_ops::error_wrapper<int>(int, boost::system::error_code&)':
+C:/boost_1_61_0/boost/asio/detail/impl/socket_ops.ipp:82: undefined reference to `__imp_WSAGetLastError'
+main.o: In function `int boost::asio::detail::socket_ops::call_connect<int>(int boost::asio::detail::socket_ops::msghdr::*, unsigned long long, sockaddr const*, unsigned long long)':
+C:/boost_1_61_0/boost/asio/detail/impl/socket_ops.ipp:472: undefined reference to `__imp_connect'
+main.o: In function `int boost::asio::detail::socket_ops::call_setsockopt<int>(int boost::asio::detail::socket_ops::msghdr::*, unsigned long long, int, int, void const*, unsigned long long)':
+C:/boost_1_61_0/boost/asio/detail/impl/socket_ops.ipp:1428: undefined reference to `__imp_setsockopt'
+main.o: In function `int boost::asio::detail::socket_ops::call_getsockopt<int>(int boost::asio::detail::socket_ops::msghdr::*, unsigned long long, int, int, void*, unsigned long long*)':
+C:/boost_1_61_0/boost/asio/detail/impl/socket_ops.ipp:1514: undefined reference to `__imp_getsockopt'
+main.o: In function `int boost::asio::detail::socket_ops::call_getsockname<int>(int boost::asio::detail::socket_ops::msghdr::*, unsigned long long, sockaddr*, unsigned long long*)':
+C:/boost_1_61_0/boost/asio/detail/impl/socket_ops.ipp:1678: undefined reference to `__imp_getsockname'
+collect2.exe: error: ld returned 1 exit status
+
+13:05:40 Build Finished (took 5s.260ms)
+

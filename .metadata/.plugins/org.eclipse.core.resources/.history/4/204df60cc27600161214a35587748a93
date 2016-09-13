@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int sub_copy(int x){
+	x++;
+	printf("%i",x);
+	return x;
+}
+
+int sub_pointer(int * x){
+	(*x)++;
+	printf("%i",(*x));
+	return *x;
+}
+
+void sub_ref(int & x){
+	x++;
+	printf("%i",x);
+}
+
+int main(){
+	return 0;
+}

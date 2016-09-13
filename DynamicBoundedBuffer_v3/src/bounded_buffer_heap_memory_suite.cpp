@@ -24,6 +24,22 @@ struct AllocationTracker {
 		::operator delete[](ptr);
 	}
 
+//	AllocationTracker & operator=(AllocationTracker const & rhl){
+//		allocatedSingleObjects = rhl.allocatedSingleObjects;
+//		allocatedArrays = rhl.allocatedArrays;
+//		deallocatedSingleObjects = rhl.deallocatedSingleObjects;
+//		deallocatedArrays = rhl.deallocatedArrays;
+//		return *this;
+//	}
+//
+//	AllocationTracker & operator=(AllocationTracker && rhl){
+//		allocatedSingleObjects = std::move(rhl.allocatedSingleObjects);
+//		allocatedArrays = std::move(rhl.allocatedArrays);
+//		deallocatedSingleObjects = std::move(rhl.deallocatedSingleObjects);
+//		deallocatedArrays = std::move(rhl.deallocatedArrays);
+//		return *this;
+//	}
+
 	static std::vector<AllocationTracker*> allocatedSingleObjects;
 	static std::vector<AllocationTracker*> allocatedArrays;
 	static std::vector<AllocationTracker*> deallocatedSingleObjects;

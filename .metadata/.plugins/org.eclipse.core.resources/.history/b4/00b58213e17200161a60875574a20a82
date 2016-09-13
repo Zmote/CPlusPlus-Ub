@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void){
+	printf("%s","Before struct output...\n");
+	typedef struct{
+		char * name;
+		char * surname;
+		int age;
+		char * description;
+	}Person;
+
+	Person zafer;
+	zafer.name = "Zafer";
+	zafer.surname = "Dogan";
+	zafer.age = 27;
+	zafer.description = "He is an awesome dude";
+
+	printf("%s\n%s\n%i\n%s\n", zafer.name, zafer.surname,zafer.age,zafer.description);
+
+	return 0;
+}

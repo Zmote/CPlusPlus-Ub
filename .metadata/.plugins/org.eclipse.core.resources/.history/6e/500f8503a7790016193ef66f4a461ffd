@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+void printArr(int * arr, int length);
+int medianOfArr(int * arr, int length);
+
+int main(){
+	int zahlen[3] = {1,2,3};
+	printArr(zahlen,3);
+}
+
+void printArr(int * arr,int length){
+	int * p = arr;
+		while(p < &arr[length]){
+			printf("%d ", *p );
+			p++;
+		}
+}
+
+int medianOfArr(int * arr, int length){
+	int * p = arr;
+	int sum = 0;
+		while(p < &arr[length]){
+			printf("%d ", *p );
+			sum = sum * (*p);
+			p++;
+		}
+}
+
+

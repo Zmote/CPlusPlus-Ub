@@ -1,0 +1,26 @@
+#
+#Fri Apr 15 13:12:53 CEST 2016
+src/bounded_buffer_student_suite.cpp=1
+src/bounded_buffer_signatures_suite.h=1
+src/bounded_buffer_semantic_suite.cpp=1
+src/bounded_buffer_signatures_suite.cpp=1
+Debug/src/bounded_buffer_default_behavior_suite.o=1
+Debug/src/Test.o=1
+src/MemoryOperationCounter.h=1
+src/bounded_buffer_student_suite.h=1
+Debug/src/bounded_buffer_student_suite.o=1
+src/bounded_buffer_default_behavior_suite.cpp=1
+src/bounded_buffer_semantic_suite.h=1
+src/Test.cpp=1
+src/bounded_buffer_default_behavior_suite.h=1
+Debug/src/bounded_buffer_semantic_suite.o=1
+src/bounded_buffer_content_suite.h=1
+Debug/src/bounded_buffer_content_suite.o=1
+cute/cute_runner.h=1
+cute/cute_xml_file.h=1
+Debug/DynamicBoundedBuffer_v3.exe=1
+cute/cute_listener.h=1
+Debug/src/bounded_buffer_signatures_suite.o=1
+cute/ide_listener.h=1
+cute/xml_listener.h=1
+src/bounded_buffer_content_suite.cpp=1

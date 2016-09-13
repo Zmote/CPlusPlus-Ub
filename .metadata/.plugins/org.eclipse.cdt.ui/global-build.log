@@ -1,5 +1,5 @@
-15:28:53 **** Incremental Build of configuration Debug for project 06_Iterators ****
+17:12:02 **** Incremental Build of configuration Debug for project C_PrintBinary ****
 Info: Internal Builder is used for build
-g++ -std=c++1y "-IC:\\Users\\Zmote\\Dropbox\\cWorkSpace\\06_Iterators\\cute" "-IC:\\boost_1_60_0" "-IC:\\Program Files\\boost\\boost_1_59_0" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Test.o" "..\\src\\Test.cpp" 
-g++ -o 06_Iterators.exe "src\\Test.o" 
-Info: Nothing to build for 06_Iterators
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o C_PrintBinary.exe main.o 
+Info: Nothing to build for C_PrintBinary

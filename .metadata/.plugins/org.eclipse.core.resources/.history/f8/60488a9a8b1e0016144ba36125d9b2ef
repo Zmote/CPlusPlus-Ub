@@ -1,0 +1,22 @@
+1. Why can't be use the front() and back() member functions from BoundedBuffer?
+  -
+2. Why doesn't it make sense to provide iterators for BoundedQueue?
+  - Because of concurrent access, the underlying Buffer might be changed during
+  Iterator-Iteration, which isn't allowed for the Iterator to work properly.
+  Ie. the Iterator gets invalidated when the underlying Buffer is changed, thus
+  there is not much sense to implement one.
+3. Can you suggest an alternative means for observing the BoundedQueue content?
+  - You could freeze the BoundedQueue during Iteration or any operation that
+  tries to unveil the underlying contents. This could be very inefficient though
+  and time consuming, because the BoundedQueue would be locked for multiple
+  content operation(ie. Iteration over elements), which in the face of conurrency
+  would lead to performance drops that might even undermine concurrency.
+4. Why is pop() returning a value by value and not void as in BoundedBuffer?
+  - Because as the name suggests, it's a queue, ie. the objects are needed
+  afterwards for further operations. It is returned by value, because
+  during the pop-operation the object is destroyed, therefore we can't return
+  a reference as well. So the main difference is that in the BoundedBuffer,
+  the contents are access via front/back and are manipulated while they are in the
+  queue; this is because of the buffer logic, the "BoundedBuffer" buffers objects,
+  while the "BoundedQueue" queues, ie the contents of the Queue are "left" 
+  untouched while in the Queue.

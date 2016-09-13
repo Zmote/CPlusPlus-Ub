@@ -1,0 +1,11 @@
+12:44:53 **** Incremental Build of configuration Debug for project C_InputTest ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:6:8: warning: unknown escape sequence: '\l'
+  scanf("%\lf",&zahl);
+        ^
+gcc -o C_InputTest.exe main.o 
+
+12:44:53 Build Finished (took 383ms)
+

@@ -1,0 +1,32 @@
+1. Why can't be use the front() and back() member functions from BoundedBuffer?
+
+  - Because in a Queue it doesn't make sense to access the objects while they
+  are in the Queue, they are put in the Queue to wait their turn in FIFO order.
+  Furthermore, because of concurrent access, it is be problematic to hold a reference
+  to either the front or back object, while another thread could pop() the object
+  and destroy it, thus we'd have a pointer to a destroyed object, which would lead to
+  undefined behaviour.
+  
+2. Why doesn't it make sense to provide iterators for BoundedQueue?
+
+  - Because of concurrent access, the underlying Buffer might be changed during
+  Iterator-Iteration, which isn't allowed for the Iterator to work properly.
+  Ie. the Iterator gets invalidated when the underlying Buffer is changed, thus
+  there is not much sense to implement one. We'd have the same issue as in one, ie
+  iteration might try to access objects that are long gone/destroyed.
+  
+3. Can you suggest an alternative means for observing the BoundedQueue content?
+
+  - You could copy the Queue and lock it. Through an appropriate algorithm one could iterate over the contents
+  for example with lambdas or simple loop-iterations.
+  
+4. Why is pop() returning a value by value and not void as in BoundedBuffer?
+
+  - Because as the name suggests, it's a queue, ie. the objects are needed
+  afterwards for further operations. It is returned by value, because
+  during the pop-operation the object is destroyed, therefore we can't return
+  a reference. So the main difference is that in the BoundedBuffer,
+  the contents are accessed via front/back and are manipulated while they are in the
+  buffer; this is because of the buffer logic, the "BoundedBuffer" buffers objects,
+  while the "BoundedQueue" queues, ie the contents of the Queue are "left" 
+  untouched while in the Queue.

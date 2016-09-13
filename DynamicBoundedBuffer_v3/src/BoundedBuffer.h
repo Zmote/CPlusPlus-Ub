@@ -41,7 +41,12 @@ public:
 			elements_{elem.elements_}{
 		dynamic_container_size_ = elem.dynamic_container_size_;
 		dynamic_container_ = new char[(dynamic_container_size_)*sizeof(T)];
-		std::copy(elem.dynamic_container_,(dynamic_container_)+dynamic_container_size_,dynamic_container_);
+		for(unsigned int i = 0; i < dynamic_container_size_;i++){
+			T * elem_pointer = (T*)elem.dynamic_container_+(i*sizeof(T));
+			if(elem_pointer){
+				::new (dynamic_container_+(i*sizeof(T))) T{*elem_pointer};
+			}
+		}
 	}
 
 	BoundedBuffer(BoundedBuffer && elem):head_{std::move(elem.head_)},tail_{std::move(elem.tail_)},
@@ -56,7 +61,12 @@ public:
 		elements_ = elem.elements_;
 		dynamic_container_size_ = elem.dynamic_container_size_;
 		dynamic_container_ = new char[(dynamic_container_size_)*sizeof(T)];
-		std::copy(elem.dynamic_container_,(dynamic_container_)+dynamic_container_size_,dynamic_container_);
+		for(unsigned int i = 0; i < dynamic_container_size_;i++){
+			T * elem_pointer = (T*)elem.dynamic_container_+(i*sizeof(T));
+			if(elem_pointer){
+				::new (dynamic_container_+(i*sizeof(T))) T{*elem_pointer};
+			}
+		}
 		return *this;
 	}
 
@@ -87,43 +97,43 @@ public:
 
 	reference front(){
 		if(empty()) throw std::logic_error{"Invalid use of front on empty BoundedBuffer"};
-		return *((T*)(dynamic_container_+head_));
+		return *((T*)(dynamic_container_+(head_*sizeof(T))));
 	}
 
 	const_reference front() const{
 		if(empty()) throw std::logic_error{"Invalid use of front on empty BoundedBuffer"};
-		return *((T*)(dynamic_container_+head_));
+		return *((T*)(dynamic_container_+(head_*sizeof(T))));
 	}
 
 	reference back(){
 		if(empty()) throw std::logic_error{"Invalid use of back on empty BoundedBuffer"};
-		int back_tail_ = (tail_-1) < 0? dynamic_container_size_ -1: tail_-1;
-		return *((T*)(dynamic_container_+back_tail_));
+		int back_tail_ = tail_ == 0? dynamic_container_size_-1:tail_-1;
+		return *((T*)(dynamic_container_+(back_tail_*sizeof(T))));
 	}
 
 	const_reference back() const{
 		if(empty()) throw std::logic_error{"Invalid use of back on empty BoundedBuffer"};
-		int back_tail_ = (tail_-1) < 0? dynamic_container_size_ -1: tail_-1;
-		return *((T*)(dynamic_container_+back_tail_));
+		int back_tail_ = tail_ == 0? dynamic_container_size_-1:tail_-1;
+		return *((T*)(dynamic_container_+(back_tail_*sizeof(T))));
 	}
 
 	void push(value_type const & elem){
 		if(full()) throw std::logic_error{"Invalid use of push on full BoundedBuffer"};
-		::new (dynamic_container_+tail_) T{elem};
+		::new (dynamic_container_+(tail_*sizeof(T))) T{elem};
 		tail_ = (tail_+1)%dynamic_container_size_;
 		elements_++;
 	}
 
 	void push(value_type && elem){
 		if(full()) throw std::logic_error{"Invalid use of push on full BoundedBuffer"};
-		::new (dynamic_container_+tail_) T{std::move(elem)};
+		::new (dynamic_container_+(tail_*sizeof(T))) T{std::move(elem)};
 		tail_ = (tail_+1)%dynamic_container_size_;
 		elements_++;
 	}
 
 	void pop(){
 		if(empty()) throw std::logic_error{"Invalid use of pop on empty BoundedBuffer"};
-		T* pointer = (T*)(dynamic_container_ + head_);
+		T* pointer = (T*)(dynamic_container_ + (head_*sizeof(T)));
 		pointer->~T();
 		head_ = (head_+1)%dynamic_container_size_;
 		elements_--;
@@ -131,6 +141,10 @@ public:
 
 	void swap(BoundedBuffer & elem){
 		std::swap(dynamic_container_,elem.dynamic_container_);
+		std::swap(head_,elem.head_);
+		std::swap(tail_,elem.tail_);
+		std::swap(elements_,elem.elements_);
+		std::swap(dynamic_container_size_,elem.dynamic_container_size_);
 	}
 
 	void push_many(){

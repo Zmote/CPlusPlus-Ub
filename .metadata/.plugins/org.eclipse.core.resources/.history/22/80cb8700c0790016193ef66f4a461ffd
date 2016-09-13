@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+
+void printRed();
+void printBlue();
+void printGreen();
+void addAmpel(void (*ptr)(void));
+int main(){
+
+}
+
+void addAmpel(void (*ptr)(void)){
+	static (void)(*ptr)(void) ampeln[3];
+}
+
+void printRed(){
+	printf("Die Ampel ist rot.\n");
+}
+void printBlue(){
+	printf("Die Ampel ist blau.\n");
+}
+void printGreen(){
+	printf("Die Ampel ist grün.\n");
+}

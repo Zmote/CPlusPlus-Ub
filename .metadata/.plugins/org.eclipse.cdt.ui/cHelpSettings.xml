@@ -3,4 +3,7 @@
 <project name="chapter_function_syntax">
 <provider id="org.eclipse.cdt.ui.provider1"/>
 </project>
+<project name="13_DirectoryResizer">
+<provider id="org.eclipse.cdt.ui.provider1"/>
+</project>
 </cHelpSettings>

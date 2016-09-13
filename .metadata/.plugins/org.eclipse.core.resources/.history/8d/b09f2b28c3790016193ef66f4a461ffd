@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+void printBinary(int value);
+
+int main(){
+	return 0;
+}
+
+void printBinary(int value){
+	int i = 0;
+	int anzBits = sizeof(value)*8;
+	unsigned int mask = 1 << (anzbits-1);
+}

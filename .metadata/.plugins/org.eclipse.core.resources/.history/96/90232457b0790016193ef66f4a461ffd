@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct{
+	int artikelNummer;
+	int anzahl;
+	float preis;
+	char bezeichnung[50];
+}t_artikel;
+
+void printArtikel(struct t_artikel artikel);
+
+int main(){
+	return 0;
+}
+
+void printArtikel(t_artikel artikel){
+	printf("Artikelnummer: %d\nAnzahl: %d\n Preis: %f, Bezeichnung: %s",artikel.artikelNummer,artikel.anzahl,artikel.preis,artikel.bezeichnung);
+}

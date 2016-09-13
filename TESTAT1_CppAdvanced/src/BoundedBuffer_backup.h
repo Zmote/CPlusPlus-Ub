@@ -8,11 +8,11 @@ template<typename T, std::size_t SIZET>
 class BoundedBuffer{
 	using container_type = std::array<T,SIZET>;
 	container_type myContainer;
-	unsigned int elements{0};
-	unsigned int index{0};
+	unsigned int elements_{0};
+	unsigned int tail_{0};
 
 	bool index_is_over_buffer_size() const {
-		return index > myContainer.size();
+		return tail_ > myContainer.size();
 	}
 
 	void pre_push_operation() const{
@@ -21,9 +21,9 @@ class BoundedBuffer{
 
 	void post_push_operation(){
 		if(!index_is_over_buffer_size()){
-			elements++;
+			elements_++;
 		}
-		index++;
+		tail_++;
 	};
 
 public:
@@ -34,33 +34,33 @@ public:
 
 	BoundedBuffer() = default;
 	BoundedBuffer(BoundedBuffer const & elem):myContainer{elem.myContainer},
-			elements{elem.elements},index{elem.index}{};
+			elements_{elem.elements_},tail_{elem.tail_}{};
 	BoundedBuffer(BoundedBuffer && elem):myContainer{std::move(elem.myContainer)},
-			elements{std::move(elem.elements)},index{std::move(elem.index)}{};
+			elements_{std::move(elem.elements_)},tail_{std::move(elem.tail_)}{};
 
 	BoundedBuffer & operator=(BoundedBuffer const & elem){
 		myContainer = elem.myContainer;
-		elements = elem.elements;
-		index = elem.index;
+		elements_ = elem.elements_;
+		tail_ = elem.tail_;
 		return *this;
 	}
 
 	BoundedBuffer & operator=(BoundedBuffer && elem){
 		myContainer = std::move(elem.myContainer);
-		elements = std::move(elem.elements);
-		index = std::move(elem.index);
+		elements_ = std::move(elem.elements_);
+		tail_ = std::move(elem.tail_);
 		return *this;
 	}
 
 	bool empty() const{
-		return elements < 1;
+		return elements_ < 1;
 	};
 
 	bool full() const{
-		return elements == myContainer.size();
+		return elements_ == myContainer.size();
 	};
 	size_type size() const{
-		return elements;
+		return elements_;
 	}
 
 	reference front(){
@@ -74,23 +74,23 @@ public:
 
 	reference back(){
 		if(empty()) throw std::logic_error{"BoundedBuffer is empty"};
-		return myContainer.at((index-1)%myContainer.size());
+		return myContainer.at((tail_-1)%myContainer.size());
 	};
 
 	const_reference back() const{
 		if(empty()) throw std::logic_error{"BoundedBuffer is empty"};
-		return myContainer.at((index-1)%myContainer.size());
+		return myContainer.at((tail_-1)%myContainer.size());
 	};
 
 	void push(value_type const & elem){
 		pre_push_operation();
-		myContainer.at(index%myContainer.size()) = elem;
+		myContainer.at(tail_%myContainer.size()) = elem;
 		post_push_operation();
 	};
 
 	void push(value_type && elem){
 		pre_push_operation();
-		myContainer.at(index%myContainer.size()) = std::move(elem);
+		myContainer.at(tail_%myContainer.size()) = std::move(elem);
 		post_push_operation();
 	};
 
@@ -102,9 +102,9 @@ public:
 		}
 
 		if(!index_is_over_buffer_size()){
-			elements--;
+			elements_--;
 		}
-		index--;
+		tail_--;
 	};
 
 	void swap(BoundedBuffer & elem){
@@ -115,12 +115,12 @@ public:
 		std::copy(myContainer.begin(),myContainer.end(),elem.myContainer.begin());
 		std::copy(swap_store_buffer.myContainer.begin(),swap_store_buffer.myContainer.end(),myContainer.begin());
 
-		swap_store_buffer.elements = elements;
-		swap_store_buffer.index = index;
-		elements = elem.elements;
-		index = elem.index;
-		elem.elements = swap_store_buffer.elements;
-		elem.index = swap_store_buffer.index;
+		swap_store_buffer.elements_ = elements_;
+		swap_store_buffer.tail_ = tail_;
+		elements_ = elem.elements_;
+		tail_ = elem.tail_;
+		elem.elements_ = swap_store_buffer.elements_;
+		elem.tail_ = swap_store_buffer.tail_;
 	};
 
 //	static BoundedBuffer<T,SIZET> make_buffer(T && param){

@@ -1,0 +1,8 @@
+#include <stdio.h>
+
+int main(){
+	double zahl;
+	scanf("%f\n",&zahl);
+	printf("Your input was: %f", zahl);
+	return 0;
+}

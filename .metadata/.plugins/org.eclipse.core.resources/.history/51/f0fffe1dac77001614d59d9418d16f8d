@@ -1,0 +1,6 @@
+#include <windows.h>
+#include <stdio.h>
+
+DWORD WINAPI ThreadFunc(LPVOID n){
+	printf("Thread entered; initial thread paramter is: %d\n", *(int *)n);
+}

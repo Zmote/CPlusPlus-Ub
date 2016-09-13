@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct{
+	int artikelNummer;
+	int anzahl;
+	float preis;
+	char bezeichnung[50];
+}t_artikel;
+
+
+int main(){
+	return 0;
+}

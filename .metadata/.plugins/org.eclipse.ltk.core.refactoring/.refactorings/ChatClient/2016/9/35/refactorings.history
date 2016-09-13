@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;ChatClient/chat_message.h&apos; to &apos;chat_message.hpp&apos;" description="Rename resource &apos;chat_message.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="chat_message.h" name="chat_message.hpp" stamp="1472812728225" updateReferences="true"/>
+</session>

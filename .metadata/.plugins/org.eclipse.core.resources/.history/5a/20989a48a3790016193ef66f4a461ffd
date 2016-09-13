@@ -1,0 +1,6 @@
+#include <stdio.h>
+
+int main(){
+	char buffer[40];
+	buffer[0] = "\0";
+}

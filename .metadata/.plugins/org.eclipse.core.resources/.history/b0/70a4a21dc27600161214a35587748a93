@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+void sub_copy(int x){
+	x++;
+	printf("%i",x);
+}
+
+int sub_pointer(int * x){
+	(*x)++;
+	printf("%i",(*x));
+	return *x;
+}
+
+int main(){
+	int a = 500;
+
+	return 0;
+}

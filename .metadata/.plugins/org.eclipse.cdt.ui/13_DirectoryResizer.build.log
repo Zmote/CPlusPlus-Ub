@@ -1,0 +1,18 @@
+16:26:42 **** Incremental Build of configuration Debug for project 13_DirectoryResizer ****
+Info: Internal Builder is used for build
+g++ -std=c++1y "-IC:\\boost_1_61_0" "-IC:\\Program Files\\boost\\boost_1_59_0" "-IC:\\boost_1_61_0\\boost\\filesystem" "-IC:\\boost_1_61_0\\boost\\system" -O0 -g3 -Wall -c -fmessage-length=0 -o path.o "..\\path.cpp" 
+g++ -std=c++1y "-IC:\\boost_1_61_0" "-IC:\\Program Files\\boost\\boost_1_59_0" "-IC:\\boost_1_61_0\\boost\\filesystem" "-IC:\\boost_1_61_0\\boost\\system" -O0 -g3 -Wall -c -fmessage-length=0 -o portability.o "..\\portability.cpp" 
+g++ -std=c++1y "-IC:\\boost_1_61_0" "-IC:\\Program Files\\boost\\boost_1_59_0" "-IC:\\boost_1_61_0\\boost\\filesystem" "-IC:\\boost_1_61_0\\boost\\system" -O0 -g3 -Wall -c -fmessage-length=0 -o utf8_codecvt_facet.o "..\\utf8_codecvt_facet.cpp" 
+g++ -std=c++1y "-IC:\\boost_1_61_0" "-IC:\\Program Files\\boost\\boost_1_59_0" "-IC:\\boost_1_61_0\\boost\\filesystem" "-IC:\\boost_1_61_0\\boost\\system" -O0 -g3 -Wall -c -fmessage-length=0 -o codecvt_error_category.o "..\\codecvt_error_category.cpp" 
+g++ -std=c++1y "-IC:\\boost_1_61_0" "-IC:\\Program Files\\boost\\boost_1_59_0" "-IC:\\boost_1_61_0\\boost\\filesystem" "-IC:\\boost_1_61_0\\boost\\system" -O0 -g3 -Wall -c -fmessage-length=0 -o error_code.o "..\\error_code.cpp" 
+g++ -std=c++1y "-IC:\\boost_1_61_0" "-IC:\\Program Files\\boost\\boost_1_59_0" "-IC:\\boost_1_61_0\\boost\\filesystem" "-IC:\\boost_1_61_0\\boost\\system" -O0 -g3 -Wall -c -fmessage-length=0 -o windows_file_codecvt.o "..\\windows_file_codecvt.cpp" 
+g++ -std=c++1y "-IC:\\boost_1_61_0" "-IC:\\Program Files\\boost\\boost_1_59_0" "-IC:\\boost_1_61_0\\boost\\filesystem" "-IC:\\boost_1_61_0\\boost\\system" -O0 -g3 -Wall -c -fmessage-length=0 -o unique_path.o "..\\unique_path.cpp" 
+..\unique_path.cpp:31:0: warning: ignoring #pragma comment  [-Wunknown-pragmas]
+ #   pragma comment(lib, "Advapi32.lib")
+ ^
+g++ -std=c++1y "-IC:\\boost_1_61_0" "-IC:\\Program Files\\boost\\boost_1_59_0" "-IC:\\boost_1_61_0\\boost\\filesystem" "-IC:\\boost_1_61_0\\boost\\system" -O0 -g3 -Wall -c -fmessage-length=0 -o path_traits.o "..\\path_traits.cpp" 
+g++ -std=c++1y "-IC:\\boost_1_61_0" "-IC:\\Program Files\\boost\\boost_1_59_0" "-IC:\\boost_1_61_0\\boost\\filesystem" "-IC:\\boost_1_61_0\\boost\\system" -O0 -g3 -Wall -c -fmessage-length=0 -o operations.o "..\\operations.cpp" 
+g++ -o 13_DirectoryResizer.exe codecvt_error_category.o error_code.o operations.o path.o path_traits.o portability.o unique_path.o utf8_codecvt_facet.o windows_file_codecvt.o main.o 
+
+16:27:13 Build Finished (took 30s.479ms)
+

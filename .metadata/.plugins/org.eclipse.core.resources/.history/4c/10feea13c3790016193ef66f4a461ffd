@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+void printBinary(int value);
+
+int main(){
+	return 0;
+}
+
+void printBinary(int value){
+
+}

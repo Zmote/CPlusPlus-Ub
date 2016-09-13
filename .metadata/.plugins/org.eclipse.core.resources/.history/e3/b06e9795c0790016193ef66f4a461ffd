@@ -1,0 +1,29 @@
+#include <stdio.h>
+#define MAX_FUNCTIONS 10
+int counter = 0;
+void * ampeln[3];
+
+void printRed();
+void printBlue();
+void printGreen();
+void addAmpel(void (*ptr)(void));
+int main(){
+
+}
+
+void addAmpel(void (*ptr)(void)){
+	if(counter < 3){
+		ampeln[counter] = ptr;
+		counter++;
+	}
+}
+
+void printRed(){
+	printf("Die Ampel ist rot.\n");
+}
+void printBlue(){
+	printf("Die Ampel ist blau.\n");
+}
+void printGreen(){
+	printf("Die Ampel ist grün.\n");
+}

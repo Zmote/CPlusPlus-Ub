@@ -1,0 +1,9 @@
+#include <stdio.h>
+
+void convertToString(int zahl, char * buffer){
+
+}
+
+int main(){
+	return 0;
+}

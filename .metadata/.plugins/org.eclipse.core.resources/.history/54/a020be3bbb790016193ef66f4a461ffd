@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+
+void printRed();
+void printBlue();
+void printGreen();
+
+int main(){
+
+}
+
+void printRed(){
+	printf("Die Ampel ist rot.\n");
+}
+void printBlue(){
+
+}
+void printGreen(){
+
+}

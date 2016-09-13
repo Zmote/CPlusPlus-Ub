@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="copy" key="selection"/>
+		<item value="dopush" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="copy"/>
-			<item value="Hello World"/>
-			<item value="pi"/>
-			<item value="PI"/>
-			<item value="cos"/>
-			<item value="operator"/>
-			<item value="istreambuf"/>
-			<item value="istream"/>
+			<item value="dopush"/>
+			<item value="milli"/>
+			<item value="try_pop_for"/>
+			<item value="make_buffer"/>
+			<item value="empty_buffer"/>
+			<item value="BoundedBuffer&lt;int&gt;::iterator"/>
+			<item value="cbegin"/>
+			<item value="&lt;&lt;"/>
 		</list>
 		<list key="replacehistory">
 		</list>
@@ -23,8 +23,8 @@
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="357" key="DIALOG_WIDTH"/>
 		<item value="1|Segoe UI|11.4|0|WINDOWS|1|-19|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
-		<item value="503" key="DIALOG_HEIGHT"/>
-		<item value="579" key="DIALOG_X_ORIGIN"/>
-		<item value="350" key="DIALOG_Y_ORIGIN"/>
+		<item value="512" key="DIALOG_HEIGHT"/>
+		<item value="908" key="DIALOG_X_ORIGIN"/>
+		<item value="456" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

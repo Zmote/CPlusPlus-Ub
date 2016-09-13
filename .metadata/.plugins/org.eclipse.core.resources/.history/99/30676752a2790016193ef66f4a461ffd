@@ -1,0 +1,10 @@
+#include <stdio.h>
+
+void convertToString(int zahl, char * buffer){
+	sprintf(buffer, "%d", zahl);
+}
+
+int main(){
+	char * buffer;
+	return 0;
+}

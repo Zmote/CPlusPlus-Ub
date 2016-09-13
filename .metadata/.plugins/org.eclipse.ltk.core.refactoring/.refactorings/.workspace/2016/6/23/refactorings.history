@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 11 resources" deleteContents="false" description="Delete 11 resources" element1="/13_DirectoryResizer/config.hpp" element10="/13_DirectoryResizer/string_file.hpp" element11="/13_DirectoryResizer/system_error.hpp" element2="/13_DirectoryResizer/convenience.hpp" element3="/13_DirectoryResizer/error_code.hpp" element4="/13_DirectoryResizer/exception.hpp" element5="/13_DirectoryResizer/fstream.hpp" element6="/13_DirectoryResizer/main.cpp" element7="/13_DirectoryResizer/operations.hpp" element8="/13_DirectoryResizer/path_traits.hpp" element9="/13_DirectoryResizer/path.hpp" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="11" stamp="1465395984683"/>
+</session>
