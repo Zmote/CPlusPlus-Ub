@@ -145,10 +145,7 @@ globalFrame::globalFrame( wxWindow* parent, wxWindowID id, const wxString& title
 	wxBoxSizer* chat_wrapper_sizer;
 	chat_wrapper_sizer = new wxBoxSizer( wxVERTICAL );
 	
-	chat_text_output = new wxStaticText( chat_panel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
-	chat_text_output->Wrap( -1 );
-	chat_text_output->SetBackgroundColour( wxColour( 240, 240, 240 ) );
-	
+	chat_text_output = new wxTextCtrl( chat_panel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_READONLY );
 	chat_wrapper_sizer->Add( chat_text_output, 7, wxALL|wxEXPAND, 5 );
 	
 	wxBoxSizer* input_wrapper_sizer;
@@ -185,6 +182,7 @@ globalFrame::globalFrame( wxWindow* parent, wxWindowID id, const wxString& title
 	session_other_host_port_input->Connect( wxEVT_COMMAND_TEXT_ENTER, wxCommandEventHandler( globalFrame::handle_other_host_port ), NULL, this );
 	save_session_settings_button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( globalFrame::handle_save_settings ), NULL, this );
 	chat_text_input->Connect( wxEVT_COMMAND_TEXT_ENTER, wxCommandEventHandler( globalFrame::handle_chat_text_input ), NULL, this );
+	send_button->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( globalFrame::handle_send ), NULL, this );
 }
 
 globalFrame::~globalFrame()
@@ -199,5 +197,6 @@ globalFrame::~globalFrame()
 	session_other_host_port_input->Disconnect( wxEVT_COMMAND_TEXT_ENTER, wxCommandEventHandler( globalFrame::handle_other_host_port ), NULL, this );
 	save_session_settings_button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( globalFrame::handle_save_settings ), NULL, this );
 	chat_text_input->Disconnect( wxEVT_COMMAND_TEXT_ENTER, wxCommandEventHandler( globalFrame::handle_chat_text_input ), NULL, this );
+	send_button->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( globalFrame::handle_send ), NULL, this );
 	
 }

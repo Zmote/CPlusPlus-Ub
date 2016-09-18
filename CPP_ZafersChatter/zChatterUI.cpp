@@ -21,6 +21,13 @@ void zChatterUI::handle_save_settings( wxCommandEvent& event )
 
 }
 
+void zChatterUI::handle_send(wxCommandEvent & event)
+{
+	wxString prepend{"[" + zChatterUI::get_session_name() + "]: "};
+	zChatterUI::chat_text_output->SetValue(prepend + zChatterUI::chat_text_output->GetValue() + zChatterUI::chat_text_input->GetValue());
+	//TODO: newline
+}
+
 //EVENT HANDLER FIELDS
 void zChatterUI::handle_session_name_input( wxCommandEvent& event )
 {
@@ -28,23 +35,25 @@ void zChatterUI::handle_session_name_input( wxCommandEvent& event )
 }
 void zChatterUI::handle_host_input( wxCommandEvent& event )
 {
-
+	zChatterUI::set_session_host(event.GetString());
 }
 void zChatterUI::handle_host_port_input( wxCommandEvent& event )
 {
-
+	zChatterUI::set_session_host_port(event.GetString());
 }
 void zChatterUI::handle_other_host_input( wxCommandEvent& event )
 {
-
+	zChatterUI::set_session_other_host(event.GetString());
 }
 void zChatterUI::handle_other_host_port( wxCommandEvent& event )
 {
-
+	zChatterUI::set_session_other_host_port(event.GetString());
 }
 void zChatterUI::handle_chat_text_input( wxCommandEvent& event )
 {
-
+	wxString prepend{"[" + zChatterUI::get_session_name() + "]: "};
+	zChatterUI::chat_text_output->GetValue().insert(zChatterUI::chat_text_output->GetValue().length(),event.GetString());
+	//TODO: newline
 }
 
 //DATA MANIPULATORS

@@ -60,7 +60,7 @@ class globalFrame : public wxFrame
 		wxStaticText* cs_other_host_ip_port;
 		wxStaticText* cs_other_host_ip_port_info;
 		wxPanel* chat_panel;
-		wxStaticText* chat_text_output;
+		wxTextCtrl* chat_text_output;
 		wxTextCtrl* chat_text_input;
 		wxButton* send_button;
 		
@@ -74,6 +74,7 @@ class globalFrame : public wxFrame
 		virtual void handle_other_host_port( wxCommandEvent& event ) { event.Skip(); }
 		virtual void handle_save_settings( wxCommandEvent& event ) { event.Skip(); }
 		virtual void handle_chat_text_input( wxCommandEvent& event ) { event.Skip(); }
+		virtual void handle_send( wxCommandEvent& event ) { event.Skip(); }
 		
 	
 	public:

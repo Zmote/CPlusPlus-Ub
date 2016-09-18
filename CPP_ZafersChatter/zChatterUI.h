@@ -24,6 +24,7 @@ class zChatterUI : public globalFrame
 	virtual void handle_other_host_port( wxCommandEvent& event );
 	virtual void handle_save_settings( wxCommandEvent& event );
 	virtual void handle_chat_text_input( wxCommandEvent& event );
+	virtual void handle_send(wxCommandEvent & event);
 	public:
 		/** Constructor */
 		zChatterUI( wxWindow* parent );
