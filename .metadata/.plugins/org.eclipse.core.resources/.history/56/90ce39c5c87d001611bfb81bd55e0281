@@ -1,0 +1,18 @@
+/*
+ * ZChatter.cpp
+ *
+ *  Created on: 18.09.2016
+ *      Author: Zmote
+ */
+
+#include "ZChatter.h"
+
+ZChatter::ZChatter() {
+	// TODO Auto-generated constructor stub
+
+}
+
+ZChatter::~ZChatter() {
+	// TODO Auto-generated destructor stub
+}
+

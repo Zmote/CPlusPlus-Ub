@@ -1,0 +1,23 @@
+#include <wx/wx.h>
+
+class my_first_app : public wxApp
+{
+public :
+	bool OnInit()
+	{
+
+		return true;
+	}
+
+	void on_button_clicked(wxCommandEvent &)
+	{
+		wxMessageBox("Button has been pressed", "Info");
+	}
+
+	void on_button2_clicked(wxCommandEvent &)
+	{
+		wxMessageBox("Button 2 has been pressed", "Info2");
+	}
+};
+
+IMPLEMENT_APP(my_first_app);

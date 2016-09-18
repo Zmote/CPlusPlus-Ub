@@ -1,0 +1,26 @@
+#include "zChatterUI.h"
+#include <iostream>
+#include <string>
+
+zChatterUI::zChatterUI( wxWindow* parent )
+:
+globalFrame( parent )
+{
+
+}
+
+void zChatterUI::handle_session_name_input( wxCommandEvent& event )
+{
+	zChatterUI::set_session_name(event.GetString());
+	std::cout << zChatterUI::get_session_name().ToStdString();
+}
+
+void zChatterUI::set_session_name(wxString name)
+{
+	zChatterUI::session_name = name;
+}
+
+wxString zChatterUI::get_session_name()
+{
+	return zChatterUI::session_name;
+}

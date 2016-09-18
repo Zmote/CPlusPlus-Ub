@@ -1,0 +1,25 @@
+#include <wx/wx.h>
+#include "chat_ui.h"
+#include <iostream>
+
+class my_first_app : public wxApp
+{
+public :
+	bool OnInit()
+	{
+		globalFrame * mywindow = new globalFrame(NULL,-1,"Zafer's Point-to-Point Chatter");
+		mywindow->Show();
+		return true;
+	}
+private:
+	wxString session_name;
+	wxString session_host;
+	wxString session_host_port;
+	wxString session_other_host;
+	wxString session_other_host_port;
+	void handle_session_name_input( wxCommandEvent& event ){
+		session_name = event.GetString();
+	}
+};
+
+IMPLEMENT_APP(my_first_app);

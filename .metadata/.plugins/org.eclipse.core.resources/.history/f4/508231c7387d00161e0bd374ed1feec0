@@ -1,0 +1,13 @@
+#include <wx/wx.h>
+
+class my_first_app : public wxApp
+{
+public :
+	bool OnInit()
+	{
+
+		return true;
+	}
+};
+
+IMPLEMENT_APP(my_first_app);

@@ -1,0 +1,10 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+	char * envPointer;
+	if(putenv("EU=Europe") != 0){
+		printf("Something went wrong with putenv()");
+		exit(-1);
+	}
+}

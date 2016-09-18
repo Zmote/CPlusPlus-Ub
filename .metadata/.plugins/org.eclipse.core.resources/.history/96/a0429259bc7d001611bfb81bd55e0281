@@ -1,0 +1,14 @@
+#include <wx/wx.h>
+#include "chat_ui.h"
+class my_first_app : public wxApp
+{
+public :
+	bool OnInit()
+	{
+		globalFrame * mywindow = new globalFrame(NULL,-1,"My Frame");
+		mywindow->Show();
+		return true;
+	}
+};
+
+IMPLEMENT_APP(my_first_app);

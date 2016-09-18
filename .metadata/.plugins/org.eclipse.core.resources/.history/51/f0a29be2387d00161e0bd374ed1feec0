@@ -1,0 +1,14 @@
+#include <wx/wx.h>
+
+class my_first_app : public wxApp
+{
+public :
+	bool OnInit()
+	{
+		MyFrame1 window = new MyFrame1();
+		window->Show();
+		return true;
+	}
+};
+
+IMPLEMENT_APP(my_first_app);

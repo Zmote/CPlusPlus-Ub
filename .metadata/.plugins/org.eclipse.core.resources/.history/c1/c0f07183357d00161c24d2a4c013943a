@@ -1,0 +1,34 @@
+#include <wx/wx.h>
+
+class my_first_app : public wxApp
+{
+public :
+	bool OnInit()
+	{
+		wxFrame* window = new wxFrame(NULL, -1, "hi there");
+		wxButton * button = new wxButton(window, -1, "press me baby");
+		wxButton * button2 = new wxButton(window, -1, "press me too", wxPoint{0,30});
+		button->Bind(wxEVT_BUTTON, &my_first_app::on_button_clicked, this);
+		button2->Bind(wxEVT_BUTTON, &my_first_app::on_button2_clicked, this);
+		window->Show();
+		return true;
+	}
+
+	int OnExit()
+	{
+		wxMessageBox("Im closing");
+		return 0;
+	}
+
+	void on_button_clicked(wxCommandEvent &)
+	{
+		wxMessageBox("Button has been pressed", "Info");
+	}
+
+	void on_button2_clicked(wxCommandEvent &)
+	{
+		wxMessageBox("Button 2 has been pressed", "Info2");
+	}
+};
+
+IMPLEMENT_APP(my_first_app);

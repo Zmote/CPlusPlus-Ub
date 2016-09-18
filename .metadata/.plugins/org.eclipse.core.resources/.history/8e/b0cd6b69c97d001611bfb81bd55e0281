@@ -1,0 +1,19 @@
+/*
+ * ZChatterFrame.h
+ *
+ *  Created on: 18.09.2016
+ *      Author: Zmote
+ */
+
+#ifndef ZCHATTERFRAME_H_
+#define ZCHATTERFRAME_H_
+
+#include "chat_ui.h"
+
+class ZChatterFrame: public globalFrame {
+public:
+	ZChatterFrame(): globalFrame{NULL,-1,"Zafer's Point-to-Point Chatter"};
+	virtual ~ZChatterFrame();
+};
+
+#endif /* ZCHATTERFRAME_H_ */

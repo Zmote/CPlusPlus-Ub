@@ -1,0 +1,18 @@
+/*
+ * ZChatterFrame.cpp
+ *
+ *  Created on: 18.09.2016
+ *      Author: Zmote
+ */
+
+#include "ZChatterFrame.h"
+
+ZChatterFrame::ZChatterFrame()::globalFrame{NULL,-1,"Zafer's Point-to-Point Chatter"} {
+	// TODO Auto-generated constructor stub
+
+}
+
+ZChatterFrame::~ZChatterFrame() {
+	// TODO Auto-generated destructor stub
+}
+

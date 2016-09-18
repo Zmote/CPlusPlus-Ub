@@ -1,0 +1,22 @@
+#include <wx/wx.h>
+#include "ZChatterFrame.h"
+#include <iostream>
+
+class my_first_app : public wxApp
+{
+public :
+	bool OnInit()
+	{
+		ZChatterFrame * mywindow = new ZChatterFrame(NULL,-1,"Zafer's Point-to-Point Chatter");
+		mywindow->Show();
+		return true;
+	}
+private:
+	wxString session_name;
+	wxString session_host;
+	wxString session_host_port;
+	wxString session_other_host;
+	wxString session_other_host_port;
+};
+
+IMPLEMENT_APP(my_first_app);

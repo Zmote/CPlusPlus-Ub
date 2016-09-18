@@ -1,0 +1,17 @@
+/*
+ * ZChatter.h
+ *
+ *  Created on: 18.09.2016
+ *      Author: Zmote
+ */
+
+#ifndef ZCHATTER_H_
+#define ZCHATTER_H_
+
+class ZChatter {
+public:
+	ZChatter();
+	virtual ~ZChatter();
+};
+
+#endif /* ZCHATTER_H_ */

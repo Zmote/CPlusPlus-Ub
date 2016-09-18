@@ -1,5 +1,6 @@
-17:12:02 **** Incremental Build of configuration Debug for project C_PrintBinary ****
+21:19:55 **** Incremental Build of configuration Debug for project CPP_ZafersChatter ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
-gcc -o C_PrintBinary.exe main.o 
-Info: Nothing to build for C_PrintBinary
+g++ -std=c++1y "-IG:\\Users\\Zmote\\Dropbox\\cWorkSpace\\CPP_ZafersChatter\\lib" "-IC:\\wxWidgets-3.1.0\\lib\\gcc_dll\\mswu" "-IC:\\wxWidgets-3.1.0\\include" -O0 -Wall -c -fmessage-length=0 -o chat_ui.o "..\\chat_ui.cpp" 
+g++ -std=c++1y "-IG:\\Users\\Zmote\\Dropbox\\cWorkSpace\\CPP_ZafersChatter\\lib" "-IC:\\wxWidgets-3.1.0\\lib\\gcc_dll\\mswu" "-IC:\\wxWidgets-3.1.0\\include" -O0 -Wall -c -fmessage-length=0 -o zChatterUI.o "..\\zChatterUI.cpp" 
+g++ -std=c++1y "-IG:\\Users\\Zmote\\Dropbox\\cWorkSpace\\CPP_ZafersChatter\\lib" "-IC:\\wxWidgets-3.1.0\\lib\\gcc_dll\\mswu" "-IC:\\wxWidgets-3.1.0\\include" -O0 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ "-LG:\\Users\\Zmote\\Dropbox\\cWorkSpace\\CPP_ZafersChatter\\lib" -o CPP_ZafersChatter.exe chat_ui.o main.o zChatterUI.o -lwxbase310u_gcc_custom -lwxbase310u_net_gcc_custom -lwxbase310u_xml_gcc_custom -lwxmsw310u_adv_gcc_custom -lwxmsw310u_aui_gcc_custom -lwxmsw310u_core_gcc_custom -lwxmsw310u_gl_gcc_custom -lwxmsw310u_html_gcc_custom -lwxmsw310u_media_gcc_custom -lwxmsw310u_propgrid_gcc_custom -lwxmsw310u_ribbon_gcc_custom -lwxmsw310u_richtext_gcc_custom -lwxmsw310u_stc_gcc_custom -lwxmsw310u_webview_gcc_custom -lwxmsw310u_xrc_gcc_custom 

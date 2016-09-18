@@ -1,0 +1,48 @@
+///////////////////////////////////////////////////////////////////////////
+// C++ code generated with wxFormBuilder (version Jun 17 2015)
+// http://www.wxformbuilder.org/
+//
+// PLEASE DO "NOT" EDIT THIS FILE!
+///////////////////////////////////////////////////////////////////////////
+
+#include "noname.h"
+
+///////////////////////////////////////////////////////////////////////////
+
+MyFrame1::MyFrame1( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxFrame( parent, id, title, pos, size, style )
+{
+	this->SetSizeHints( wxDefaultSize, wxDefaultSize );
+
+	m_menubar1 = new wxMenuBar( 0 );
+	file_id = new wxMenu();
+	open_id = new wxMenu();
+	wxMenuItem* open_idItem = new wxMenuItem( file_id, wxID_ANY, wxT("Open"), wxEmptyString, wxITEM_NORMAL, open_id );
+	file_id->Append( open_idItem );
+
+	m_menubar1->Append( file_id, wxT("File") );
+
+	this->SetMenuBar( m_menubar1 );
+
+	wxBoxSizer* bSizer1;
+	bSizer1 = new wxBoxSizer( wxHORIZONTAL );
+
+	m_panel1 = new wxPanel( this, wxID_ANY, wxDefaultPosition, wxSize( 100,-1 ), wxTAB_TRAVERSAL );
+	m_panel1->SetBackgroundColour( wxColour( 240, 240, 240 ) );
+
+	bSizer1->Add( m_panel1, 1, wxEXPAND | wxALL, 5 );
+
+	m_panel2 = new wxPanel( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
+	m_panel2->SetBackgroundColour( wxColour( 255, 255, 255 ) );
+
+	bSizer1->Add( m_panel2, 1, wxEXPAND | wxALL, 5 );
+
+
+	this->SetSizer( bSizer1 );
+	this->Layout();
+
+	this->Centre( wxBOTH );
+}
+
+MyFrame1::~MyFrame1()
+{
+}

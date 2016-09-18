@@ -1,0 +1,60 @@
+#include "zChatterUI.h"
+#include <iostream>
+#include <string>
+
+zChatterUI::zChatterUI( wxWindow* parent )
+:
+globalFrame( parent )
+{
+
+}
+
+void zChatterUI::handle_session_name_input( wxCommandEvent& event )
+{
+	zChatterUI::chat_text_input->SetValue(zChatterUI::session_name_input->GetValue());
+}
+
+void zChatterUI::set_session_name(wxString name)
+{
+	zChatterUI::user_session_name = name;
+}
+wxString zChatterUI::get_session_name()
+{
+	return zChatterUI::user_session_name;
+}
+
+void zChatterUI::set_session_host(wxString name)
+{
+	zChatterUI::user_session_host = name;
+}
+wxString zChatterUI::get_session_host()
+{
+
+}
+
+void zChatterUI::set_session_host_port(wxString name)
+{
+
+}
+wxString zChatterUI::get_session_host_port()
+{
+
+}
+
+void zChatterUI::set_session_other_host(wxString name)
+{
+
+}
+wxString zChatterUI::get_session_other_host()
+{
+
+}
+
+void zChatterUI::set_session_other_host_port(wxString name)
+{
+
+}
+wxString zChatterUI::get_session_other_host_port()
+{
+
+}

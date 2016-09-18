@@ -1,0 +1,29 @@
+#include "cppChatUIglobalFrame.h"
+#include <iostream>
+
+
+cppChatUIglobalFrame::cppChatUIglobalFrame( wxWindow* parent )
+:
+globalFrame( parent )
+{
+}
+
+cppChatUIglobalFrame::cppChatUIglobalFrame(wxWindow* parent, wxWindowID id, const wxString& title)
+:globalFrame(parent,id,title)
+{
+}
+
+void cppChatUIglobalFrame::handle_session_name_input( wxCommandEvent& event )
+{
+	cppChatUIglobalFrame::set_session_name(event.GetString());
+	std::cout << cppChatUIglobalFrame::get_session_name().ToStdString();
+}
+
+void cppChatUIglobalFrame::set_session_name(wxString & session_n){
+	cppChatUIglobalFrame::session_name = session_n;
+}
+
+wxString cppChatUIglobalFrame::get_session_name(){
+	return cppChatUIglobalFrame::session_name;
+}
+

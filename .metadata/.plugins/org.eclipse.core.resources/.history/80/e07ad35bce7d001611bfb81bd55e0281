@@ -1,0 +1,13 @@
+#include "zChatterUI.h"
+
+zChatterUI::zChatterUI( wxWindow* parent )
+:
+globalFrame( parent )
+{
+
+}
+
+void zChatterUI::handle_session_name_input( wxCommandEvent& event )
+{
+// TODO: Implement handle_session_name_input
+}

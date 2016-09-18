@@ -1,0 +1,18 @@
+/*
+ * ZChatter.h
+ *
+ *  Created on: 18.09.2016
+ *      Author: Zmote
+ */
+
+#ifndef ZCHATTER_H_
+#define ZCHATTER_H_
+#include "chat_ui.h"
+
+class ZChatter : chat_ui {
+public:
+	ZChatter();
+	virtual ~ZChatter();
+};
+
+#endif /* ZCHATTER_H_ */
